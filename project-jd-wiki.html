@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="京东组件库与规范沉淀 Wiki 项目：用 AI 将设计资产结构化为 Design.md 文档，并验证从 token、组件到页面的闭环流程。" />
+  <title>京东组件库与规范沉淀 Wiki · AI Design Documentation</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="project-jd-wiki">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="返回首页">
+      <span class="brand-mark">BX</span>
+    </a>
+    <nav class="site-nav" aria-label="项目页导航">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="jd-hero section">
+      <p class="eyebrow">JD Design Wiki · AI Component Documentation</p>
+      <h1>京东组件库与规范沉淀 Wiki</h1>
+      <p>用 AI 将 Relay 设计稿里的 token、组件与页面结构转化为可验证、可复用、可协作的 Design.md 文档体系。</p>
+      <div class="jd-hero-meta" aria-label="项目关键词">
+        <span>Design Wiki</span>
+        <span>JoyCode / Codex</span>
+        <span>Relay MCP</span>
+        <span>SOP 沉淀</span>
+      </div>
+    </section>
+
+    <section class="jd-flow section" aria-labelledby="jd-flow-title">
+      <div class="jd-section-title">
+        <p class="eyebrow">Validation Loop</p>
+        <h2 id="jd-flow-title">我是如何跑通 Relay 设计稿到 Design Wiki 的闭环流程。</h2>
+      </div>
+      <div class="jd-flow-map" aria-label="Relay 设计稿到 Design Wiki 再到 Validation 的闭环流程">
+        <article class="jd-flow-step">
+          <div class="jd-step-head">
+            <span>01</span>
+            <h3>设计输入</h3>
+          </div>
+          <p>我先选择视频场域下的真实业务组件作为测试对象，而不是使用孤立 demo。输入范围覆盖 token、atom、component、module 到 page，让流程从一开始就面对真实复杂度。</p>
+          <ul>
+            <li>Relay 设计稿</li>
+            <li>颜色、字号、间距等 token</li>
+            <li>卡片、导航、表单等组件</li>
+          </ul>
+        </article>
+
+        <article class="jd-flow-step">
+          <div class="jd-step-head">
+            <span>02</span>
+            <h3>连接层</h3>
+          </div>
+          <p>通过 Relay MCP 读取节点结构、样式 token、组件层级、页面 frame 和必要的截图坐标信息，让 AI 理解设计稿结构，而不是只看一张视觉截图。</p>
+          <ul>
+            <li>读取节点结构</li>
+            <li>读取组件层级</li>
+            <li>补充截图与坐标语义</li>
+          </ul>
+        </article>
+
+        <article class="jd-flow-step">
+          <div class="jd-step-head">
+            <span>03</span>
+            <h3>Skill 生成</h3>
+          </div>
+          <p>基于已有 relay-to-design.md skill，我连续跑多个视频场域组件，生成 design.md，并观察文档中的 meta、tokens、atoms、components、modules、layout、interactions 是否稳定。</p>
+          <ul>
+            <li>解析设计稿</li>
+            <li>生成 design.md</li>
+            <li>检查结构字段完整度</li>
+          </ul>
+        </article>
+
+        <article class="jd-flow-step">
+          <div class="jd-step-head">
+            <span>04</span>
+            <h3>产物输出</h3>
+          </div>
+          <p>我和带教、+1 一起沉淀文件职责：design.md 描述设计源文件，spec.md 面向实现规范，behaviors.md 描述交互状态，variants.md 记录不同状态变体，assets/ 管理图片和图标资源。</p>
+          <ul>
+            <li>design.md</li>
+            <li>spec.md / variants.md / behaviors.md</li>
+            <li>ai-schema.yaml / CHANGELOG.md</li>
+          </ul>
+        </article>
+
+        <article class="jd-flow-step">
+          <div class="jd-step-head">
+            <span>05</span>
+            <h3>UI 还原</h3>
+          </div>
+          <p>我将 design.md 进一步还原为 HTML 预览，用页面效果反向检查结构化文档是否足够准确。这个环节帮助我发现单看文档不容易暴露的问题。</p>
+          <ul>
+            <li>design.md 转 HTML</li>
+            <li>生成 spec-page.html</li>
+            <li>还原门户页面预览</li>
+          </ul>
+        </article>
+
+        <article class="jd-flow-step">
+          <div class="jd-step-head">
+            <span>06</span>
+            <h3>多维验证</h3>
+          </div>
+          <p>我从 schema、视觉还原和语义三个维度检查结果，记录 icon 还原度低、token 映射不完整、文档结构不稳定、HTML 渲染不符合预期等问题。</p>
+          <ul>
+            <li>Schema Validation</li>
+            <li>Visual Validation</li>
+            <li>Semantic Validation</li>
+          </ul>
+        </article>
+
+        <article class="jd-flow-step">
+          <div class="jd-step-head">
+            <span>07</span>
+            <h3>闭环优化</h3>
+          </div>
+          <p>没有通过的内容会回到连接层、skill 或文档结构中继续调整。我将问题整理反馈给许帅，部分内容也通过 PR 参与到 skill 的优化迭代中。</p>
+          <ul>
+            <li>回写 design.md 或模块内容</li>
+            <li>更新设计稿模块</li>
+            <li>重新生成并迭代验证</li>
+          </ul>
+        </article>
+      </div>
+      <div class="jd-flow-value">
+        <strong>价值总结</strong>
+        <span>结构化</span>
+        <span>可验证</span>
+        <span>可追溯</span>
+        <span>可复用</span>
+        <span>高效协作</span>
+      </div>
+    </section>
+
+    <section class="jd-file-guide section" aria-labelledby="jd-file-guide-title">
+      <div class="jd-section-title">
+        <p class="eyebrow">Generated Files</p>
+        <h2 id="jd-file-guide-title">生成之后，每个文件分别承担什么职责。</h2>
+      </div>
+      <div class="jd-file-guide-shell">
+        <aside class="jd-file-guide-summary" aria-label="文件体系概览">
+          <span class="jd-file-guide-label">Output Package</span>
+          <h3>从设计稿生成到工程落地，不是只有一个 design.md。</h3>
+          <p>我把生成产物拆成「设计事实、实现规范、交互状态、机器校验、资源资产、版本记录」几类，让设计、开发和 AI 都能在同一套结构里定位信息。</p>
+          <div class="jd-file-tree" aria-label="Design Wiki 项目文件结构图">
+            <div class="jd-tree-root">
+              <span>JDS Pzujianku</span>
+            </div>
+            <div class="jd-tree-branch">
+              <span>foundations</span>
+              <small>tokens / atoms</small>
+            </div>
+            <div class="jd-tree-branch active">
+              <span>horizontal / components / secondary-tab</span>
+              <small>component package</small>
+            </div>
+            <ul class="jd-tree-files">
+              <li><span class="schema">YAML</span>ai-schema.yaml</li>
+              <li><span>MD</span>behaviors.md</li>
+              <li><span>MD</span>CHANGELOG.md</li>
+              <li><span>MD</span>design.md</li>
+              <li><span>MD</span>spec.md</li>
+              <li><span>MD</span>variants.md</li>
+            </ul>
+            <div class="jd-tree-flow">
+              <span>Relay Design</span>
+              <b></b>
+              <span>Design Wiki</span>
+              <b></b>
+              <span>Engineering</span>
+            </div>
+          </div>
+          <div class="jd-file-guide-metrics">
+            <strong>6+</strong>
+            <span>核心文件类型</span>
+          </div>
+        </aside>
+        <div class="jd-file-cards" aria-label="生成文件说明">
+          <article class="jd-file-card primary">
+            <div>
+              <span class="jd-file-icon">MD</span>
+              <small>Source of Design</small>
+            </div>
+            <h3>design.md</h3>
+            <p>描述从 Relay 设计稿中抽取出来的设计事实，包括页面结构、模块层级、布局关系、设计 token、组件组成和视觉语义。</p>
+            <em>用来回答：设计稿里到底有什么？</em>
+          </article>
+          <article class="jd-file-card">
+            <div>
+              <span class="jd-file-icon">SP</span>
+              <small>Implementation Spec</small>
+            </div>
+            <h3>spec.md</h3>
+            <p>把设计信息转译成开发可执行的实现规范，明确尺寸、间距、颜色、字体、组件规则和页面还原要求。</p>
+            <em>用来回答：开发应该如何实现？</em>
+          </article>
+          <article class="jd-file-card">
+            <div>
+              <span class="jd-file-icon">BH</span>
+              <small>Interaction Rules</small>
+            </div>
+            <h3>behaviors.md</h3>
+            <p>记录组件或页面的交互行为，例如 hover、click、loading、empty、error、disabled 等状态下的响应方式。</p>
+            <em>用来回答：用户操作后会发生什么？</em>
+          </article>
+          <article class="jd-file-card">
+            <div>
+              <span class="jd-file-icon">VR</span>
+              <small>State Variants</small>
+            </div>
+            <h3>variants.md</h3>
+            <p>沉淀组件或模块的不同形态与状态变体，帮助后续复用、扩展和对齐多场景下的视觉差异。</p>
+            <em>用来回答：这个组件有哪些版本？</em>
+          </article>
+          <article class="jd-file-card">
+            <div>
+              <span class="jd-file-icon">AI</span>
+              <small>Machine Schema</small>
+            </div>
+            <h3>ai-schema.yaml</h3>
+            <p>提供给 AI 或自动化流程读取的结构化 schema，用字段化方式描述组件、token、模块和校验规则。</p>
+            <em>用来回答：机器如何稳定理解这份设计？</em>
+          </article>
+          <article class="jd-file-card">
+            <div>
+              <span class="jd-file-icon">AS</span>
+              <small>Visual Assets</small>
+            </div>
+            <h3>assets/</h3>
+            <p>集中管理从设计稿导出的图片、图标、截图和其他静态资源，保证 HTML 预览与实现过程有可追溯的素材来源。</p>
+            <em>用来回答：图片和图标资源在哪里？</em>
+          </article>
+          <article class="jd-file-card">
+            <div>
+              <span class="jd-file-icon">CL</span>
+              <small>Change Record</small>
+            </div>
+            <h3>CHANGELOG.md</h3>
+            <p>记录每轮生成、人工修正、验证反馈和结构调整，让设计文档的演进过程可以被复盘和追踪。</p>
+            <em>用来回答：这份文档经历了哪些变化？</em>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="jd-case-grid section-grid">
+      <article class="jd-case-lead">
+        <p class="eyebrow">What I Did</p>
+        <h2>把一个仍在迭代的 AI skill，放进真实业务组件里反复验证。</h2>
+      </article>
+      <div class="jd-case-copy">
+        <p>在 Design Wiki 项目中，我主要参与设计资产结构化流程的验证、落地和推广。项目里的核心 skill 由正职同学提前搭建基础能力，我的重点不是从零开发工具，而是基于已有能力，在真实业务场景中系统测试它是否可用、稳定、可推广。</p>
+        <p>我选择视频场域下的一系列组件作为测试对象，从基础 token 开始，到组件文档生成、页面级 Design.md 组织，再到 HTML 预览渲染，完整跑通了从 token、组件到页面的链路，验证 Design Wiki 方向的可行性。</p>
+      </div>
+    </section>
+
+    <section class="jd-stack section">
+      <div class="jd-section-title">
+        <p class="eyebrow">Documentation System</p>
+        <h2>让设计资产进入一个可被理解、检索和复用的文件结构。</h2>
+      </div>
+      <div class="jd-structure">
+        <article>
+          <span>01</span>
+          <h3>Foundations</h3>
+          <p>基础规范沉淀 token、颜色、字号、间距等设计变量，保证后续组件生成有明确的源头。</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Horizontal / Components</h3>
+          <p>组件层沉淀 spec、variants、behaviors 与 ai-schema，让不同状态和交互语义被结构化表达。</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Pages</h3>
+          <p>页面级内容通过 Design.md 串联模块、布局、语义和验证目标，并支持 HTML 预览还原。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="jd-case-grid section-grid">
+      <article class="jd-case-lead">
+        <p class="eyebrow">Contribution</p>
+        <h2>我的贡献不是单点输出，而是把验证经验变成团队可以复用的方法。</h2>
+      </article>
+      <div class="jd-contributions">
+        <article>
+          <strong>跑通链路</strong>
+          <p>基于真实业务组件，连续验证 token、组件、页面到 HTML 预览的完整流程。</p>
+        </article>
+        <article>
+          <strong>暴露问题</strong>
+          <p>在多组件测试中发现 icon 资产还原度低、token 映射不完整、文档结构不稳定、HTML 渲染不符合预期等问题。</p>
+        </article>
+        <article>
+          <strong>推动迭代</strong>
+          <p>整理问题并寻找解决方案，将优化点反馈给许帅，部分内容通过 PR 参与到 skill 迭代中。</p>
+        </article>
+        <article>
+          <strong>沉淀 SOP</strong>
+          <p>输出《将 Relay 设计稿转化成 Design.md 的标准化流程》，帮助设计同学理解文件职责、检查项和协作方式。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="jd-reflection section">
+      <div>
+        <p class="eyebrow">Meaning</p>
+        <h2>这件事的价值，是把 AI 工具能力和真实设计业务连接起来。</h2>
+      </div>
+      <ol>
+        <li><span>项目层</span>验证 Design Wiki 方向在真实组件场景中的可行性。</li>
+        <li><span>工具层</span>在正式推广前发现 skill 在复杂场景里的优化点。</li>
+        <li><span>规范层</span>把个人验证经验转化成可复用的目录和文档结构。</li>
+        <li><span>协作层</span>让设计、开发、AI 在同一套结构化资产里工作。</li>
+        <li><span>个人层</span>理解 AI 不是替代设计判断，而是放大结构化沉淀和团队协作的效率。</li>
+      </ol>
+    </section>
+
+    <section class="next-project section">
+      <a class="button secondary" href="index.html#projects">返回项目列表</a>
+      <a class="button primary" href="project.html">查看美团项目</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Baoyi Xuan. JD Design Wiki · AI Component Documentation.</p>
+  </footer>
+  <script>
+    (() => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduceMotion || !("IntersectionObserver" in window)) return;
+
+      const revealSections = document.querySelectorAll("main > section");
+      const revealItems = document.querySelectorAll([
+        ".jd-section-title",
+        ".jd-flow-step",
+        ".jd-flow-value",
+        ".jd-file-guide-summary",
+        ".jd-file-card",
+        ".jd-case-lead",
+        ".jd-case-copy > p",
+        ".jd-structure article",
+        ".jd-contributions article",
+        ".jd-reflection li",
+        ".next-project a"
+      ].join(","));
+
+      revealSections.forEach((section) => {
+        section.classList.add("reveal", "jd-section-reveal");
+      });
+
+      revealItems.forEach((item, index) => {
+        item.classList.add("reveal", "jd-reveal-item");
+        item.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 70}ms`);
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            entry.target.classList.remove("out-view");
+            return;
+          }
+
+          if (entry.boundingClientRect.top < 0) {
+            entry.target.classList.add("out-view");
+            entry.target.classList.remove("in-view");
+          }
+        });
+      }, {
+        threshold: 0.14,
+        rootMargin: "0px 0px -10% 0px"
+      });
+
+      document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+    })();
+  </script>
+</body>
+</html>
