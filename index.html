@@ -15,7 +15,6 @@
     </a>
     <nav class="site-nav" aria-label="主导航">
       <a href="#about">About</a>
-      <a href="#capabilities">Capabilities</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -23,6 +22,7 @@
 
   <main>
     <section class="cover" aria-label="作品集封面">
+      <canvas class="cover-dither" aria-hidden="true"></canvas>
       <div class="cover-inner">
         <div class="cover-top">
           <p class="cover-corner">BAOYI XUAN</p>
@@ -184,8 +184,9 @@
           <span class="word">IS WH<span class="accent-letter accent-pink">O</span></span>
         </h1>
         <div class="about-intro">
-          <p>我是 Baoyi Xuan, 这里是一处仍在生长中的实验现场, 让技术成为放大 imagination 的引擎, 而不是替代判断与感受力的答案。</p>
-          <p>我更关心 AI 如何参与创作、触发偏离、制造新秩序, 这里是一些正在生长中的方向, 而不是被固定下来的结论。</p>
+          <p>中国美术学院本硕，硕士研究方向为艺术与科技（体验设计与人工智能交叉领域），本科主修视觉传达设计</p>
+          <p>兼具系统的设计逻辑与扎实的视觉审美，探索技术如何赋能创意表达与用户交互</p>
+          <p>Artificial Intelligence & Artistic Intelligence，人工智能越发达，人类越需要艺术智性</p>
         </div>
       </div>
 
@@ -257,30 +258,6 @@
       </div>
     </section>
 
-    <section class="section" id="capabilities">
-      <div class="section-heading">
-        <p class="eyebrow">Core Capabilities</p>
-        <h2>从问题定义到视觉交付的完整设计能力</h2>
-      </div>
-      <div class="capability-grid">
-        <article class="capability-card">
-          <span>01</span>
-          <h3>用户体验与交互策略</h3>
-          <p>梳理用户路径、任务流程与信息架构,将业务目标转化为低摩擦、高效率的产品体验。</p>
-        </article>
-        <article class="capability-card">
-          <span>02</span>
-          <h3>高保真 UI 与设计系统</h3>
-          <p>建立稳定的视觉层级、组件规范与响应式布局,保证界面在多场景中一致、清晰、易扩展。</p>
-        </article>
-        <article class="capability-card">
-          <span>03</span>
-          <h3>创意视觉与作品集包装</h3>
-          <p>为项目构建有叙事感的视觉表达,兼顾创意冲击力、阅读节奏与招聘场景下的信息传达。</p>
-        </article>
-      </div>
-    </section>
-
     <section class="section" id="projects">
       <div class="works-heading">
         <h2 aria-label="Recent works experience design just for future">
@@ -301,48 +278,24 @@
       </div>
       <div class="project-gallery">
         <div class="project-grid" aria-label="Recent works gallery">
-        <a class="project-card" id="work-meituan" href="project.html" style="--i:0">
-          <div class="project-visual visual-meituan" aria-label="美团团购商家端实习产出封面"></div>
-          <div class="project-info">
-            <p>Vibe Coding Practice</p>
-            <h3>新商体验优化</h3>
-            <span>美团营销活动报名页 · 体验优化 · AI Coding</span>
-          </div>
-        </a>
-        <a class="project-card" id="work-qishui" href="project-qishui.html" style="--i:1">
+        <a class="project-card" id="work-qishui" href="project-qishui.html" style="--i:0">
           <div class="project-visual visual-qishui" aria-label="汽水音乐 新商体验优化封面"></div>
           <div class="project-info">
-            <p>UI / UX Design</p>
-            <h3>汽水音乐 · 新商体验优化</h3>
-            <span>Soda Music · 新商体验 · UI/UX</span>
+            <p>Soda Music UIUX Design</p>
+            <h3>抖音-汽水音乐体验设计</h3>
+            <span>用户留存 · AI Agent玩法设计· AIMV工作流</span>
           </div>
         </a>
-        <a class="project-card" id="work-packaging" href="project.html" style="--i:2">
-          <div class="project-visual visual-packaging"></div>
+        <a class="project-card" id="work-meituan" href="project-meituan.html" style="--i:1">
+          <div class="project-visual visual-meituan" aria-label="美团团购商家端实习产出封面"></div>
           <div class="project-info">
-            <p>Portfolio Packaging</p>
-            <h3>设计项目叙事包装</h3>
-            <span>Storytelling · Layout · Presentation</span>
-          </div>
-        </a>
-        <a class="project-card" id="work-motion" href="project.html" style="--i:3">
-          <div class="project-visual visual-motion"></div>
-          <div class="project-info">
-            <p>Motion Study</p>
-            <h3>活动动效与转场探索</h3>
-            <span>Interaction Motion · Micro Animation · Prototype</span>
-          </div>
-        </a>
-        <a class="project-card" id="work-ai" href="project.html" style="--i:4">
-          <div class="project-visual visual-ai"></div>
-          <div class="project-info">
-            <p>AI Workflow</p>
-            <h3>AI 辅助设计工作流</h3>
-            <span>Prompt · Generation · Design Automation</span>
+            <p>Meituan Merchant App</p>
+            <h3>美团团购体验设计复盘</h3>
+            <span>手艺人页面改版 · 新商体验设计 · Vibe Coding</span>
           </div>
         </a>
         <a class="project-card" id="work-system" href="project-jd-wiki.html" style="--i:5">
-          <div class="project-visual visual-system"></div>
+          <div class="project-visual visual-system" aria-label="京东组件库与规范沉淀项目封面"></div>
           <div class="project-info">
             <p>JD Design Wiki</p>
             <h3>京东组件库与规范沉淀 Wiki</h3>
@@ -370,17 +323,150 @@
     <p>© 2026 Baoyi Xuan. Designed with clarity and restraint.</p>
   </footer>
 
+  <script type="module">
+    import { initCoverDither } from './assets/dither.js';
+    const canvas = document.querySelector('.cover-dither');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (canvas) {
+      const instance = initCoverDither(canvas, {
+        waveColor: [0.32, 0.40, 0.55],
+        waveSpeed: reduced ? 0 : 0.038,
+        waveFrequency: 4.6,
+        waveAmplitude: 0.24,
+        colorNum: 2,
+        pixelSize: 4,
+        disableAnimation: reduced,
+        enableMouseInteraction: !reduced,
+        mouseRadius: 0.29,
+      });
+      if (instance) document.body.classList.add('has-dither');
+    }
+  </script>
+
   <script>
+    (() => {
+      const cards = document.querySelectorAll('.project-card');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const rotateAmplitude = 7;
+      const scaleOnHover = 1.025;
+      const liftOnHover = -8;
+      const stiffness = 0.1;
+      const damping = 0.66;
+
+      const getEdgeProximity = (rect, x, y) => {
+        const cx = rect.width / 2;
+        const cy = rect.height / 2;
+        const dx = x - cx;
+        const dy = y - cy;
+        const kx = dx === 0 ? Infinity : cx / Math.abs(dx);
+        const ky = dy === 0 ? Infinity : cy / Math.abs(dy);
+        return Math.min(Math.max(1 / Math.min(kx, ky), 0), 1);
+      };
+      const getCursorAngle = (rect, x, y) => {
+        const dx = x - rect.width / 2;
+        const dy = y - rect.height / 2;
+        if (dx === 0 && dy === 0) return 45;
+        const degrees = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
+        return degrees < 0 ? degrees + 360 : degrees;
+      };
+
+      cards.forEach((card) => {
+        const state = {
+          rx: 0, ry: 0, s: 1, lift: 0,
+          trx: 0, try_: 0, ts: 1, tlift: 0,
+          vrx: 0, vry: 0, vs: 0, vlift: 0,
+          raf: 0,
+        };
+
+        const tick = () => {
+          state.vrx += (state.trx - state.rx) * stiffness;
+          state.vry += (state.try_ - state.ry) * stiffness;
+          state.vs += (state.ts - state.s) * stiffness;
+          state.vlift += (state.tlift - state.lift) * stiffness;
+          state.vrx *= damping;
+          state.vry *= damping;
+          state.vs *= damping;
+          state.vlift *= damping;
+          state.rx += state.vrx;
+          state.ry += state.vry;
+          state.s += state.vs;
+          state.lift += state.vlift;
+          card.style.setProperty('--tilt-x', state.rx.toFixed(3) + 'deg');
+          card.style.setProperty('--tilt-y', state.ry.toFixed(3) + 'deg');
+          card.style.setProperty('--tilt-scale', state.s.toFixed(4));
+          card.style.setProperty('--tilt-lift', state.lift.toFixed(2) + 'px');
+          const settled =
+            Math.abs(state.trx - state.rx) < 0.02 && Math.abs(state.vrx) < 0.02 &&
+            Math.abs(state.try_ - state.ry) < 0.02 && Math.abs(state.vry) < 0.02 &&
+            Math.abs(state.ts - state.s) < 0.0008 && Math.abs(state.vs) < 0.0008 &&
+            Math.abs(state.tlift - state.lift) < 0.05 && Math.abs(state.vlift) < 0.05;
+          if (settled) {
+            state.rx = state.trx; state.ry = state.try_; state.s = state.ts; state.lift = state.tlift;
+            card.style.setProperty('--tilt-x', state.rx.toFixed(3) + 'deg');
+            card.style.setProperty('--tilt-y', state.ry.toFixed(3) + 'deg');
+            card.style.setProperty('--tilt-scale', state.s.toFixed(4));
+            card.style.setProperty('--tilt-lift', state.lift.toFixed(2) + 'px');
+            state.raf = 0;
+            return;
+          }
+          state.raf = requestAnimationFrame(tick);
+        };
+        const ensureTick = () => { if (!state.raf) state.raf = requestAnimationFrame(tick); };
+
+        card.addEventListener('pointermove', (event) => {
+          const rect = card.getBoundingClientRect();
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+          const edge = 0.38 + getEdgeProximity(rect, x, y) * 0.62;
+          const angle = getCursorAngle(rect, x, y);
+          card.style.setProperty('--edge-proximity', `${(edge * 100).toFixed(3)}`);
+          card.style.setProperty('--cursor-angle', `${angle.toFixed(3)}deg`);
+          if (reducedMotion) return;
+          const offsetX = x - rect.width / 2;
+          const offsetY = y - rect.height / 2;
+          state.trx = (offsetY / (rect.height / 2)) * -rotateAmplitude;
+          state.try_ = (offsetX / (rect.width / 2)) * rotateAmplitude;
+          ensureTick();
+        });
+        card.addEventListener('pointerenter', () => {
+          if (reducedMotion) return;
+          state.ts = scaleOnHover;
+          state.tlift = liftOnHover;
+          ensureTick();
+        });
+        card.addEventListener('pointerleave', () => {
+          card.style.setProperty('--edge-proximity', '0');
+          if (reducedMotion) return;
+          state.trx = 0; state.try_ = 0; state.ts = 1; state.tlift = 0;
+          ensureTick();
+        });
+        card.addEventListener('focus', () => {
+          card.style.setProperty('--edge-proximity', '88');
+          card.style.setProperty('--cursor-angle', '45deg');
+          if (reducedMotion) return;
+          state.ts = scaleOnHover;
+          state.tlift = liftOnHover;
+          ensureTick();
+        });
+        card.addEventListener('blur', () => {
+          card.style.setProperty('--edge-proximity', '0');
+          if (reducedMotion) return;
+          state.trx = 0; state.try_ = 0; state.ts = 1; state.tlift = 0;
+          ensureTick();
+        });
+      });
+    })();
+
     (() => {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
       const targets = document.querySelectorAll(
-        '#about, #capabilities, #projects, #contact, .about-wordmark, .about-intro, .about-photo-placeholder, .about-experience-heading, .about-timeline li, .works-heading, .capability-card, .project-card, .contact-card, .section-heading'
+        '#about, #projects, #contact, .about-wordmark, .about-intro, .about-photo-placeholder, .about-experience-heading, .about-timeline li, .works-heading, .project-card, .contact-card, .section-heading'
       );
       targets.forEach((el, i) => {
         el.classList.add('reveal');
         // stagger siblings inside a group
-        if (el.classList.contains('capability-card') || el.classList.contains('project-card')) {
+        if (el.classList.contains('project-card')) {
           el.style.setProperty('--reveal-delay', `${(Number(el.style.getPropertyValue('--i')) || i % 3) * 90}ms`);
         }
       });

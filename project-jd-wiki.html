@@ -20,36 +20,359 @@
 
   <main>
     <section class="jd-hero section">
-      <p class="eyebrow">JD Design Wiki · AI Component Documentation</p>
-      <h1>京东组件库与规范沉淀 Wiki</h1>
-      <p>用 AI 将 Relay 设计稿里的 token、组件与页面结构转化为可验证、可复用、可协作的 Design.md 文档体系。</p>
-      <div class="jd-hero-meta" aria-label="项目关键词">
-        <span>Design Wiki</span>
-        <span>JoyCode / Codex</span>
-        <span>Relay MCP</span>
-        <span>SOP 沉淀</span>
+      <div class="jd-hero-copy">
+        <p class="eyebrow">JD Design Wiki · AI-Native Design System</p>
+        <h1><span class="line">让组件库成为</span><span class="line jd-accent">AI 可以调用的设计能力</span></h1>
+        <p class="jd-hero-subtitle">基于逛频道与 16.0 组件升级，跑通 Relay → Design.md → HTML → Design Wiki 的设计资产沉淀闭环</p>
+      </div>
+
+      <div class="jd-hero-system" aria-label="从 Relay 设计稿到 Design Wiki 的设计能力转译主视觉">
+        <div class="jd-system-grid" aria-hidden="true"></div>
+        <article class="jd-system-panel jd-system-relay">
+          <div class="jd-system-panel-head">
+            <span class="jd-window-dots"><i></i><i></i><i></i></span>
+            <small>RELAY / DESIGN SOURCE</small>
+            <b>01</b>
+          </div>
+          <div class="jd-relay-canvas">
+            <span class="jd-relay-label">逛频道 · 16.0</span>
+            <div class="jd-relay-nav"></div>
+            <div class="jd-relay-tabs"><i></i><i></i><i></i></div>
+            <div class="jd-relay-cards">
+              <div><span></span><b></b><em></em></div>
+              <div><span></span><b></b><em></em></div>
+              <div><span></span><b></b><em></em></div>
+              <div><span></span><b></b><em></em></div>
+            </div>
+            <span class="jd-selection-box"></span>
+          </div>
+          <p>Visual nodes · Auto layout · Component instances</p>
+        </article>
+
+        <div class="jd-system-connector" aria-hidden="true"><span>MCP</span><i></i></div>
+
+        <article class="jd-system-panel jd-system-doc">
+          <div class="jd-system-panel-head">
+            <span class="jd-file-badge">MD</span>
+            <small>STRUCTURED DESIGN.MD</small>
+            <b>02</b>
+          </div>
+          <div class="jd-code-window">
+            <ol>
+              <li><strong>#</strong> component: <em>ChannelCard</em></li>
+              <li><strong>##</strong> tokens</li>
+              <li>&nbsp;&nbsp;color: <span>var(--gray-900)</span></li>
+              <li>&nbsp;&nbsp;radius: <span>12px</span></li>
+              <li><strong>##</strong> structure</li>
+              <li>&nbsp;&nbsp;- image / title / meta</li>
+              <li><strong>##</strong> variants</li>
+              <li>&nbsp;&nbsp;- default / selected</li>
+            </ol>
+          </div>
+          <p>Tokens · Structure · Variants · Behaviors</p>
+        </article>
+
+        <div class="jd-system-connector" aria-hidden="true"><span>RENDER</span><i></i></div>
+
+        <article class="jd-system-panel jd-system-html">
+          <div class="jd-system-panel-head">
+            <span class="jd-live-dot"></span>
+            <small>HTML / DESIGN WIKI</small>
+            <b>03</b>
+          </div>
+          <div class="jd-wiki-window">
+            <aside><i></i><i></i><i></i><i></i></aside>
+            <div>
+              <span class="jd-wiki-kicker">COMPONENT SPEC</span>
+              <h3>Channel Card</h3>
+              <div class="jd-wiki-preview"><i></i><span></span></div>
+              <div class="jd-wiki-specs"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <p>Preview · Specification · Reusable assets</p>
+        </article>
+
+        <div class="jd-capability-chain">
+          <span><i>01</i>Token</span><b>→</b>
+          <span><i>02</i>Component</span><b>→</b>
+          <span><i>03</i>Page</span><b>→</b>
+          <span class="active"><i>04</i>Skill<em>AI Callable</em></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="jd-summary section" aria-labelledby="jd-summary-title">
+      <div class="jd-summary-heading">
+        <p class="eyebrow">02 / Project Summary</p>
+        <span class="jd-summary-index" aria-hidden="true">02</span>
+        <h2 id="jd-summary-title">我解决了什么问题</h2>
+        <p>面对逛频道组件梳理与京东 16.0 组件升级，我不仅完成了业务组件沉淀，还进一步探索：<strong>如何借助 AI，将设计师脑中的规则转化为机器可识别、可执行、可持续维护的组件知识。</strong></p>
+      </div>
+
+      <div class="jd-summary-results" aria-label="项目核心结果">
+        <article>
+          <span>01</span>
+          <i aria-hidden="true">T</i>
+          <h3>跑通完整链路</h3>
+          <p>从基础设计变量出发，完成 Token → 组件 → 页面的逐层沉淀与验证。</p>
+          <small>Token → Component → Page</small>
+        </article>
+        <article>
+          <span>02</span>
+          <i aria-hidden="true">MD</i>
+          <h3>验证转译可行性</h3>
+          <p>让 Relay 中的视觉结构被准确转译为 AI 和工程均可读取的设计文档。</p>
+          <small>Relay → Design.md</small>
+        </article>
+        <article>
+          <span>03</span>
+          <i aria-hidden="true">!</i>
+          <h3>反馈真实问题</h3>
+          <p>在复杂业务场景中发现 Skill 的结构、语义与还原问题，并推动迭代。</p>
+          <small>Test → Feedback → Iterate</small>
+        </article>
+        <article>
+          <span>04</span>
+          <i aria-hidden="true">S</i>
+          <h3>沉淀标准化 SOP</h3>
+          <p>将个人验证过程转化为清晰、稳定、可交接的团队复用方法。</p>
+          <small>Practice → SOP → Scale</small>
+        </article>
+      </div>
+
+      <dl class="jd-summary-facts" aria-label="项目基本信息">
+        <div>
+          <dt>我的角色</dt>
+          <dd>设计师<br><span>AI 工作流验证与落地</span></dd>
+        </div>
+        <div>
+          <dt>项目范围</dt>
+          <dd>逛频道 · 视频场域<br><span>商详组件</span></dd>
+        </div>
+        <div>
+          <dt>使用工具</dt>
+          <dd>Relay · JoyCode · Codex<br><span>MCP · Git</span></dd>
+        </div>
+        <div>
+          <dt>项目产出</dt>
+          <dd>组件规范 · 页面还原<br><span>操作手册 · Skill 反馈</span></dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="jd-context section" aria-labelledby="jd-context-title">
+      <div class="jd-context-intro">
+        <p class="eyebrow">03 / Business Context</p>
+        <div>
+          <span>业务背景</span>
+          <h2 id="jd-context-title">为什么要做组件库</h2>
+        </div>
+        <p>这不是一个脱离业务的 AI 实验。组件库首先承载真实场景中的设计规则，AI 则是让这些规则从“只能被人阅读”，走向“也能被机器理解与调用”的手段。</p>
+      </div>
+
+      <div class="jd-context-lines" aria-label="业务与 AI 两条问题线索">
+        <article class="jd-context-line business">
+          <header>
+            <span>01</span>
+            <div>
+              <small>BUSINESS LINE</small>
+              <h3>业务线</h3>
+            </div>
+          </header>
+          <p>逛频道及商详场域存在大量<strong>结构相似、状态复杂、跨场景复用</strong>的组件，同时迎来京东 16.0 规范升级，需要集中梳理和统一。</p>
+          <div class="jd-context-signals">
+            <span>结构相似<i>Similar</i></span>
+            <span>状态复杂<i>Complex</i></span>
+            <span>跨场景复用<i>Reusable</i></span>
+            <span>16.0 升级<i>Upgrade</i></span>
+          </div>
+          <div class="jd-context-source" aria-hidden="true">
+            <i></i><i></i><i></i><b>真实业务组件</b>
+          </div>
+        </article>
+
+        <div class="jd-context-plus" aria-hidden="true"><span>+</span><small>CONVERGE</small></div>
+
+        <article class="jd-context-line ai">
+          <header>
+            <span>02</span>
+            <div>
+              <small>AI LINE</small>
+              <h3>AI 线</h3>
+            </div>
+          </header>
+          <p>传统组件规范主要服务于设计师阅读，信息分散在<strong>设计稿、口头经验和规范文档</strong>中，AI 很难稳定识别、正确调用。</p>
+          <div class="jd-context-fragments" aria-hidden="true">
+            <span><i>◫</i>设计稿</span>
+            <span><i>···</i>口头经验</span>
+            <span><i>MD</i>规范文档</span>
+          </div>
+          <div class="jd-context-barrier"><span>信息分散</span><b></b><em>AI 无法稳定调用</em></div>
+        </article>
+      </div>
+
+      <div class="jd-context-question">
+        <div>
+          <small>THE DESIGN QUESTION</small>
+          <span>所以我要做的是</span>
+        </div>
+        <h3><span>如何在完成组件规范升级的同时，</span><span>把这些设计经验沉淀成 <em>AI 可以理解和复用的能力？</em></span></h3>
+        <div class="jd-context-formula" aria-label="组件库与 AI 的关系">
+          <span><b>业务载体</b>组件库</span>
+          <i>×</i>
+          <span><b>解决手段</b>AI 工作流</span>
+          <i>=</i>
+          <span class="result"><b>最终能力</b>可调用的设计资产</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="jd-definition section" aria-labelledby="jd-definition-title">
+      <div class="jd-definition-head">
+        <p class="eyebrow">04 / Point of View</p>
+        <div><span>重新定义</span><h2 id="jd-definition-title">AI 时代的组件库是什么？</h2></div>
+      </div>
+
+      <blockquote class="jd-definition-statement">
+        <span aria-hidden="true">“</span>
+        <p>AI 时代的组件库，不再只是可拖拽复用的视觉组件集合，而是一套包含<strong>设计规则、使用边界、状态逻辑和验证机制</strong>的设计语言系统。</p>
+      </blockquote>
+
+      <div class="jd-library-compare" aria-label="传统组件库与 AI 组件库对比">
+        <header>
+          <div>
+            <small>VISUAL ASSETS</small>
+            <h3>传统组件库</h3>
+            <span>For Designer</span>
+          </div>
+          <i aria-hidden="true">→</i>
+          <div>
+            <small>DESIGN CAPABILITY</small>
+            <h3>AI 组件库</h3>
+            <span>For Human + AI</span>
+          </div>
+        </header>
+        <div class="jd-compare-row">
+          <div><b>01</b><p>服务设计师拖拽复用</p></div>
+          <i aria-hidden="true">→</i>
+          <div><b>01</b><p>服务人和 AI 共同调用</p></div>
+        </div>
+        <div class="jd-compare-row">
+          <div><b>02</b><p>重点记录视觉样式</p></div>
+          <i aria-hidden="true">→</i>
+          <div><b>02</b><p>同时记录结构、状态、行为与约束</p></div>
+        </div>
+        <div class="jd-compare-row">
+          <div><b>03</b><p>依赖人工理解</p></div>
+          <i aria-hidden="true">→</i>
+          <div><b>03</b><p>具备机器可读结构</p></div>
+        </div>
+        <div class="jd-compare-row">
+          <div><b>04</b><p>规范展示即结束</p></div>
+          <i aria-hidden="true">→</i>
+          <div><b>04</b><p>可以生成、验证、回写和迭代</p></div>
+        </div>
+        <div class="jd-compare-row">
+          <div><b>05</b><p>更新依赖口头同步</p></div>
+          <i aria-hidden="true">→</i>
+          <div><b>05</b><p>通过文档与版本记录持续维护</p></div>
+        </div>
+      </div>
+
+      <div class="jd-definition-model" aria-label="AI 组件库的四项组成">
+        <span><i>01</i>设计规则<small>Rules</small></span>
+        <b>+</b>
+        <span><i>02</i>使用边界<small>Constraints</small></span>
+        <b>+</b>
+        <span><i>03</i>状态逻辑<small>Behaviors</small></span>
+        <b>+</b>
+        <span><i>04</i>验证机制<small>Validation</small></span>
+        <em>= 可调用的设计语言</em>
+      </div>
+    </section>
+
+    <section class="jd-layers section" aria-labelledby="jd-layers-title">
+      <div class="jd-layers-head">
+        <p class="eyebrow">05 / System Architecture</p>
+        <div><span>HOW TO BUILD</span><h2 id="jd-layers-title"><span>如何沉淀 AI 时代的</span><br><span>组件库 Markdown？</span></h2></div>
+        <p>建立清晰的分层思维，让知识从底层规则逐步向上组合。<strong>下层决定上层：</strong>先有 Token，再形成 Visual，继而构成 Component，最终由组件编排出 Page。</p>
+      </div>
+
+      <div class="jd-layer-architecture">
+        <div class="jd-layer-architecture-top"><span>DESIGN KNOWLEDGE STACK</span><small>依赖方向：由下至上 · 规则逐层收敛</small></div>
+        <div class="jd-layer-stage">
+          <article class="jd-layer-node page"><div class="jd-layer-node-id">L4</div><div><small>ORCHESTRATION</small><h3>Page <span>页面编排</span></h3><p>调用并编排组件，不重复描述组件规则</p></div><code>pages/*.md</code></article>
+          <i class="jd-layer-link link-page" aria-hidden="true"><span>调用组件</span></i>
+          <article class="jd-layer-node component"><div class="jd-layer-node-id">L3</div><div><small>COMPOSITION</small><h3>Component <span>组件结构与状态</span></h3><p>定义结构、变体、状态与交互</p></div><code>components/*.md</code></article>
+          <i class="jd-layer-link link-visual" aria-hidden="true"><span>组合能力</span></i>
+          <article class="jd-layer-node visual"><div class="jd-layer-node-id">L2</div><div><small>PRIMITIVES</small><h3>Visual <span>最小视觉能力</span></h3><p>图标、蒙层、文字等最小视觉能力</p></div><code>visuals/*.md</code></article>
+          <i class="jd-layer-link link-token" aria-hidden="true"><span>引用规则</span></i>
+          <article class="jd-layer-node token"><div class="jd-layer-node-id">L1</div><div><small>FOUNDATION</small><h3>Token <span>基础规则</span></h3><p>颜色、字体、间距等全局基础规则</p></div><code>tokens/*.md</code></article>
+          <article class="jd-layer-node assets"><div class="jd-layer-node-id">A</div><div><small>PRIVATE RESOURCES</small><h3>Assets <span>组件私有资源</span></h3><p>跟随组件管理，避免污染全局资产库</p></div><code>assets/</code></article>
+          <i class="jd-assets-link" aria-hidden="true"><span>私有引用</span></i>
+        </div>
+        <div class="jd-layer-direction"><span>基础规则</span><i></i><b>页面能力</b><em>AI 理解成本逐层降低 →</em></div>
+      </div>
+
+      <div class="jd-layer-details" aria-label="组件库各层职责说明">
+        <article><header><span>01</span><small>FOUNDATION</small></header><h3>Token</h3><p>颜色、字体、间距等基础规则。作为唯一事实来源，为所有上层视觉能力提供统一变量。</p><pre><code>color.primary: #2F8EE8
+space.md: 16px
+radius.card: 12px</code></pre><em>不描述具体组件</em></article>
+        <article><header><span>02</span><small>PRIMITIVES</small></header><h3>Visual</h3><p>图标、蒙层、文字等最小视觉能力。引用 Token，将抽象变量转换成可组合的视觉单元。</p><pre><code>visual: title-primary
+font: {type.heading}
+color: {color.text-1}</code></pre><em>不承担业务结构</em></article>
+        <article><header><span>03</span><small>COMPOSITION</small></header><h3>Component</h3><p>描述组件结构、变体、状态与交互，明确可以如何使用，以及在什么边界内使用。</p><pre><code>variant: compact | default
+state: loading | empty
+behavior: tap → detail</code></pre><em>不重复基础样式</em></article>
+        <article><header><span>04</span><small>ORCHESTRATION</small></header><h3>Page</h3><p>调用并编排已有组件，描述页面结构、顺序和业务上下文，不重复解释组件内部规则。</p><pre><code>page: channel-home
+uses: Header, FeedCard
+layout: vertical-flow</code></pre><em>只描述组合关系</em></article>
+        <article class="asset-detail"><header><span>A</span><small>PRIVATE</small></header><h3>Assets</h3><p>存放组件私有图片与图标资源，资源跟随组件归档，避免一次性素材进入并污染全局资产库。</p><pre><code>components/feed-card/
+├─ design.md
+└─ assets/cover.webp</code></pre><em>谁使用，谁管理</em></article>
+      </div>
+
+      <div class="jd-layer-principle">
+        <div><small>CORE PRINCIPLE</small><span>核心原则</span></div>
+        <p>每一层只描述自己该负责的内容。</p>
+        <strong>前面的规则越准确，AI 在页面层需要理解和猜测的内容就越少。</strong>
+        <div class="jd-guess-meter"><span>规则准确度</span><i></i><b>↑</b><span>AI 猜测成本</span><i></i><b>↓</b></div>
       </div>
     </section>
 
     <section class="jd-flow section" aria-labelledby="jd-flow-title">
       <div class="jd-section-title">
         <p class="eyebrow">Validation Loop</p>
-        <h2 id="jd-flow-title">我是如何跑通 Relay 设计稿到 Design Wiki 的闭环流程。</h2>
+        <h2 id="jd-flow-title">完整 AI 工作流：从设计稿到可执行资产</h2>
+      </div>
+      <div class="jd-input-case">
+        <div class="jd-input-case-head">
+          <span>01 / DESIGN INPUT</span>
+          <h3><span>从业务设计稿开始：</span><span>我如何拆解真实页面</span></h3>
+          <p>我没有从孤立的组件 Demo 开始，而是选择逛频道与视频场域的真实页面作为输入。先识别页面结构，再逐层判断哪些规则应该进入全局规范、哪些能力应该沉淀为可复用组件。</p>
+        </div>
+        <div class="jd-input-workbench">
+          <figure class="jd-real-page">
+            <figcaption><span>REAL BUSINESS PAGE</span><small>逛频道 · 视频场域</small></figcaption>
+            <div class="jd-real-page-asset">
+              <img src="assets/jd-wiki/%E9%80%9B%E9%A2%91%E9%81%93.png" alt="京东逛频道视频场域真实业务页面" />
+            </div>
+            <small class="jd-page-note">真实业务页面 · 逛频道视频场域</small>
+          </figure>
+          <div class="jd-page-decomposition">
+            <div class="jd-decomp-top"><span>PAGE DECOMPOSITION</span><small>页面不是一个整体截图，而是规则的组合</small></div>
+            <ol>
+              <li class="page"><span>05</span><div><small>PAGE</small><h4>逛频道首页</h4><p>只描述页面区块顺序与组件编排关系</p></div><b>1</b></li>
+              <li class="module"><span>04</span><div><small>MODULE</small><h4>Header · Hero · Feed · Bottom Bar</h4><p>组织具备独立业务语义的内容区块</p></div><b>4</b></li>
+              <li class="component"><span>03</span><div><small>COMPONENT</small><h4>频道 Tab · 视频卡片 · 推荐卡片</h4><p>提取跨场景复用的结构、变体与状态</p></div><b>8+</b></li>
+              <li class="visual"><span>02</span><div><small>VISUAL</small><h4>图标 · 标签 · 蒙层 · 标题</h4><p>沉淀可组合的最小视觉能力</p></div><b>12+</b></li>
+              <li class="token"><span>01</span><div><small>TOKEN</small><h4>颜色 · 字号 · 间距 · 圆角</h4><p>统一所有上层结构依赖的基础规则</p></div><b>20+</b></li>
+            </ol>
+            <div class="jd-decomp-rule"><span>拆解判断</span><p>跨页面重复出现 → 进入组件库<br>仅服务当前场景 → 作为模块或私有 Assets 管理</p></div>
+          </div>
+        </div>
       </div>
       <div class="jd-flow-map" aria-label="Relay 设计稿到 Design Wiki 再到 Validation 的闭环流程">
-        <article class="jd-flow-step">
-          <div class="jd-step-head">
-            <span>01</span>
-            <h3>设计输入</h3>
-          </div>
-          <p>我先选择视频场域下的真实业务组件作为测试对象，而不是使用孤立 demo。输入范围覆盖 token、atom、component、module 到 page，让流程从一开始就面对真实复杂度。</p>
-          <ul>
-            <li>Relay 设计稿</li>
-            <li>颜色、字号、间距等 token</li>
-            <li>卡片、导航、表单等组件</li>
-          </ul>
-        </article>
-
         <article class="jd-flow-step">
           <div class="jd-step-head">
             <span>02</span>
@@ -66,65 +389,52 @@
         <article class="jd-flow-step">
           <div class="jd-step-head">
             <span>03</span>
-            <h3>Skill 生成</h3>
+            <h3>Design Outline 预检</h3>
           </div>
-          <p>基于已有 relay-to-design.md skill，我连续跑多个视频场域组件，生成 design.md，并观察文档中的 meta、tokens、atoms、components、modules、layout、interactions 是否稳定。</p>
+          <p>正式生成文档前，先让 AI 输出 Design Outline，预检页面层级、组件边界、复用关系与缺失信息。通过人工确认提纲，避免错误结构直接进入最终文档。</p>
           <ul>
-            <li>解析设计稿</li>
-            <li>生成 design.md</li>
-            <li>检查结构字段完整度</li>
+            <li>输出页面与组件提纲</li>
+            <li>确认层级和复用边界</li>
+            <li>补齐缺失信息后再生成</li>
           </ul>
         </article>
 
         <article class="jd-flow-step">
           <div class="jd-step-head">
             <span>04</span>
-            <h3>产物输出</h3>
+            <h3>生产组件化文档包</h3>
           </div>
-          <p>我和带教、+1 一起沉淀文件职责：design.md 描述设计源文件，spec.md 面向实现规范，behaviors.md 描述交互状态，variants.md 记录不同状态变体，assets/ 管理图片和图标资源。</p>
+          <p>Outline 通过后，按组件边界批量生成结构化文档包。每个组件独立管理设计事实、实现规范、变体、行为与私有资源，让文档可以被检索、调用和持续维护。</p>
           <ul>
-            <li>design.md</li>
-            <li>spec.md / variants.md / behaviors.md</li>
-            <li>ai-schema.yaml / CHANGELOG.md</li>
+            <li>design.md / spec.md</li>
+            <li>variants.md / behaviors.md</li>
+            <li>ai-schema.yaml / assets/ / CHANGELOG.md</li>
           </ul>
         </article>
 
         <article class="jd-flow-step">
           <div class="jd-step-head">
             <span>05</span>
-            <h3>UI 还原</h3>
+            <h3>验证：检验规范是否可执行</h3>
           </div>
-          <p>我将 design.md 进一步还原为 HTML 预览，用页面效果反向检查结构化文档是否足够准确。这个环节帮助我发现单看文档不容易暴露的问题。</p>
+          <p>让 AI 仅依据组件文档还原 HTML 或完整页面，用实际渲染结果反向检验规范是否足够明确、完整且可执行，暴露单看文档难以发现的问题。</p>
           <ul>
-            <li>design.md 转 HTML</li>
-            <li>生成 spec-page.html</li>
-            <li>还原门户页面预览</li>
+            <li>文档驱动 HTML / 页面还原</li>
+            <li>检查结构与视觉一致性</li>
+            <li>验证状态和交互语义</li>
           </ul>
         </article>
 
         <article class="jd-flow-step">
           <div class="jd-step-head">
             <span>06</span>
-            <h3>多维验证</h3>
+            <h3>沉淀：进入 Design Wiki</h3>
           </div>
-          <p>我从 schema、视觉还原和语义三个维度检查结果，记录 icon 还原度低、token 映射不完整、文档结构不稳定、HTML 渲染不符合预期等问题。</p>
+          <p>根据验证结果修正 Token 映射、组件边界、状态与交互规则，更新对应文档和版本记录。通过验证的组件包最终进入 Design Wiki，成为团队和 AI 可复用的设计资产。</p>
           <ul>
-            <li>Schema Validation</li>
-            <li>Visual Validation</li>
-            <li>Semantic Validation</li>
-          </ul>
-        </article>
-
-        <article class="jd-flow-step">
-          <div class="jd-step-head">
-            <span>07</span>
-            <h3>闭环优化</h3>
-          </div>
-          <p>没有通过的内容会回到连接层、skill 或文档结构中继续调整。我将问题整理反馈给许帅，部分内容也通过 PR 参与到 skill 的优化迭代中。</p>
-          <ul>
-            <li>回写 design.md 或模块内容</li>
-            <li>更新设计稿模块</li>
-            <li>重新生成并迭代验证</li>
+            <li>修正规则并回写文档</li>
+            <li>更新 CHANGELOG 与版本</li>
+            <li>发布至 Design Wiki</li>
           </ul>
         </article>
       </div>
@@ -302,30 +612,154 @@
           <strong>推动迭代</strong>
           <p>整理问题并寻找解决方案，将优化点反馈给许帅，部分内容通过 PR 参与到 skill 迭代中。</p>
         </article>
-        <article>
-          <strong>沉淀 SOP</strong>
-          <p>输出《将 Relay 设计稿转化成 Design.md 的标准化流程》，帮助设计同学理解文件职责、检查项和协作方式。</p>
+        <article class="jd-sop-impact">
+          <div class="jd-sop-proof" aria-label="标准化流程文档传播成果">
+            <div class="jd-sop-proof-head"><span>DESIGN WIKI / SOP</span><i>•••</i></div>
+            <div class="jd-sop-doc">
+              <small>AI 设计工作流</small>
+              <h3><span>将 Relay 设计稿转化成</span><span>Design.md 的标准化流程</span></h3>
+              <p>从第一次使用者视角出发的完整上手指南</p>
+              <div><span>Skill 调用</span><span>使用方法</span><span>上手教程</span><span>检查清单</span></div>
+            </div>
+            <div class="jd-sop-metrics">
+              <div><b>150<sup>+</sup></b><span>触达并帮助设计师</span></div>
+              <div><b>400<sup>+</sup></b><span>累计文档浏览量</span></div>
+            </div>
+            <small class="jd-sop-proof-note">流程文档传播数据</small>
+          </div>
+          <div class="jd-sop-copy">
+            <span>04 / TEAM ENABLEMENT</span>
+            <strong>沉淀 SOP</strong>
+            <p>输出《将 Relay 设计稿转化成 Design.md 的标准化流程》，帮助设计同学理解文件职责、检查项和协作方式。</p>
+            <p>文档中不仅写了如何调用 Skill，我还站在第一次使用这套工具的设计师视角，与 Zero 产品经理、正职同学共同协作，补充不同的使用方法、完整上手教程与常见问题，让流程真正能够被团队理解和复用。</p>
+            <p>这份文档随后通过团队宣讲进行推广，目前已触达并帮助 <b>150+ 位设计师</b>，累计获得 <b>400+ 次浏览</b>。</p>
+            <div class="jd-sop-tags"><span>协作共创</span><span>教程补全</span><span>团队宣讲</span><span>规模化复用</span></div>
+          </div>
         </article>
       </div>
     </section>
 
-    <section class="jd-reflection section">
-      <div>
-        <p class="eyebrow">Meaning</p>
-        <h2>这件事的价值，是把 AI 工具能力和真实设计业务连接起来。</h2>
+    <section class="jd-skill-lab section" aria-labelledby="jd-skill-lab-title">
+      <div class="jd-skill-lab-head">
+        <p class="eyebrow">Independent Practice / Skill Lab</p>
+        <div>
+          <span>从“可阅读”到“可调用”</span>
+          <h2 id="jd-skill-lab-title"><span>让组件文档真正成为</span><span>AI 的设计能力</span></h2>
+        </div>
+        <div class="jd-skill-lab-intro">
+          <p>我的目标不只是把设计成果换成文档供人查阅。否则，它仍然只是另一种形式的设计说明，并没有充分发挥 AI 可读资产的价值。</p>
+          <p>因此，我继续沿着组件库生产与调用链路，独立实践了三个 Skill：先提升 16.0 组件库的生产效率，再尝试让 AI 结合 PRD、组件文档与 Skill，识别需求结构、调用已有组件并生成设计稿。</p>
+        </div>
       </div>
-      <ol>
-        <li><span>项目层</span>验证 Design Wiki 方向在真实组件场景中的可行性。</li>
-        <li><span>工具层</span>在正式推广前发现 skill 在复杂场景里的优化点。</li>
-        <li><span>规范层</span>把个人验证经验转化成可复用的目录和文档结构。</li>
-        <li><span>协作层</span>让设计、开发、AI 在同一套结构化资产里工作。</li>
-        <li><span>个人层</span>理解 AI 不是替代设计判断，而是放大结构化沉淀和团队协作的效率。</li>
-      </ol>
+
+      <div class="jd-skill-progress" aria-label="组件知识从沉淀到生成的演进路径">
+        <span><i>01</i>沉淀组件知识</span><b>→</b>
+        <span><i>02</i>提升生产效率</span><b>→</b>
+        <span><i>03</i>让 AI 调用组件</span><b>→</b>
+        <span class="active"><i>04</i>从 PRD 生成设计</span>
+      </div>
+
+      <div class="jd-skill-projects">
+        <article class="jd-skill-project annotation">
+          <div class="jd-skill-copy">
+            <div class="jd-skill-number"><span>01</span><small>ANNOTATION SKILL</small></div>
+            <h3>组件自动标注</h3>
+            <p>在组件整理过程中，我发现间距标注存在大量重复劳动。不同标注对象的颜色、优先级和伸缩行为都需要设计师反复判断与设置。</p>
+            <p>我将这些判断规则沉淀为标注 Skill，让 AI 自动识别对象关系并完成一致的规范标注。</p>
+            <dl>
+              <div><dt>输入</dt><dd>待标注组件与图层结构</dd></div>
+              <div><dt>规则</dt><dd>标注颜色 · 对象优先级 · 伸缩规则</dd></div>
+              <div><dt>输出</dt><dd>自动生成的规范标注</dd></div>
+            </dl>
+            <div class="jd-skill-value"><span>减少重复操作</span><span>统一标注判断</span><span>提升整理效率</span></div>
+          </div>
+          <div class="jd-skill-demo" data-demo="annotation">
+            <div class="jd-demo-toolbar"><span>DEMO 01 / COMPONENT ANNOTATION</span><i></i><i></i><i></i></div>
+            <div class="jd-demo-stage annotation-stage has-video">
+              <video controls playsinline preload="metadata" aria-label="组件自动标注演示视频">
+                <source src="assets/jd-wiki/%E7%BB%84%E4%BB%B6%E6%A0%87%E6%B3%A8%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91.mp4" type="video/mp4" />
+                你的浏览器暂不支持视频播放。
+              </video>
+            </div>
+          </div>
+        </article>
+
+        <article class="jd-skill-project packaging">
+          <div class="jd-skill-copy">
+            <div class="jd-skill-number"><span>02</span><small>PACKAGING SKILL</small></div>
+            <h3>组件自动封装</h3>
+            <p>已定稿的原子组件仍需要经过命名、属性配置、变体组织与层级整理，才能成为结构稳定、可复用的正式组件。</p>
+            <p>该 Skill 支持大模型自动阅读原子组件稿件，并按照机器可理解的组件范式完成封装。</p>
+            <dl>
+              <div><dt>输入</dt><dd>已定稿的原子组件稿件</dd></div>
+              <div><dt>规则</dt><dd>命名 · 属性 · 变体 · 层级范式</dd></div>
+              <div><dt>输出</dt><dd>可复用、可读取的组件资产</dd></div>
+            </dl>
+            <div class="jd-skill-value"><span>自动理解稿件</span><span>规范组件结构</span><span>降低封装成本</span></div>
+          </div>
+          <div class="jd-skill-demo" data-demo="packaging">
+            <div class="jd-demo-toolbar"><span>DEMO 02 / COMPONENT PACKAGING</span><i></i><i></i><i></i></div>
+            <div class="jd-demo-stage packaging-stage has-video">
+              <video controls playsinline preload="metadata" aria-label="组件自动封装演示视频">
+                <source src="assets/jd-wiki/%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85%E6%BC%94%E7%A4%BA.mp4" type="video/mp4" />
+                你的浏览器暂不支持视频播放。
+              </video>
+            </div>
+          </div>
+        </article>
+
+        <article class="jd-skill-project prd">
+          <div class="jd-skill-copy">
+            <div class="jd-skill-number"><span>03</span><small>PRD TO DESIGN</small></div>
+            <h3>基于 PRD 生成设计稿</h3>
+            <p>这是组件 Markdown 沉淀的最终目的之一：让 AI 不只是理解组件，还能在真实需求中正确调用组件。</p>
+            <p>我从最小范围开始验证：向 AI 输入 PRD，让它结合已有组件文档与 Skill，识别需求结构、匹配组件并编排为设计稿。</p>
+            <dl>
+              <div><dt>输入</dt><dd>PRD · 业务约束 · 目标场景</dd></div>
+              <div><dt>调用</dt><dd>组件 Markdown · 组件 Skill</dd></div>
+              <div><dt>输出</dt><dd>符合现有组件体系的设计稿</dd></div>
+            </dl>
+            <div class="jd-skill-value"><span>识别需求结构</span><span>调用已有组件</span><span>自动编排页面</span></div>
+          </div>
+          <div class="jd-skill-demo" data-demo="prd">
+            <div class="jd-demo-toolbar"><span>DEMO 03 / PRD TO DESIGN</span><i></i><i></i><i></i></div>
+            <div class="jd-demo-stage prd-stage" aria-label="基于 PRD 生成设计稿演示视频占位">
+              <div class="jd-prd-doc"><b>PRD</b><i></i><i></i><i></i><i></i></div>
+              <div class="jd-prd-process"><span>解析</span><b>→</b><span>匹配</span><b>→</b><span>编排</span></div>
+              <div class="jd-prd-screen"><i></i><span></span><span></span><span></span></div>
+              <div class="jd-demo-play"><b>▶</b><span>演示视频待上传</span><small>推荐比例 16:10 · MP4 / WebM</small></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="jd-skill-lab-summary">
+        <span>THE END-TO-END LOOP</span>
+        <p>设计师沉淀规则，AI 理解并调用规则，新的业务设计再反向验证和完善组件资产。</p>
+        <div><b>Design Knowledge</b><i>→</i><b>Component Skills</b><i>→</i><b>PRD</b><i>→</i><strong>Generated Design</strong></div>
+      </div>
+    </section>
+
+    <section class="jd-final-reflection section" aria-labelledby="jd-final-reflection-title">
+      <div class="jd-final-reflection-head">
+        <p class="eyebrow">Reflection / Designer’s Role</p>
+        <div><span>项目反思</span><h2 id="jd-final-reflection-title"><span>AI 时代，设计师的价值</span><span>发生了什么变化？</span></h2></div>
+        <p>当生成本身变得更快，设计师的价值开始向规则定义、上下文建设与工作流设计迁移。</p>
+      </div>
+      <div class="jd-role-shifts">
+        <article><header><span>01</span><small>RULE MAKER</small></header><div class="jd-role-shift-title"><s>执行设计</s><i>→</i><h3>定义规则</h3></div><p>AI 可以提高生成效率，但组件如何拆分、规则是否合理、状态是否完整，仍需要设计判断。</p><div class="jd-role-keywords"><span>组件拆分</span><span>规则判断</span><span>状态完整性</span></div></article>
+        <article><header><span>02</span><small>CONTEXT BUILDER</small></header><div class="jd-role-shift-title"><s>交付界面</s><i>→</i><h3>建设上下文</h3></div><p>AI 生成质量取决于它获得的上下文。设计师需要将隐性经验转化为结构化知识。</p><div class="jd-role-keywords"><span>经验显性化</span><span>知识结构化</span><span>上下文建设</span></div></article>
+        <article><header><span>03</span><small>WORKFLOW DESIGNER</small></header><div class="jd-role-shift-title"><s>使用工具</s><i>→</i><h3>设计工作流</h3></div><p>真正的 AI 能力，不是会调用某个工具，而是能定义输入、约束、审核、异常处理和持续迭代机制。</p><div class="jd-role-keywords"><span>输入与约束</span><span>审核与异常</span><span>持续迭代</span></div></article>
+      </div>
+      <blockquote class="jd-final-statement">
+        <div><span>FINAL TAKEAWAY</span><i></i></div>
+        <p>这次实践让我意识到，AI 时代设计师的护城河，不只是做出一个更好的页面，而是能否把自己的<strong>专业判断</strong>，沉淀成稳定、可复用、可被团队和 AI 持续调用的能力。</p>
+      </blockquote>
     </section>
 
     <section class="next-project section">
       <a class="button secondary" href="index.html#projects">返回项目列表</a>
-      <a class="button primary" href="project.html">查看美团项目</a>
+      <a class="button primary" href="project-meituan.html">查看美团项目</a>
     </section>
   </main>
 
@@ -340,6 +774,23 @@
       const revealSections = document.querySelectorAll("main > section");
       const revealItems = document.querySelectorAll([
         ".jd-section-title",
+        ".jd-summary-heading",
+        ".jd-summary-results article",
+        ".jd-summary-facts > div",
+        ".jd-context-intro",
+        ".jd-context-line",
+        ".jd-context-question",
+        ".jd-definition-head",
+        ".jd-definition-statement",
+        ".jd-library-compare",
+        ".jd-definition-model",
+        ".jd-layers-head",
+        ".jd-layer-architecture",
+        ".jd-layer-details article",
+        ".jd-layer-principle",
+        ".jd-input-case-head",
+        ".jd-real-page",
+        ".jd-page-decomposition",
         ".jd-flow-step",
         ".jd-flow-value",
         ".jd-file-guide-summary",
@@ -348,6 +799,13 @@
         ".jd-case-copy > p",
         ".jd-structure article",
         ".jd-contributions article",
+        ".jd-skill-lab-head",
+        ".jd-skill-progress",
+        ".jd-skill-project",
+        ".jd-skill-lab-summary",
+        ".jd-final-reflection-head",
+        ".jd-role-shifts article",
+        ".jd-final-statement",
         ".jd-reflection li",
         ".next-project a"
       ].join(","));
