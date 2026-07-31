@@ -276,32 +276,68 @@
           </span>
         </h2>
       </div>
-      <div class="project-gallery">
+      <div class="project-gallery" data-project-count="06">
         <div class="project-grid" aria-label="Recent works gallery">
-        <a class="project-card" id="work-qishui" href="project-qishui.html" style="--i:0">
-          <div class="project-visual visual-qishui" aria-label="汽水音乐 新商体验优化封面"></div>
-          <div class="project-info">
-            <p>Soda Music UIUX Design</p>
-            <h3>抖音-汽水音乐体验设计</h3>
-            <span>用户留存 · AI Agent玩法设计· AIMV工作流</span>
-          </div>
-        </a>
-        <a class="project-card" id="work-meituan" href="project-meituan.html" style="--i:1">
-          <div class="project-visual visual-meituan" aria-label="美团团购商家端实习产出封面"></div>
-          <div class="project-info">
-            <p>Meituan Merchant App</p>
-            <h3>美团团购体验设计复盘</h3>
-            <span>手艺人页面改版 · 新商体验设计 · Vibe Coding</span>
-          </div>
-        </a>
-        <a class="project-card" id="work-system" href="project-jd-wiki.html" style="--i:5">
-          <div class="project-visual visual-system" aria-label="京东组件库与规范沉淀项目封面"></div>
-          <div class="project-info">
-            <p>JD Design Wiki</p>
-            <h3>京东组件库与规范沉淀 Wiki</h3>
-            <span>AI 组件文档 · Design.md · SOP</span>
-          </div>
-        </a>
+          <a class="project-card" id="work-qishui" href="project-qishui.html" style="--i:0" data-index="01">
+            <span class="project-index" aria-hidden="true">01</span>
+            <div class="project-visual visual-qishui" aria-label="汽水音乐 新商体验优化封面"></div>
+            <div class="project-info">
+              <p>Soda Music UIUX Design</p>
+              <h3>抖音-汽水音乐体验设计</h3>
+              <div class="project-meta-line"><span>2025</span><span>Product Experience</span></div>
+              <span>用户留存 · AI Agent玩法设计· AIMV工作流</span>
+            </div>
+          </a>
+          <a class="project-card" id="work-meituan" href="project-meituan.html" style="--i:1" data-index="02">
+            <span class="project-index" aria-hidden="true">02</span>
+            <div class="project-visual visual-meituan" aria-label="美团团购商家端实习产出封面"></div>
+            <div class="project-info">
+              <p>Meituan Merchant App</p>
+              <h3>美团团购体验设计复盘</h3>
+              <div class="project-meta-line"><span>2026</span><span>Merchant Growth</span></div>
+              <span>手艺人页面改版 · 新商体验设计 · Vibe Coding</span>
+            </div>
+          </a>
+          <a class="project-card" id="work-system" href="project-jd-wiki.html" style="--i:2" data-index="03">
+            <span class="project-index" aria-hidden="true">03</span>
+            <div class="project-visual visual-system" aria-label="京东组件库与规范沉淀项目封面"></div>
+            <div class="project-info">
+              <p>JD Design Wiki</p>
+              <h3>京东-AI搭建设计系统工作流</h3>
+              <div class="project-meta-line"><span>2026</span><span>AI-Native System</span></div>
+              <span>AI 组件文档 · Design.md · SOP</span>
+            </div>
+          </a>
+          <a class="project-card" id="work-meituan-campaign" href="project-meituan-visual.html" style="--i:3" data-index="04">
+            <span class="project-index" aria-hidden="true">04</span>
+            <div class="project-visual visual-meituan-campaign" aria-label="美团活动运营视觉设计封面"></div>
+            <div class="project-info">
+              <p>Meituan Campaign Design</p>
+              <h3>美团活动运营视觉设计</h3>
+              <div class="project-meta-line"><span>2025</span><span>Operation Visual</span></div>
+              <span>活动主视觉 · 运营物料 · 营销场景延展</span>
+            </div>
+          </a>
+          <a class="project-card" id="work-aimv" href="project-qishui.html" style="--i:4" data-index="05">
+            <span class="project-index" aria-hidden="true">05</span>
+            <div class="project-visual visual-aimv" aria-label="AI MV 工作流设计封面"></div>
+            <div class="project-info">
+              <p>AI MV Workflow</p>
+              <h3>音乐人 AI MV 工作流</h3>
+              <div class="project-meta-line"><span>2025</span><span>Creator Tool</span></div>
+              <span>内容生成链路 · 创作工具 · 视觉表达</span>
+            </div>
+          </a>
+          <a class="project-card" id="work-sop" href="project-jd-wiki.html" style="--i:5" data-index="06">
+            <span class="project-index" aria-hidden="true">06</span>
+            <div class="project-visual visual-sop" aria-label="设计规范 SOP 沉淀封面"></div>
+            <div class="project-info">
+              <p>Design SOP</p>
+              <h3>组件规范与交付 SOP</h3>
+              <div class="project-meta-line"><span>2026</span><span>Design Ops</span></div>
+              <span>组件标准化 · 设计文档 · 资产复用</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -346,6 +382,7 @@
   <script>
     (() => {
       const cards = document.querySelectorAll('.project-card');
+      const gallery = document.querySelector('.project-gallery');
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const rotateAmplitude = 7;
       const scaleOnHover = 1.025;
@@ -369,6 +406,16 @@
         const degrees = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
         return degrees < 0 ? degrees + 360 : degrees;
       };
+
+      if (gallery) {
+        gallery.addEventListener('pointermove', (event) => {
+          const rect = gallery.getBoundingClientRect();
+          const x = ((event.clientX - rect.left) / rect.width) * 100;
+          const y = ((event.clientY - rect.top) / rect.height) * 100;
+          gallery.style.setProperty('--gallery-x', `${x.toFixed(2)}%`);
+          gallery.style.setProperty('--gallery-y', `${y.toFixed(2)}%`);
+        });
+      }
 
       cards.forEach((card) => {
         const state = {
