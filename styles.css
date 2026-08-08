@@ -852,6 +852,7 @@ dd { margin: 6px 0 0; font-weight: 700; }
 #work-meituan-campaign .project-info p { color: #ffcc00; }
 #work-aimv .project-info p { color: var(--accent-pink); }
 #work-sop .project-info p { color: #9db6ff; }
+#work-system .project-info h3 { max-width: none; white-space: nowrap; font-size: clamp(22px, 2.5vw, 34px); letter-spacing: -0.02em; }
 .project-info h3 {
   max-width: 12em;
   margin-bottom: 14px;
@@ -1176,7 +1177,6 @@ body.project-jd-wiki .brand-mark {
   gap: 28px clamp(48px,8vw,130px);
   align-items: end;
   padding-bottom: 48px;
-  border-bottom: 1px solid rgba(245,243,237,.14);
 }
 .jd-context-intro .eyebrow { grid-column:1 / -1; align-self:start; margin-bottom:18px; }
 .jd-context-intro > div > span { display: block; margin-bottom: 12px; color: #67aef2; font-size: 13px; font-weight: 750; letter-spacing: .12em; }
@@ -1187,6 +1187,71 @@ body.project-jd-wiki .brand-mark {
   grid-template-columns: minmax(0,1fr) 72px minmax(0,1fr);
   align-items: stretch;
   margin-top: 28px;
+}
+.jd-context-blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(48px, 6vw, 96px);
+  margin-top: 36px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(245,243,237,.12);
+}
+.jd-context-block header { display: flex; align-items: baseline; gap: 16px; }
+.jd-context-block h3 { margin: 0; color: #fff; font-size: clamp(24px, 2.2vw, 32px); letter-spacing: -.01em; }
+.jd-context-block > p { margin: 22px 0 0; color: rgba(245,243,237,.92); font-size: 17px; line-height: 1.75; }
+.jd-context-block > p strong { color: #fff; font-weight: 650; }
+.jd-context-lanes {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 44px);
+  align-items: stretch;
+  margin-top: 56px;
+}
+.jd-context-lane {
+  padding: clamp(28px, 3vw, 40px);
+  border: 1px solid rgba(245,243,237,.16);
+  border-radius: 20px;
+  background: rgba(245,243,237,.02);
+}
+.jd-context-lane header { display: flex; align-items: baseline; gap: 14px; }
+.jd-context-lane h4 { margin: 0; color: #fff; font-size: clamp(22px, 2vw, 28px); letter-spacing: -.01em; font-weight: 600; }
+.jd-context-lane p { margin: 24px 0 0; color: rgba(245,243,237,.85); font-size: 15.5px; line-height: 1.78; }
+.jd-context-lane p strong { color: #67aef2; font-weight: 650; }
+.jd-context-lane-plus {
+  align-self: center;
+  display: grid;
+  place-items: center;
+  gap: 14px;
+}
+.jd-context-lane-plus span {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(103,174,242,.4);
+  border-radius: 50%;
+  color: #67aef2;
+  font-size: 22px;
+  line-height: 1;
+}
+.jd-context-lane-plus small { color: rgba(103,174,242,.55); font: 700 9px/1 "Space Mono", monospace; letter-spacing: .18em; writing-mode: vertical-rl; }
+body.project-jd-wiki .jd-context-blocks { border-top-color: rgba(0,0,0,.1); }
+body.project-jd-wiki .jd-context-block h3 { color: #1d1d1f; }
+body.project-jd-wiki .jd-context-block > p { color: #1d1d1f; }
+body.project-jd-wiki .jd-context-block > p strong { color: #0b0b0d; }
+body.project-jd-wiki .jd-context-lane { border-color: rgba(0,0,0,.14); background: #fff; }
+body.project-jd-wiki .jd-context-lane h4 { color: #1d1d1f; }
+body.project-jd-wiki .jd-context-lane p { color: #4a4a52; }
+body.project-jd-wiki .jd-context-lane p strong { color: #0066cc; }
+body.project-jd-wiki .jd-context-lane-plus span { border-color: rgba(0,102,204,.35); color: #0066cc; }
+body.project-jd-wiki .jd-context-lane-plus small { color: rgba(0,102,204,.55); }
+body.project-jd-wiki .jd-line-index { color: rgba(0,102,204,.75); }
+@media (max-width: 900px) {
+  .jd-context-blocks { grid-template-columns: 1fr; gap: 48px; }
+ .jd-context-lanes { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 12px; }
+ .jd-context-lane { padding: 24px 18px; }
+ .jd-context-lane-plus { justify-self: center; align-self: center; }
+ .jd-context-lane-plus small { writing-mode: vertical-rl; }
 }
 .jd-context-line {
   min-height: 460px;
@@ -1286,7 +1351,7 @@ body.project-jd-wiki .brand-mark {
 .jd-definition-model span small { color: rgba(245,243,237,.35); font: 600 8px/1 monospace; }
 .jd-definition-model > b { color: rgba(103,174,242,.4); }
 .jd-definition-model > em { justify-self: stretch; padding: 16px; border-radius: 10px; background: #2f8ee8; color: #fff; font-size: 13px; font-style: normal; font-weight: 750; text-align: center; }
-.jd-layers { padding-top: 120px; padding-bottom: 130px; }
+.jd-layers { padding-top: 80px; padding-bottom: 90px; }
 .jd-layers-head { display:grid; grid-template-columns:minmax(300px,.9fr) minmax(360px,1.1fr); gap:28px clamp(48px,8vw,130px); align-items:end; }
 .jd-layers-head .eyebrow { grid-column:1 / -1; align-self:start; margin-bottom:18px; }
 .jd-layers-head > div > span { color: #67aef2; font: 700 10px/1 monospace; letter-spacing: .14em; }
@@ -1294,32 +1359,32 @@ body.project-jd-wiki .brand-mark {
 .jd-layers-head h2 > span { display: block; }
 .jd-layers-head > p { margin: 0; color: rgba(245,243,237,.62); font-size: 17px; line-height: 1.85; }
 .jd-layers-head > p strong { color: #fff; }
-.jd-layer-architecture { margin-top: 72px; overflow: hidden; border: 1px solid rgba(103,174,242,.28); border-radius: 30px; background: radial-gradient(circle at 50% 30%,rgba(47,142,232,.13),transparent 36%),#080c12; }
-.jd-layer-architecture-top { height: 62px; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(245,243,237,.1); }
+.jd-layer-architecture { margin-top: 44px; overflow: hidden; border: 1px solid rgba(103,174,242,.28); border-radius: 22px; background: radial-gradient(circle at 50% 30%,rgba(47,142,232,.13),transparent 36%),#080c12; }
+.jd-layer-architecture-top { height: 46px; padding: 0 22px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(245,243,237,.1); }
 .jd-layer-architecture-top span { color: rgba(103,174,242,.75); font: 700 10px/1 monospace; letter-spacing: .13em; }
 .jd-layer-architecture-top small { color: rgba(245,243,237,.38); font-size: 10px; }
-.jd-layer-stage { position: relative; min-height: 870px; padding: 58px; }
-.jd-layer-stage::before { content:""; position:absolute; inset:0; opacity:.15; background-image:linear-gradient(rgba(103,174,242,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(103,174,242,.18) 1px,transparent 1px); background-size:32px 32px; }
-.jd-layer-node { position: absolute; z-index: 2; width: min(52%,620px); min-height: 132px; padding: 24px 26px; display: grid; grid-template-columns: 44px 1fr auto; gap: 18px; align-items: center; border: 1px solid rgba(245,243,237,.15); border-radius: 18px; background: linear-gradient(135deg,rgba(25,33,45,.98),rgba(12,16,23,.98)); box-shadow: 0 20px 55px rgba(0,0,0,.35); }
-.jd-layer-node.page { top: 54px; left: 24%; border-color: rgba(103,174,242,.6); background: linear-gradient(135deg,rgba(38,86,132,.55),rgba(12,20,30,.98)); }
-.jd-layer-node.component { top: 238px; left: 24%; }
-.jd-layer-node.visual { top:422px; left:7%; width:min(44%,540px); }
-.jd-layer-node.token { top:606px; left:7%; width:min(44%,540px); }
-.jd-layer-node.assets { top:422px; right:7%; width:min(34%,410px); }
-.jd-layer-node-id { width: 42px; height: 42px; display:grid; place-items:center; border-radius:50%; background:rgba(103,174,242,.12); color:#76b9fa; font:800 10px/1 monospace; }
+.jd-layer-stage { position: relative; min-height: 560px; padding: 36px; }
+.jd-layer-stage::before { content:""; position:absolute; inset:0; opacity:.15; background-image:linear-gradient(rgba(103,174,242,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(103,174,242,.18) 1px,transparent 1px); background-size:26px 26px; }
+.jd-layer-node { position: absolute; z-index: 2; width: min(52%,600px); min-height: 98px; padding: 16px 20px; display: grid; grid-template-columns: 34px 1fr auto; gap: 14px; align-items: center; border: 1px solid rgba(245,243,237,.15); border-radius: 14px; background: linear-gradient(135deg,rgba(25,33,45,.98),rgba(12,16,23,.98)); box-shadow: 0 14px 38px rgba(0,0,0,.32); }
+.jd-layer-node.page { top: 32px; left: 24%; border-color: rgba(103,174,242,.6); background: linear-gradient(135deg,rgba(38,86,132,.55),rgba(12,20,30,.98)); }
+.jd-layer-node.component { top: 160px; left: 24%; }
+.jd-layer-node.visual { top: 288px; left: 7%; width: min(44%,520px); }
+.jd-layer-node.token { top: 416px; left: 7%; width: min(44%,520px); }
+.jd-layer-node.assets { top: 288px; right: 7%; width: min(34%,390px); }
+.jd-layer-node-id { width: 32px; height: 32px; display:grid; place-items:center; border-radius:50%; background:rgba(103,174,242,.12); color:#76b9fa; font:800 10px/1 monospace; }
 .jd-layer-node small { color:rgba(103,174,242,.58); font:700 8px/1 monospace; letter-spacing:.12em; }
-.jd-layer-node h3 { margin:7px 0 6px; font-size:24px; }
-.jd-layer-node h3 span { color:rgba(245,243,237,.48); font-size:14px; font-weight:500; }
-.jd-layer-node p { margin:0; color:rgba(245,243,237,.52); font-size:12px; }
-.jd-layer-node code { padding:8px 10px; border-radius:7px; background:rgba(103,174,242,.08); color:rgba(103,174,242,.64); font-size:9px; }
-.jd-layer-link { position:absolute; z-index:1; left:calc(50% - 1px); width:1px; height:52px; background:linear-gradient(#67aef2,rgba(103,174,242,.25)); }
+.jd-layer-node h3 { margin:5px 0 4px; font-size:18px; }
+.jd-layer-node h3 span { color:rgba(245,243,237,.48); font-size:12px; font-weight:500; }
+.jd-layer-node p { margin:0; color:rgba(245,243,237,.52); font-size:11px; }
+.jd-layer-node code { padding:6px 8px; border-radius:6px; background:rgba(103,174,242,.08); color:rgba(103,174,242,.64); font-size:9px; }
+.jd-layer-link { position:absolute; z-index:1; left:calc(50% - 1px); width:1px; height:36px; background:linear-gradient(#67aef2,rgba(103,174,242,.25)); }
 .jd-layer-link::after { content:""; position:absolute; bottom:-2px; left:-3px; border:4px solid transparent; border-top-color:#67aef2; }
-.jd-layer-link span,.jd-assets-link span { position:absolute; left:12px; top:18px; width:max-content; color:rgba(103,174,242,.46); font:600 8px/1 monospace; }
-.link-page { top:186px; }.link-visual { top:370px; left:29%; }.link-token { top:554px; left:29%; }
-.jd-assets-link { position:absolute; z-index:1; top:372px; left:50%; width:26%; height:84px; border-top:1px solid rgba(103,174,242,.42); border-right:1px solid rgba(103,174,242,.42); border-radius:0 26px 0 0; }
+.jd-layer-link span,.jd-assets-link span { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); padding:3px 8px; border-radius:6px; background:rgba(8,12,18,.95); width:max-content; color:rgba(103,174,242,.72); font:600 8px/1 monospace; }
+.link-page { top:124px; }.link-visual { top:252px; left:29%; }.link-token { top:380px; left:29%; }
+.jd-assets-link { position:absolute; z-index:1; top:252px; left:50%; width:26%; height:60px; border-top:1px solid rgba(103,174,242,.42); border-right:1px solid rgba(103,174,242,.42); border-radius:0 22px 0 0; }
 .jd-assets-link::after { content:""; position:absolute; right:-4px; bottom:-2px; border:4px solid transparent; border-top-color:#67aef2; }
-.jd-assets-link span { left:50%; top:-15px; }
-.jd-layer-direction { padding:18px 28px; display:grid; grid-template-columns:auto 1fr auto auto; gap:16px; align-items:center; border-top:1px solid rgba(245,243,237,.1); }
+.jd-assets-link span { top:0; left:50%; transform:translate(-50%,-50%); }
+.jd-layer-direction { padding:14px 22px; display:grid; grid-template-columns:auto 1fr auto auto; gap:14px; align-items:center; border-top:1px solid rgba(245,243,237,.1); }
 .jd-layer-direction span,.jd-layer-direction b { color:rgba(245,243,237,.44); font-size:10px; }.jd-layer-direction b { color:#67aef2; }.jd-layer-direction i { height:1px; background:linear-gradient(90deg,rgba(103,174,242,.15),#67aef2); }.jd-layer-direction em { color:rgba(245,243,237,.38); font:600 9px/1 monospace; }
 .jd-layer-details { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:20px; }
 .jd-layer-details article { min-height:410px; padding:25px; display:flex; flex-direction:column; border:1px solid rgba(245,243,237,.12); border-radius:20px; background:linear-gradient(160deg,rgba(20,27,38,.9),rgba(8,11,16,.94)); }
@@ -1328,9 +1393,9 @@ body.project-jd-wiki .brand-mark {
 .jd-layer-details pre { margin:auto 0 20px; padding:16px; overflow:auto; border-radius:10px; background:#080b10; color:#83bff8; font:10px/1.8 monospace; }.jd-layer-details pre code { font:inherit; }
 .jd-layer-details article > em { color:rgba(245,243,237,.4); font-size:10px; font-style:normal; }.jd-layer-details article > em::before { content:"— "; color:#67aef2; }
 .jd-layer-details .asset-detail { grid-column:1 / -1; min-height:0; display:grid; grid-template-columns:.35fr .65fr 1.2fr 1fr auto; gap:22px; align-items:center; }.jd-layer-details .asset-detail h3,.jd-layer-details .asset-detail pre { margin:0; }
-.jd-layer-principle { margin-top:20px; padding:clamp(34px,5vw,68px); display:grid; grid-template-columns:.42fr 1.2fr; gap:18px 60px; border:1px solid rgba(103,174,242,.4); border-radius:28px; background:radial-gradient(circle at 80% 40%,rgba(47,142,232,.2),transparent 32%),#0b111a; }
+.jd-layer-principle { margin-top:20px; padding:clamp(28px,4vw,52px); display:grid; grid-template-columns:.42fr 1.2fr; gap:16px 48px; border:1px solid rgba(103,174,242,.4); border-radius:22px; background:radial-gradient(circle at 80% 40%,rgba(47,142,232,.2),transparent 32%),#0b111a; }
 .jd-layer-principle > div:first-child { display:flex; flex-direction:column; gap:9px; }.jd-layer-principle small { color:rgba(103,174,242,.58); font:700 9px/1 monospace; letter-spacing:.13em; }.jd-layer-principle > div:first-child span { color:#67aef2; font-size:13px; font-weight:750; }
-.jd-layer-principle > p { margin:0; font-size:clamp(28px,3.2vw,48px); font-weight:750; letter-spacing:-.035em; }.jd-layer-principle > strong { grid-column:2; color:rgba(245,243,237,.65); font-size:clamp(18px,2vw,28px); line-height:1.55; }
+.jd-layer-principle > p { margin:0; font-size:clamp(28px,3.2vw,48px); font-weight:750; letter-spacing:-.035em; }.jd-layer-principle > strong { grid-column:2; color:rgba(245,243,237,.65); font-size:clamp(15px,1.4vw,20px); font-weight:500; line-height:1.55; white-space:nowrap; }
 .jd-guess-meter { grid-column:2; padding:18px; display:grid; grid-template-columns:110px 1fr 44px; gap:12px 16px; align-items:center; border:1px solid rgba(245,243,237,.1); border-radius:16px; background:rgba(4,8,13,.55); }.jd-guess-meter span { color:rgba(245,243,237,.68); font-size:11px; font-weight:650; }.jd-guess-meter i { position:relative; height:16px; overflow:hidden; border-radius:999px; background:rgba(103,174,242,.12); }.jd-guess-meter i::after { content:""; position:absolute; inset:0; border-radius:inherit; background:linear-gradient(90deg,#276fae,#67b7ff); box-shadow:0 0 18px rgba(103,183,255,.45); }.jd-guess-meter b { width:40px; height:40px; display:grid; place-items:center; border-radius:50%; background:rgba(103,174,242,.14); color:#67b7ff; font-size:22px; }.jd-guess-meter span:nth-of-type(2) { grid-row:2; }.jd-guess-meter i:nth-of-type(2) { grid-row:2; background:rgba(240,137,137,.1); }.jd-guess-meter i:nth-of-type(2)::after { right:64%; background:linear-gradient(90deg,#f08989,#db6f78); box-shadow:0 0 18px rgba(240,137,137,.35); }.jd-guess-meter b:nth-of-type(2) { grid-row:2; background:rgba(126,220,175,.12); color:#7edcaf; }
 }
 .jd-hero-meta span {
@@ -1363,11 +1428,11 @@ body.project-jd-wiki .brand-mark {
 }
 .jd-key-issue-head h2 {
   margin: 0;
-  max-width: 760px;
   color: #1d1d1f;
-  font-size: clamp(42px, 5.4vw, 84px);
+  font-size: clamp(36px, 4.4vw, 64px);
   line-height: 1.04;
   letter-spacing: -0.05em;
+  white-space: nowrap;
 }
 .jd-key-issue-head p {
   margin: 0;
@@ -1441,9 +1506,10 @@ body.project-jd-wiki .brand-mark {
 }
 .jd-key-conclusion p {
   margin: 0;
-  font-size: clamp(22px, 2.4vw, 34px);
+  font-size: clamp(18px, 2vw, 26px);
   line-height: 1.45;
   letter-spacing: -0.03em;
+  white-space: nowrap;
 }
 .jd-input-case { margin: 54px 0 34px; }
 .jd-input-case-head { display:grid; grid-template-columns:minmax(300px,.9fr) minmax(360px,1.1fr); gap:28px clamp(48px,8vw,130px); align-items:end; margin-bottom:32px; }
@@ -1475,52 +1541,60 @@ body.project-jd-wiki .brand-mark {
 .jd-decomp-rule { margin:14px 0 0 16%; padding:15px 18px; display:grid; grid-template-columns:auto 1fr; gap:18px; border-radius:12px; background:rgba(0,102,204,.1); border:1px solid rgba(0,102,204,.16); }.jd-decomp-rule span { color:#0066cc; font-size:10px; font-weight:800; }.jd-decomp-rule p { margin:0; color:#424245; font-size:11px; font-weight:700; line-height:1.65; }
 .jd-flow-map {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
   overflow: visible;
   padding: 8px 0 20px;
 }
 .jd-flow-step {
   position: relative;
-  min-height: 360px;
-  padding: 20px;
+  min-height: 0;
+  padding: 18px 18px 20px;
   border: 1px solid rgba(245, 243, 237, 0.14);
-  border-radius: 24px;
+  border-radius: 18px;
   background:
     linear-gradient(180deg, rgba(47, 142, 232, 0.12), transparent 42%),
     rgba(12, 14, 18, 0.82);
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
 }
 .jd-flow-step::after {
   display: none;
 }
 .jd-flow-step:last-child::after { display: none; }
 .jd-step-head {
-  display: grid;
-  gap: 14px;
-  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 .jd-step-head span {
-  width: 38px;
-  height: 38px;
+  width: 30px;
+  height: 30px;
   display: grid;
   place-items: center;
   border-radius: 50%;
   background: #2f8ee8;
   color: #fff;
+  font-size: 12px;
   font-weight: 900;
+  flex-shrink: 0;
 }
 .jd-step-head h3 {
   margin: 0;
   color: var(--ink);
-  font-size: 25px;
-  line-height: 1.18;
+  font-size: 18px;
+  line-height: 1.25;
+  letter-spacing: -.01em;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 .jd-flow-step p {
-  margin: 0 0 18px;
+  margin: 0;
   color: rgba(245, 243, 237, 0.68);
-  font-size: 14px;
-  line-height: 1.68;
+  font-size: 13px;
+  line-height: 1.65;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 .jd-flow-step ul {
   margin: 0;
@@ -1904,8 +1978,9 @@ body.project-jd-wiki .brand-mark {
 .jd-sop-copy { padding:clamp(20px,3vw,38px) 10px; display:flex; flex-direction:column; justify-content:center; }.jd-sop-copy > span { color:#67aef2; font:700 9px/1 monospace; letter-spacing:.12em; }.jd-sop-copy strong { display:block; margin:28px 0 20px; }.jd-sop-copy strong small { display:block; margin-bottom:8px; font-size:clamp(16px,1.3vw,20px); line-height:1.1; font-weight:760; letter-spacing:.02em; }.jd-sop-copy strong span { display:block; font-size:clamp(30px,3.4vw,48px); line-height:1.05; }.jd-contributions .jd-sop-copy p { margin:0 0 18px; font-size:14px; line-height:1.8; }.jd-sop-copy p b { color:#fff; font-weight:750; }
 .jd-sop-tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:9px; }.jd-sop-tags span { padding:7px 10px; border:1px solid rgba(103,174,242,.2); border-radius:999px; color:rgba(103,174,242,.75); font-size:9px; }
 .jd-skill-lab { padding-top:130px; padding-bottom:130px; }
-.jd-skill-lab-head { display:grid; grid-template-columns:minmax(300px,.9fr) minmax(360px,1.1fr); gap:28px clamp(48px,8vw,130px); align-items:end; }
+.jd-skill-lab-head { display:grid; grid-template-columns:minmax(520px,1.35fr) minmax(280px,.65fr); gap:28px clamp(32px,5vw,80px); align-items:end; }
 .jd-skill-lab-head .eyebrow { grid-column:1 / -1; align-self:start; margin-bottom:18px; }.jd-skill-lab-head > div:nth-child(2) > span { color:#67aef2; font-size:12px; font-weight:750; letter-spacing:.12em; }.jd-skill-lab-head h2 { margin:14px 0 0; font-size:clamp(38px,4.4vw,64px); line-height:1.08; letter-spacing:-.04em; word-break:keep-all; overflow-wrap:normal; }.jd-skill-lab-head h2 > span { display:block; }
+.jd-skill-lab-head h2 > span.jd-nowrap { white-space:nowrap; }
 .jd-skill-lab-intro { display:grid; gap:18px; }.jd-skill-lab-intro p { margin:0; color:rgba(245,243,237,.6); font-size:15px; line-height:1.85; }.jd-skill-lab-intro p:last-child { color:rgba(245,243,237,.82); }
 .jd-skill-progress { margin:64px 0 20px; padding:18px 24px; display:grid; grid-template-columns:1fr auto 1fr auto 1fr auto 1.2fr; gap:12px; align-items:center; border:1px solid rgba(103,174,242,.22); border-radius:18px; background:rgba(47,142,232,.055); }.jd-skill-progress span { display:flex; gap:8px; align-items:center; color:rgba(245,243,237,.5); font-size:11px; font-weight:650; }.jd-skill-progress span i { color:rgba(103,174,242,.55); font:700 8px/1 monospace; }.jd-skill-progress > b { color:rgba(103,174,242,.4); }.jd-skill-progress .active { padding:12px 15px; border-radius:10px; background:#2f8ee8; color:#fff; }
 .jd-skill-projects { display:grid; gap:18px; }.jd-skill-project { min-height:680px; padding:clamp(24px,3vw,42px); display:grid; grid-template-columns:minmax(300px,.78fr) minmax(0,1.22fr); gap:clamp(34px,5vw,78px); align-items:center; border:1px solid rgba(245,243,237,.13); border-radius:28px; background:linear-gradient(145deg,rgba(17,24,34,.94),rgba(7,10,15,.96)); }.jd-skill-project:nth-child(even) { background:linear-gradient(215deg,rgba(19,35,52,.96),rgba(7,10,15,.96)); }
@@ -2220,13 +2295,13 @@ body.project-jd-wiki .jd-page-decomposition li { border-color:#d2d2d7; backgroun
 body.project-jd-wiki .jd-page-decomposition li.page { border-color:#0066cc; background:#fff; }
 body.project-jd-wiki .jd-page-decomposition li h4 { color:#1d1d1f; }
 body.project-jd-wiki .jd-page-decomposition li p { color:#6e6e73; }
-body.project-jd-wiki .jd-flow-map { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:16px; }
+body.project-jd-wiki .jd-flow-map { grid-template-columns: repeat(5, minmax(0, 1fr)); gap:14px; }
 body.project-jd-wiki .jd-flow-step {
-  min-height:360px;
+  min-height:0;
   border:0;
-  border-radius:24px;
+  border-radius:16px;
   background:#f5f5f7;
-  box-shadow:0 6px 18px rgba(0,0,0,.025),0 1px 0 rgba(0,0,0,.018);
+  box-shadow:0 4px 12px rgba(0,0,0,.02),0 1px 0 rgba(0,0,0,.018);
 }
 body.project-jd-wiki .jd-step-head h3 { color:#1d1d1f; }
 body.project-jd-wiki .jd-flow-step p { color:#6e6e73; }
@@ -2683,31 +2758,47 @@ body.project-jd-wiki .jd-loop-return::before {
 }
 body.project-jd-wiki .jd-loop-actions {
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(2,1fr);
   gap:18px;
   margin-top:22px;
 }
 body.project-jd-wiki .jd-loop-actions article {
-  min-height:260px;
+  min-height:0;
   padding:28px;
   border-radius:28px;
   background:#fff;
   box-shadow:0 10px 28px rgba(0,0,0,.028);
 }
-body.project-jd-wiki .jd-loop-actions span {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  background:#e8f3ff;
+body.project-jd-wiki .jd-loop-actions article.jd-loop-action--with-figure {
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  gap:24px;
+  align-items:start;
+}
+body.project-jd-wiki .jd-loop-actions .jd-loop-figure {
+  margin:0;
+  align-self:start;
+  display:block;
+  overflow:hidden;
+  border-radius:20px;
+  background:transparent;
+}
+body.project-jd-wiki .jd-loop-actions .jd-loop-figure img {
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:16px;
+  background:#fff;
+}
+body.project-jd-wiki .jd-loop-actions .jd-loop-tag {
+  margin:0;
   color:#0066cc;
-  font-family:var(--mono);
-  font-weight:900;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.04em;
 }
 body.project-jd-wiki .jd-loop-actions h3 {
-  margin:72px 0 18px;
+  margin:8px 0 20px;
   color:#1d1d1f;
   font-size:28px;
   line-height:1.15;
@@ -2717,6 +2808,26 @@ body.project-jd-wiki .jd-loop-actions p {
   color:#6e6e73;
   font-size:17px;
   line-height:1.75;
+}
+body.project-jd-wiki .jd-loop-actions .jd-loop-case { margin:0; display:grid; gap:14px; }
+body.project-jd-wiki .jd-loop-actions .jd-loop-case dt {
+  display:block;
+  padding:0 0 0 10px;
+  border-left:2px solid #0066cc;
+  border-radius:0;
+  background:transparent;
+  color:#0066cc;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.06em;
+  width:fit-content;
+}
+body.project-jd-wiki .jd-loop-actions .jd-loop-case dd {
+  margin:0;
+  color:#3a3a3c;
+  font-size:15px;
+  font-weight:400;
+  line-height:1.7;
 }
 
 body.project-jd-wiki .jd-contributions article.jd-sop-impact { border:0; border-radius:0; background:#f5f5f7; }
@@ -3248,7 +3359,7 @@ body.project-jd-wiki .site-footer { color:#6e6e73; }
     min-height: 0;
   }
   body.project-jd-wiki .jd-loop-actions h3 {
-    margin-top: 42px;
+    margin-top: 8px;
   }
   body.project-jd-wiki .jd-issue-shot {
     min-height: 460px;
@@ -3260,8 +3371,9 @@ body.project-jd-wiki .site-footer { color:#6e6e73; }
     grid-template-columns: 1fr;
   }
   .jd-flow-map {
-    grid-template-columns: 1fr;
-    overflow-x: visible;
+    grid-template-columns: repeat(5, minmax(180px, 1fr));
+    min-width: 960px;
+    overflow-x: auto;
   }
   .jd-input-case-head { grid-template-columns: 1fr 1fr; }
   .jd-input-case-head > span { grid-column: 1 / -1; }
@@ -3994,6 +4106,428 @@ body.project-jd-wiki .jd-file-card.jd-reveal-item:nth-child(even).in-view {
   }
 }
 
+/* Phase 02 — AI Native design & engineering delivery */
+body.project-jd-wiki .jd-skill-lab .jd-native-delivery {
+  position: relative; width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); margin-top: 96px;
+}
+body.project-jd-wiki .jd-native-delivery {
+width:100%; max-width:none; padding:0 max(24px,calc((100vw - 1180px)/2)) 32px; background:#fff; color:#1d1d1f;
+}
+/* Phase 02 — Apple-editorial light surface, matches Phase 01 tokens */
+.jd-native-opening {
+  margin:0 calc(-1 * max(24px,calc((100vw - 1180px)/2)));
+  padding:clamp(88px,10vw,144px) max(24px,calc((100vw - 1180px)/2)) clamp(64px,8vw,104px);
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);
+  column-gap:clamp(64px,8vw,140px);
+  row-gap:44px;
+  align-items:end;
+  background:#f5f5f7;
+  color:#1d1d1f;
+  border-radius:0;
+}
+.jd-native-opening>.eyebrow {
+  grid-column:1/-1;
+  margin:0;
+  padding-bottom:24px;
+  color:#0066cc!important;
+  font:600 12px/1 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;
+  letter-spacing:-.01em;
+  text-transform:none;
+  border-bottom:1px solid #d2d2d7;
+}
+.jd-native-opening>div:nth-child(2) { display:flex; flex-direction:column; gap:24px; }
+.jd-native-opening>div:nth-child(2)>span {
+  display:inline-flex; align-items:center; gap:10px;
+  align-self:flex-start;
+  padding:6px 14px;
+  border-radius:999px;
+  background:rgba(0,102,204,.08);
+  color:#0066cc;
+  font:600 12px/1.4 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;
+}
+.jd-native-opening>div:nth-child(2)>span::before {
+  content:""; width:6px; height:6px; border-radius:50%; background:#0066cc;
+}
+.jd-native-opening h2 {
+  margin:0;
+  max-width:none;
+  color:#1d1d1f;
+  font:600 clamp(44px,4.8vw,72px)/1.05 -apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC",sans-serif;
+  letter-spacing:-.028em;
+}
+.jd-native-opening h2 br { display:none; }
+.jd-native-opening h2 .jd-native-title-line {
+  display:block;
+  white-space:normal;
+  word-break:keep-all;
+  overflow-wrap:break-word;
+}
+.jd-native-opening-copy { display:grid; gap:18px; padding-bottom:8px; }
+.jd-native-opening-copy p {
+  margin:0;
+  color:#3a3a3c;
+  font:400 16px/1.7 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;
+}
+
+.jd-native-proof { display:none; }
+
+.jd-native-project-cover {
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  padding:clamp(56px,7vw,96px) max(24px,calc((100vw - 1180px)/2)) clamp(64px,8vw,104px);
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);
+  grid-template-rows:auto auto;
+  gap:24px clamp(56px,8vw,128px);
+  align-items:end;
+  background:#f5f5f7;
+  color:#1d1d1f;
+}
+.jd-native-project-cover>p {
+  grid-column:1/-1;
+  margin:0 0 16px;
+  color:#0066cc;
+  font:600 12px/1 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;
+}
+.jd-native-project-cover h3 {
+  grid-column:1; grid-row:2;
+  margin:0;
+  max-width:680px;
+  color:#1d1d1f;
+  font:600 clamp(30px,3.2vw,48px)/1.1 -apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC",sans-serif;
+  letter-spacing:-.025em;
+}
+.jd-native-project-cover>div {
+  grid-column:2; grid-row:2;
+  max-width:520px;
+  margin:0;
+  align-self:end;
+  color:#3a3a3c;
+  font:400 15px/1.7 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;
+}
+
+.jd-native-questions {
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+padding:clamp(56px,7vw,88px) max(24px,calc((100vw - 1180px)/2));
+  background:#fff;
+  color:#1d1d1f;
+}
+.jd-native-questions>header {
+  display:grid;
+  grid-template-columns:minmax(0,.6fr) minmax(0,1.4fr);
+  column-gap:clamp(48px,7vw,120px);
+  row-gap:20px;
+  align-items:end;
+margin-bottom:32px;
+padding-bottom:24px;
+  border-bottom:1px solid #d2d2d7;
+}
+.jd-native-questions>header .eyebrow {
+  align-self:start;
+  margin:0;
+  color:#0066cc!important;
+  font:600 12px/1 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;
+  letter-spacing:-.01em;
+}
+.jd-native-questions>header h3 {
+margin:0;
+color:#1d1d1f;
+font:600 clamp(30px,3.4vw,48px)/1.14 -apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC",sans-serif;
+letter-spacing:-.025em;
+justify-self:end;
+text-align:right;
+}
+.jd-native-questions>div {
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+body.project-jd-wiki .jd-native-questions>div>article:nth-child(1) { order:3; }
+body.project-jd-wiki .jd-native-questions>div>article:nth-child(2) { order:2; }
+body.project-jd-wiki .jd-native-questions>div>article:nth-child(3) { order:1; }
+.jd-native-questions article {
+min-height:0;
+padding:24px 24px 22px;
+  display:flex;
+  flex-direction:column;
+  border:1px solid #e0e0e0;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:none;
+}
+.jd-native-questions article>span {
+  align-self:flex-start;
+  padding:6px 12px;
+  border-radius:999px;
+  background:rgba(0,102,204,.08);
+  color:#0066cc;
+  font:600 12px/1 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;
+}
+.jd-native-questions h4 {
+margin:18px 0 12px;
+  color:#1d1d1f;
+  font:600 20px/1.32 -apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC",sans-serif;
+  letter-spacing:-.015em;
+}
+.jd-native-questions article p {
+  margin:0;
+  color:#3a3a3c;
+  font:400 14px/1.7 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;
+}
+.jd-native-questions article small {
+  margin-top:18px; padding-top:0;
+  color:#0066cc;
+  font:600 10px/1 -apple-system,BlinkMacSystemFont,"SF Mono",monospace;
+  letter-spacing:.08em;
+}
+
+.jd-native-process {
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  padding:clamp(56px,7vw,88px) max(24px,calc((100vw - 1180px)/2)) clamp(48px,6vw,72px);
+  background:#f5f5f7;
+  color:#1d1d1f;
+}
+.jd-native-process-head {
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  column-gap:clamp(48px,7vw,120px);
+  row-gap:20px;
+  align-items:end;
+  padding-bottom:32px;
+  border-bottom:1px solid #d2d2d7;
+}
+.jd-native-process-head .eyebrow {
+  color:#0066cc!important;
+  margin:0;
+  font:600 12px/1 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;
+  letter-spacing:-.01em;
+}
+.jd-native-process-head h3 {
+  margin:12px 0 0;
+  color:#1d1d1f;
+  font:600 clamp(32px,3.8vw,54px)/1.08 -apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC",sans-serif;
+  letter-spacing:-.028em;
+}
+.jd-native-process-head>p {
+  margin:0;
+  color:#3a3a3c;
+  font:400 15px/1.7 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;
+}
+
+.jd-native-roles {
+display:grid;
+grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-top:32px;
+}
+.jd-native-roles article {
+  padding:22px 22px;
+  border:1px solid #e0e0e0;
+  border-radius:18px;
+  background:#fff;
+}
+.jd-native-roles article>span {
+  display:block;
+  padding:0;
+  border-radius:0;
+  background:transparent;
+  color:#0066cc;
+  font:700 16px/1.35 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;
+}
+.jd-native-roles ul {
+  margin:14px 0 0;
+  padding:0;
+  list-style:none;
+  display:grid;
+  gap:10px;
+}
+.jd-native-roles li {
+  position:relative;
+  padding-left:20px;
+  color:#1d1d1f;
+font:400 12px/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;
+}
+.jd-native-roles li::before {
+  content:"";
+  position:absolute;
+  left:0; top:.6em;
+  width:6px; height:6px;
+  border-radius:50%;
+  background:#0066cc;
+}
+
+.jd-native-pipeline {
+  margin-top:32px;
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr) minmax(20px,auto)) minmax(0,1fr);
+  align-items:stretch;
+  gap:8px;
+}
+.jd-native-pipeline article {
+  min-height:92px;
+  padding:14px 12px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  border:1px solid #e0e0e0;
+  border-radius:16px;
+  background:#fff;
+}
+.jd-native-pipeline article.active {
+  background:#0066cc;
+  border-color:#0066cc;
+}
+.jd-native-pipeline article>span {
+  color:#0066cc;
+  font:600 10px/1 -apple-system,BlinkMacSystemFont,"SF Mono",monospace;
+  letter-spacing:.06em;
+}
+.jd-native-pipeline article.active>span {
+  color:rgba(255,255,255,.75);
+}
+.jd-native-pipeline article>i {
+  margin:auto 0 2px;
+  color:#1d1d1f;
+  font-style:normal;
+  font-weight:600;
+  font-size:13px;
+  letter-spacing:-.01em;
+}
+.jd-native-pipeline article.active>i { color:#fff; }
+.jd-native-pipeline article>small {
+  color:#6e6e73;
+  font:500 10px/1 -apple-system,BlinkMacSystemFont,"SF Mono",monospace;
+  letter-spacing:.06em;
+}
+.jd-native-pipeline article.active>small {
+  color:rgba(255,255,255,.72);
+}
+.jd-native-pipeline>b {
+  color:#0066cc;
+  text-align:center;
+  font-weight:400;
+  font-size:15px;
+  align-self:center;
+  opacity:.5;
+}
+
+.jd-native-loop-note { display:none; }
+
+.jd-native-context {
+  margin-top:40px;
+  padding:28px 0 0;
+  border-top:1px solid #d2d2d7;
+  color:#1d1d1f;
+}
+.jd-native-context header {
+  display:grid;
+  grid-template-columns:minmax(0,.32fr) minmax(0,.68fr);
+  column-gap:clamp(32px,5vw,80px);
+  row-gap:12px;
+  align-items:baseline;
+  margin-bottom:24px;
+}
+.jd-native-context header .eyebrow {
+  margin:0;
+  color:#0066cc!important;
+  font:600 12px/1 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;
+  letter-spacing:-.01em;
+}
+.jd-native-context header h3 {
+  margin:0;
+  color:#1d1d1f;
+  font:600 clamp(20px,1.9vw,26px)/1.35 -apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC",sans-serif;
+  letter-spacing:-.015em;
+}
+.jd-native-context ul {
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+.jd-native-context li {
+  padding:18px 18px;
+  border:1px solid #e0e0e0;
+  border-radius:14px;
+  background:#fff;
+}
+.jd-native-context li b {
+  display:block;
+  color:#1d1d1f;
+  font:600 14px/1.35 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;
+  margin-bottom:8px;
+}
+.jd-native-context li p {
+  margin:0;
+  color:#3a3a3c;
+  font:400 13px/1.65 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;
+}
+.jd-native-context-conclusion {
+  margin:18px 0 0;
+  color:#6e6e73;
+  font:400 13px/1.75 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;
+}
+@media(max-width:900px){
+  .jd-native-context header { grid-template-columns:1fr; }
+  .jd-native-context ul { grid-template-columns:repeat(3,1fr); }
+  .jd-native-roles { grid-template-columns:repeat(4,1fr); }
+  .jd-native-questions>div { grid-template-columns:1fr; }
+  .jd-native-pipeline { grid-template-columns:repeat(6,minmax(0,1fr) 12px) minmax(0,1fr); gap:6px; }
+  .jd-native-pipeline>b { transform:none; font-size:12px; }
+}
+
+@media(max-width:900px){
+  body.project-jd-wiki .jd-native-delivery { padding-left:20px; padding-right:20px; }
+  .jd-native-opening { margin-left:-20px; margin-right:-20px; padding:80px 32px; grid-template-columns:minmax(0,1.18fr) minmax(250px,.82fr); gap:44px 40px; }
+  .jd-native-proof { grid-template-columns:1fr auto 1fr auto 1fr; gap:6px; min-height:64px; padding:8px 20px; text-align:center; }
+  .jd-native-proof span,.jd-native-proof strong { gap:7px; font-size:12px; white-space:nowrap; }
+  .jd-native-proof strong { padding:10px 8px; }
+  .jd-native-proof small { font-size:7px; }
+  .jd-native-proof>i { font-size:14px; }
+  .jd-native-questions>header,.jd-native-process-head { grid-template-columns:1fr; }
+  .jd-native-questions>div { grid-template-columns:1fr; }
+  .jd-native-questions article { min-height:0; }
+  .jd-native-roles { grid-template-columns:repeat(4,1fr); gap:12px; }
+  .jd-native-roles article { padding:18px 16px; border-right:1px solid #e0e0e0; border-bottom:1px solid #e0e0e0; }
+  .jd-native-roles article:last-child { border-bottom:1px solid #e0e0e0; }
+  .jd-native-pipeline { grid-template-columns:repeat(6,minmax(0,1fr) 12px) minmax(0,1fr); gap:6px; }
+  .jd-native-pipeline>b { transform:none; font-size:12px; }
+  .jd-native-pipeline article { min-height:86px; padding:12px 10px; }
+}
+@media(max-width:760px){
+  .jd-native-roles,.jd-native-context ul { grid-template-columns:1fr; }
+  .jd-native-pipeline { grid-template-columns:1fr; }
+  .jd-native-pipeline>b { transform:rotate(90deg); }
+}
+@media(max-width:680px){
+  .jd-native-opening { padding-left:20px; padding-right:20px; grid-template-columns:1fr; gap:32px; }
+  .jd-native-opening>.eyebrow { grid-column:auto; }
+  .jd-native-project-cover { min-height:0; padding-top:48px; padding-bottom:52px; grid-template-columns:1fr; grid-template-rows:auto; gap:20px; }
+  .jd-native-project-cover>p,.jd-native-project-cover h3,.jd-native-project-cover>div { grid-column:1; grid-row:auto; }
+  .jd-native-project-cover>p { margin-bottom:8px; font-size:16px; }
+  .jd-native-project-cover h3 { font-size:clamp(28px,7vw,38px); }
+  .jd-native-project-cover>div { max-width:620px; margin-top:8px; font-size:16px; }
+}
+@media(max-width:560px){
+  body.project-jd-wiki .jd-native-delivery { padding-bottom:32px; }
+  .jd-native-opening { padding-top:72px; padding-bottom:72px; }
+  .jd-native-opening h2 { font-size:40px; }
+  .jd-native-proof { overflow-x:auto; grid-template-columns:max-content auto max-content auto max-content; justify-content:start; }
+  .jd-native-questions { padding-top:56px; padding-bottom:56px; }
+  .jd-native-process { padding-top:72px; padding-bottom:36px; }
+  .jd-native-loop-note { grid-template-columns:1fr; }
+}
+
+body.project-jd-wiki .jd-skill-lab {
+  opacity:1 !important;
+  transform:none !important;
+}
+
 /* JD Wiki: keep all case-study section titles on the same scale as the system architecture title. */
 body.project-jd-wiki #jd-summary-title,
 body.project-jd-wiki #jd-context-title,
@@ -4131,3 +4665,278 @@ body.project-jd-wiki .jd-loop-return {
     right: 72px;
   }
 }
+
+/* JD Wiki · Phase 02 · Delivery Paths (05) */
+.jd-paths { display:grid; gap:clamp(28px,3.2vw,48px); margin-bottom:clamp(48px,5vw,96px); padding:clamp(56px,6vw,96px) 0 clamp(24px,3vw,48px); color:#f5f3ed; }
+.jd-paths-head { display:grid; grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr); gap:24px clamp(48px,7vw,112px); align-items:end; margin-bottom:clamp(20px,2vw,40px); }
+.jd-paths-head .eyebrow { align-self:start; color:#2997ff!important; margin:0; }
+.jd-paths-head h3 { margin:0; font-size:clamp(38px,4.4vw,64px); line-height:1.08; letter-spacing:-.04em; color:#fff; }
+
+.jd-path { padding:clamp(28px,3vw,44px); display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:clamp(32px,4vw,72px); align-items:center; border:1px solid rgba(245,243,237,.13); border-radius:28px; background:linear-gradient(145deg,rgba(17,24,34,.94),rgba(7,10,15,.96)); }
+.jd-path:nth-child(even of .jd-path) { background:linear-gradient(215deg,rgba(19,35,52,.96),rgba(7,10,15,.96)); grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); }
+.jd-path:nth-child(even of .jd-path) .jd-path-copy { order:2; }
+.jd-path:nth-child(even of .jd-path) .jd-path-visual { order:1; }
+.jd-path-copy { display:grid; align-content:start; gap:24px; }
+.jd-path-tag { display:flex; align-items:center; gap:14px; }
+.jd-path-tag span { padding:8px 14px; display:inline-flex; align-items:center; border-radius:999px; background:rgba(41,151,255,.14); color:#2997ff; font:600 12px/1 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; letter-spacing:.02em; }
+.jd-path-tag small { color:rgba(103,174,242,.7); font:700 9px/1 monospace; letter-spacing:.14em; }
+.jd-path-copy h4 { margin:0; font-size:clamp(30px,3.2vw,44px); line-height:1.15; letter-spacing:-.035em; color:#fff; }
+.jd-path-copy dl { margin:0; display:grid; gap:16px; }
+.jd-path-copy dl>div { display:grid; grid-template-columns:minmax(88px,120px) 1fr; gap:20px; padding-top:16px; border-top:1px solid rgba(245,243,237,.08); }
+.jd-path-copy dl>div:first-child { padding-top:0; border-top:0; }
+.jd-path-copy dt { margin:0; color:#a1a1a6; font-size:13px; font-weight:600; letter-spacing:.02em; }
+.jd-path-copy dd { margin:0; color:rgba(245,243,237,.84); font-size:15px; line-height:1.7; }
+
+.jd-path-visual { position:relative; aspect-ratio:16/10; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:32px; border:1px dashed rgba(103,174,242,.32); border-radius:20px; background:radial-gradient(120% 120% at 50% 0%,rgba(41,151,255,.08),transparent 60%),rgba(255,255,255,.02); color:rgba(245,243,237,.72); text-align:center; }
+.jd-path-visual::before { content:""; position:absolute; inset:14px; border-radius:14px; border:1px dashed rgba(245,243,237,.06); pointer-events:none; }
+.jd-path-visual span { color:#67aef2; font:700 10px/1 monospace; letter-spacing:.16em; }
+.jd-path-visual strong { color:#fff; font-size:20px; letter-spacing:-.02em; font-weight:600; }
+.jd-path-visual p { margin:0; color:rgba(245,243,237,.48); font-size:13px; line-height:1.6; }
+
+.jd-paths-conclusion { margin-top:clamp(8px,1.4vw,24px); padding:clamp(28px,3vw,44px); display:grid; grid-template-columns:auto 1fr; gap:8px clamp(24px,3vw,44px); align-items:baseline; border:1px solid rgba(41,151,255,.24); border-radius:20px; background:linear-gradient(180deg,rgba(41,151,255,.05),rgba(41,151,255,0)); }
+.jd-paths-conclusion span { grid-column:1; grid-row:1; color:#2997ff; font:700 10px/1 monospace; letter-spacing:.16em; text-transform:uppercase; align-self:center; }
+.jd-paths-conclusion strong { grid-column:2; grid-row:1; color:#fff; font-size:clamp(20px,2vw,26px); font-weight:600; letter-spacing:-.02em; line-height:1.35; }
+.jd-paths-conclusion p { grid-column:2; grid-row:2; margin:0; color:rgba(245,243,237,.72); font-size:15px; line-height:1.7; }
+
+@media (max-width: 1024px) {
+  .jd-paths-head { grid-template-columns:1fr; }
+  .jd-path,.jd-path:nth-child(even of .jd-path) { grid-template-columns:1fr; }
+  .jd-path:nth-child(even of .jd-path) .jd-path-copy { order:1; }
+  .jd-path:nth-child(even of .jd-path) .jd-path-visual { order:2; }
+  .jd-path-visual { aspect-ratio:16/9; }
+}
+@media (max-width: 640px) {
+  .jd-path-copy dl>div { grid-template-columns:1fr; gap:6px; }
+  .jd-paths-conclusion { grid-template-columns:1fr; }
+  .jd-paths-conclusion strong,.jd-paths-conclusion p { grid-column:1; }
+  .jd-paths-conclusion strong { grid-row:2; }
+  .jd-paths-conclusion p { grid-row:3; }
+}
+
+/* JD Wiki: keep the compact project-background blocks side by side. */
+@media (max-width: 900px) and (min-width: 561px) {
+  body.project-jd-wiki .jd-context-blocks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+/* JD Wiki: Phase 02 core practice flow. */
+.jd-native-practice { width:100vw; margin-left:calc(50% - 50vw); padding:clamp(56px,7vw,88px) max(24px,calc((100vw - 1180px)/2)); background:#0b0b0d; color:#fff; }
+.jd-native-practice header { display:grid; grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr); gap:20px clamp(40px,6vw,96px); align-items:end; }
+.jd-native-practice .eyebrow { grid-column:1 / -1; margin:0; color:#2997ff!important; }
+.jd-native-practice header>div>span { color:#67aef2; font:700 10px/1 monospace; letter-spacing:.14em; }
+.jd-native-practice h3 { margin:12px 0 0; font-size:clamp(30px,3.6vw,50px); line-height:1.1; letter-spacing:-.04em; }
+.jd-native-practice header>p:last-child { margin:0; color:rgba(245,243,237,.72); font-size:15px; line-height:1.8; }
+.jd-native-practice-flow { display:grid; grid-template-columns:repeat(6,minmax(0,1fr) auto) minmax(0,1fr); gap:8px; align-items:stretch; margin-top:40px; }
+.jd-native-practice-flow article { min-height:132px; padding:16px 14px; display:flex; flex-direction:column; gap:12px; border:1px solid rgba(245,243,237,.18); border-radius:14px; background:rgba(255,255,255,.04); }
+.jd-native-practice-flow article.active { background:#0066cc; border-color:#0066cc; }
+.jd-native-practice-flow b { color:#67aef2; font:700 10px/1 monospace; }.jd-native-practice-flow strong { margin-top:auto; font-size:14px; line-height:1.3; }.jd-native-practice-flow small { color:rgba(245,243,237,.58); font-size:10px; line-height:1.4; }.jd-native-practice-flow article.active b,.jd-native-practice-flow article.active small { color:rgba(255,255,255,.74); }.jd-native-practice-flow i { align-self:center; color:#67aef2; font-style:normal; }
+@media(max-width:900px){ .jd-native-practice header { grid-template-columns:1fr; } .jd-native-practice-flow { grid-template-columns:repeat(7,minmax(0,1fr)); gap:6px; } .jd-native-practice-flow i { display:none; } .jd-native-practice-flow article { min-height:112px; padding:12px 9px; } .jd-native-practice-flow strong { font-size:12px; } .jd-native-practice-flow small { font-size:9px; } }
+@media(max-width:560px){ .jd-native-practice-flow { grid-template-columns:1fr; } .jd-native-practice-flow article { min-height:0; } }
+
+/* JD Wiki: Phase 02 core practice flow. */
+.jd-native-practice { width:100vw; margin-left:calc(50% - 50vw); padding:clamp(56px,7vw,88px) max(24px,calc((100vw - 1180px)/2)); background:#0b0b0d; color:#fff; }
+.jd-native-practice header { display:grid; grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr); gap:20px clamp(40px,6vw,96px); align-items:end; }.jd-native-practice .eyebrow { grid-column:1/-1; margin:0; color:#2997ff!important; }.jd-native-practice header>div>span { color:#67aef2; font:700 10px/1 monospace; letter-spacing:.14em; }.jd-native-practice h3 { margin:12px 0 0; font-size:clamp(30px,3.6vw,50px); line-height:1.1; letter-spacing:-.04em; }.jd-native-practice header>p:last-child { margin:0; color:rgba(245,243,237,.72); font-size:15px; line-height:1.8; }
+.jd-native-practice-flow { display:grid; grid-template-columns:repeat(6,minmax(0,1fr) auto) minmax(0,1fr); gap:8px; align-items:stretch; margin-top:40px; }.jd-native-practice-flow article { min-height:132px; padding:16px 14px; display:flex; flex-direction:column; gap:12px; border:1px solid rgba(245,243,237,.18); border-radius:14px; background:rgba(255,255,255,.04); }.jd-native-practice-flow article.active { background:#0066cc; border-color:#0066cc; }.jd-native-practice-flow b { color:#67aef2; font:700 10px/1 monospace; }.jd-native-practice-flow strong { margin-top:auto; font-size:14px; line-height:1.3; }.jd-native-practice-flow small { color:rgba(245,243,237,.58); font-size:10px; line-height:1.4; }.jd-native-practice-flow article.active b,.jd-native-practice-flow article.active small { color:rgba(255,255,255,.74); }.jd-native-practice-flow i { align-self:center; color:#67aef2; font-style:normal; }
+@media(max-width:900px){ .jd-native-practice header { grid-template-columns:1fr; }.jd-native-practice-flow { grid-template-columns:repeat(7,minmax(0,1fr)); gap:6px; }.jd-native-practice-flow i { display:none; }.jd-native-practice-flow article { min-height:112px; padding:12px 9px; }.jd-native-practice-flow strong { font-size:12px; }.jd-native-practice-flow small { font-size:9px; } }
+@media(max-width:560px){ .jd-native-practice-flow { grid-template-columns:1fr; }.jd-native-practice-flow article { min-height:0; } }
+}
+
+/* Stable overrides for the Phase 02 core-practice page. */
+.jd-native-practice{width:100vw;margin-left:calc(50% - 50vw);padding:clamp(56px,7vw,88px) max(24px,calc((100vw - 1180px)/2));background:#0b0b0d;color:#fff}
+.jd-native-practice header{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:20px clamp(40px,6vw,96px);align-items:end}.jd-native-practice .eyebrow{grid-column:1/-1;margin:0;color:#2997ff!important}.jd-native-practice header>div>span{color:#67aef2;font:700 10px/1 monospace;letter-spacing:.14em}.jd-native-practice h3{margin:12px 0 0;font-size:clamp(30px,3.6vw,50px);line-height:1.1;letter-spacing:-.04em}.jd-native-practice header>p:last-child{margin:0;color:rgba(245,243,237,.72);font-size:15px;line-height:1.8}
+.jd-native-practice-flow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr) auto) minmax(0,1fr);gap:8px;align-items:stretch;margin-top:40px}.jd-native-practice-flow article{min-height:132px;padding:16px 14px;display:flex;flex-direction:column;gap:12px;border:1px solid rgba(245,243,237,.18);border-radius:14px;background:rgba(255,255,255,.04)}.jd-native-practice-flow article.active{background:#0066cc;border-color:#0066cc}.jd-native-practice-flow b{color:#67aef2;font:700 10px/1 monospace}.jd-native-practice-flow strong{margin-top:auto;font-size:14px;line-height:1.3}.jd-native-practice-flow small{color:rgba(245,243,237,.58);font-size:10px;line-height:1.4}.jd-native-practice-flow article.active b,.jd-native-practice-flow article.active small{color:rgba(255,255,255,.74)}.jd-native-practice-flow i{align-self:center;color:#67aef2;font-style:normal}
+@media(max-width:900px){.jd-native-practice header{grid-template-columns:1fr}.jd-native-practice-flow{grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}.jd-native-practice-flow i{display:none}.jd-native-practice-flow article{min-height:112px;padding:12px 9px}.jd-native-practice-flow strong{font-size:12px}.jd-native-practice-flow small{font-size:9px}}@media(max-width:560px){.jd-native-practice-flow{grid-template-columns:1fr}.jd-native-practice-flow article{min-height:0}}
+
+/* JD Wiki: core-practice section uses a light page surface. */
+body.project-jd-wiki .jd-native-practice { background:#fff; color:#1d1d1f; }
+body.project-jd-wiki .jd-native-practice h3 { color:#1d1d1f; }
+body.project-jd-wiki .jd-native-practice header>p:last-child { color:#3a3a3c; }
+body.project-jd-wiki .jd-native-practice-flow article { border-color:#1d1d1f; background:#1d1d1f; color:#fff; }
+body.project-jd-wiki .jd-native-practice-flow article.active { background:#0066cc; border-color:#0066cc; }
+body.project-jd-wiki .jd-native-practice-flow b { color:#67aef2; }
+body.project-jd-wiki .jd-native-practice-flow small { color:rgba(255,255,255,.68); }
+
+/* JD Wiki: light editorial treatment for the core-practice flow. */
+body.project-jd-wiki .jd-native-practice-flow article { border-color:#e0e0e0; background:#f5f5f7; color:#1d1d1f; }
+body.project-jd-wiki .jd-native-practice-flow article.active { background:#0066cc; border-color:#0066cc; color:#fff; }
+body.project-jd-wiki .jd-native-practice-flow b { color:#0066cc; }
+body.project-jd-wiki .jd-native-practice-flow small { color:#6e6e73; }
+body.project-jd-wiki .jd-native-practice-flow article.active b,
+body.project-jd-wiki .jd-native-practice-flow article.active small { color:rgba(255,255,255,.78); }
+body.project-jd-wiki .jd-native-practice-flow i { color:#0066cc; }
+
+/* Expandable Vibe Designing strategy panel. */
+.jd-coding-path-trigger { cursor:pointer; position:relative; transition:transform 280ms cubic-bezier(.22,1,.36,1),box-shadow 280ms ease; }
+.jd-coding-path-trigger::after { content:'↓'; position:absolute; right:10px; top:10px; color:rgba(255,255,255,.78); font-size:12px; transition:transform 240ms ease; }
+.jd-coding-path-trigger[aria-expanded="true"]::after { transform:rotate(180deg); }
+.jd-coding-path-trigger:hover { transform:translateY(-4px); box-shadow:0 12px 24px rgba(0,102,204,.18); }
+.jd-vibe-designing-panel { margin-top:24px; padding:clamp(28px,4vw,48px); border:1px solid #e0e0e0; border-radius:18px; background:#fafafc; color:#1d1d1f; animation:jd-vibe-reveal 520ms cubic-bezier(.22,1,.36,1) both; }
+.jd-vibe-designing-panel .eyebrow { margin:0; color:#0066cc!important; }.jd-vibe-designing-panel h4 { max-width:860px; margin:14px 0 32px; font-size:clamp(28px,3.3vw,46px); line-height:1.1; letter-spacing:-.04em; }
+.jd-vibe-methods { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }.jd-vibe-methods article { padding:24px; border:1px solid #e0e0e0; border-radius:14px; background:#fff; }.jd-vibe-methods b { color:#0066cc; font:700 10px/1 monospace; letter-spacing:.1em; }.jd-vibe-methods h5 { margin:18px 0 12px; font-size:18px; line-height:1.3; }.jd-vibe-methods p,.jd-vibe-conclusion { margin:0; color:#3a3a3c; font-size:14px; line-height:1.75; }.jd-vibe-conclusion { margin-top:24px; padding-top:24px; border-top:1px solid #d2d2d7; }.jd-vibe-conclusion strong { color:#0066cc; }
+@keyframes jd-vibe-reveal { from { opacity:0; transform:translateY(-12px); } to { opacity:1; transform:translateY(0); } }
+@media(max-width:760px){ .jd-vibe-methods { grid-template-columns:1fr; } }
+
+/* Feedback loop: directional data-flow cue between stages. */
+body.project-jd-wiki .jd-loop-node:not(:nth-of-type(5))::after {
+  background:linear-gradient(90deg,#a8adb4 0 34%,#0066cc 48% 58%,#a8adb4 72% 100%);
+  background-size:220% 100%;
+  animation:jd-loop-flow 1.7s linear infinite;
+}
+body.project-jd-wiki .jd-loop-node:not(:nth-of-type(5))::before {
+  animation:jd-loop-arrow 1.7s ease-in-out infinite;
+}
+body.project-jd-wiki .jd-loop-node:nth-of-type(2)::after,
+body.project-jd-wiki .jd-loop-node:nth-of-type(2)::before { animation-delay:.18s; }
+body.project-jd-wiki .jd-loop-node:nth-of-type(3)::after,
+body.project-jd-wiki .jd-loop-node:nth-of-type(3)::before { animation-delay:.36s; }
+body.project-jd-wiki .jd-loop-node:nth-of-type(4)::after,
+body.project-jd-wiki .jd-loop-node:nth-of-type(4)::before { animation-delay:.54s; }
+body.project-jd-wiki .jd-loop-return { background:linear-gradient(90deg,#7a828d 0 38%,#0066cc 49% 57%,#7a828d 68% 100%); background-size:260% 100%; animation:jd-loop-flow 2.4s linear infinite; }
+@keyframes jd-loop-flow { to { background-position:-220% 0; } }
+@keyframes jd-loop-arrow { 50% { border-color:#0066cc; filter:drop-shadow(2px -2px 2px rgba(0,102,204,.25)); } }
+@media (prefers-reduced-motion: reduce) { body.project-jd-wiki .jd-loop-node:not(:nth-of-type(5))::after,body.project-jd-wiki .jd-loop-node:not(:nth-of-type(5))::before,body.project-jd-wiki .jd-loop-return { animation:none; } }
+
+/* Apple editorial refinement: restrained geometry for feedback issue cards. */
+body.project-jd-wiki .jd-loop-actions { gap:14px; }
+body.project-jd-wiki .jd-loop-actions article { padding:28px; border:1px solid #e0e0e0; border-radius:11px; box-shadow:none; }
+body.project-jd-wiki .jd-loop-actions .jd-loop-figure { border-radius:8px; }
+body.project-jd-wiki .jd-loop-actions .jd-loop-figure img { border-radius:5px; }
+@media(max-width:560px){ body.project-jd-wiki .jd-loop-actions article { padding:22px; border-radius:8px; } }
+
+/* Keep the Vibe Designing strategy headline on one line. */
+body.project-jd-wiki .jd-vibe-designing-panel h4 { max-width:none; white-space:nowrap; font-size:clamp(24px,2.65vw,42px); letter-spacing:-.045em; }
+@media(max-width:760px){ body.project-jd-wiki .jd-vibe-designing-panel h4 { white-space:normal; } }
+
+/* Feedback loop: centered dashed input arrows; remove the heavy return rail. */
+body.project-jd-wiki .jd-loop-return,
+body.project-jd-wiki .jd-loop-return::before { display:none; }
+body.project-jd-wiki .jd-loop-diagram { padding-bottom:26px; }
+body.project-jd-wiki .jd-loop-node:not(:nth-of-type(5))::after {
+  left:calc(100% + 8px);
+  top:50%;
+  width:26px;
+  height:2px;
+  transform:translateY(-50%);
+  border:0;
+  background:repeating-linear-gradient(90deg,#7a828d 0 5px,transparent 5px 10px);
+  background-size:20px 100%;
+  animation:jd-dashed-input 1.2s linear infinite;
+}
+body.project-jd-wiki .jd-loop-node:not(:nth-of-type(5))::before {
+  left:calc(100% + 29px);
+  top:50%;
+  width:8px;
+  height:8px;
+  transform:translateY(-50%) rotate(45deg);
+  border-top:2px solid #0066cc;
+  border-right:2px solid #0066cc;
+  border-bottom:0;
+  border-left:0;
+  animation:none;
+  filter:none;
+}
+@keyframes jd-dashed-input { to { background-position:-20px 0; } }
+@media (prefers-reduced-motion: reduce) { body.project-jd-wiki .jd-loop-node:not(:nth-of-type(5))::after { animation:none; } }
+
+/* Relay design previews for the three Vibe Designing methods. */
+.jd-vibe-methods article { overflow:hidden; }
+.jd-vibe-preview { height:148px; margin:-24px -24px 22px; overflow:hidden; border-bottom:1px solid #e0e0e0; background:#f5f5f7; }
+.jd-vibe-preview img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; }
+
+/* Feedback loop: geometry-aligned dashed links and a subtle return arrow. */
+body.project-jd-wiki .jd-loop-diagram { overflow:visible; padding-bottom:62px; }
+body.project-jd-wiki .jd-loop-node:not(:nth-of-type(5))::after { left:calc(100% + 8px); right:auto; width:calc(100% - 100% + 26px); top:50%; transform:translateY(-50%); }
+body.project-jd-wiki .jd-loop-node:not(:nth-of-type(5))::before { left:calc(100% + 29px); top:50%; transform:translateY(-50%) rotate(45deg); }
+body.project-jd-wiki .jd-loop-return { display:block; position:absolute; z-index:1; left:11%; right:11%; bottom:22px; height:28px; border:0; border-right:1.5px dashed #7a828d; border-bottom:1.5px dashed #7a828d; border-left:1.5px dashed #7a828d; border-radius:0 0 18px 18px; background:none; animation:none; }
+body.project-jd-wiki .jd-loop-return::before { display:block; content:""; position:absolute; left:-5px; top:-5px; width:9px; height:9px; border-top:1.5px solid #0066cc; border-left:1.5px solid #0066cc; transform:rotate(45deg); }
+@media(max-width:900px){ body.project-jd-wiki .jd-loop-diagram { padding-bottom:58px; } body.project-jd-wiki .jd-loop-return { left:56px; right:56px; } }
+
+/* Vibe methods: vertical editorial cards for full-size design previews. */
+body.project-jd-wiki .jd-vibe-methods { grid-template-columns:1fr; gap:16px; }
+body.project-jd-wiki .jd-vibe-methods article { display:grid; grid-template-columns:minmax(280px,.95fr) minmax(0,1.05fr); grid-template-rows:auto 1fr; column-gap:32px; align-items:start; padding:0; overflow:hidden; }
+body.project-jd-wiki .jd-vibe-preview { grid-column:1; grid-row:1 / span 3; height:220px; margin:0; border-right:1px solid #e0e0e0; border-bottom:0; }
+body.project-jd-wiki .jd-vibe-methods article>b { grid-column:2; margin-top:28px; }
+body.project-jd-wiki .jd-vibe-methods article h5 { grid-column:2; margin:14px 28px 12px 0; font-size:22px; }
+body.project-jd-wiki .jd-vibe-methods article p { grid-column:2; margin:0 28px 28px 0; font-size:15px; }
+@media(max-width:680px){ body.project-jd-wiki .jd-vibe-methods article { grid-template-columns:1fr; }.jd-vibe-preview { grid-column:1; grid-row:auto; height:180px; border-right:0; border-bottom:1px solid #e0e0e0; }.jd-vibe-methods article>b,.jd-vibe-methods article h5,.jd-vibe-methods article p { grid-column:1; margin-left:22px; margin-right:22px; }.jd-vibe-methods article>b { margin-top:22px; }.jd-vibe-methods article p { margin-bottom:24px; } }
+
+/* Vibe methods: full-image, image-first presentation. */
+body.project-jd-wiki .jd-vibe-methods article { display:block; padding:0; }
+body.project-jd-wiki .jd-vibe-preview { display:flex; align-items:center; justify-content:center; width:100%; height:auto; min-height:360px; margin:0; border:0; border-bottom:1px solid #e0e0e0; background:#fff; }
+body.project-jd-wiki .jd-vibe-preview img { width:100%; height:auto; max-height:none; object-fit:contain; object-position:center; }
+body.project-jd-wiki .jd-vibe-methods article>b { display:block; margin:24px 28px 0; }
+body.project-jd-wiki .jd-vibe-methods article h5 { margin:14px 28px 12px; font-size:22px; }
+body.project-jd-wiki .jd-vibe-methods article p { margin:0 28px 28px; font-size:15px; }
+@media(max-width:680px){ body.project-jd-wiki .jd-vibe-preview { min-height:0; }.jd-vibe-methods article>b { margin:20px 22px 0; }.jd-vibe-methods article h5 { margin:12px 22px; }.jd-vibe-methods article p { margin:0 22px 24px; } }
+
+/* Vibe methods: copy before the full-bleed design image. */
+body.project-jd-wiki .jd-vibe-methods article { display:flex; flex-direction:column; }
+body.project-jd-wiki .jd-vibe-methods article>b { order:1; margin:26px 28px 0; }
+body.project-jd-wiki .jd-vibe-methods article h5 { order:2; margin:14px 28px 10px; }
+body.project-jd-wiki .jd-vibe-methods article p { order:3; margin:0 28px 24px; }
+body.project-jd-wiki .jd-vibe-preview { order:4; display:block; min-height:0; height:auto; margin:0; background:transparent; border:0; line-height:0; }
+body.project-jd-wiki .jd-vibe-preview img { display:block; width:100%; height:auto; object-fit:initial; }
+@media(max-width:680px){ body.project-jd-wiki .jd-vibe-methods article>b { margin:22px 22px 0; }.jd-vibe-methods article h5 { margin:12px 22px 10px; }.jd-vibe-methods article p { margin:0 22px 20px; } }
+
+/* Core practice two: specification-driven generation. */
+body.project-jd-wiki .jd-native-practice--spec { padding-top:clamp(64px,8vw,104px); padding-bottom:clamp(64px,8vw,104px); border-top:1px solid #e0e0e0; }
+body.project-jd-wiki .jd-native-spec-content { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr); gap:clamp(28px,5vw,72px); align-items:start; margin-top:48px; }
+body.project-jd-wiki .jd-native-spec-content figure { margin:0; border:1px solid #e0e0e0; border-radius:11px; overflow:hidden; background:#f5f5f7; }
+body.project-jd-wiki .jd-native-spec-content figure img { display:block; width:100%; height:auto; }
+body.project-jd-wiki .jd-native-spec-copy { display:grid; gap:18px; }
+body.project-jd-wiki .jd-native-spec-lead { margin:0 0 6px; color:#3a3a3c; font-size:16px; line-height:1.75; }
+body.project-jd-wiki .jd-native-spec-lead code { color:#0066cc; font-family:monospace; font-size:.9em; }
+body.project-jd-wiki .jd-native-spec-copy article { display:grid; grid-template-columns:32px 1fr; gap:14px; padding:20px 0; border-top:1px solid #e0e0e0; }
+body.project-jd-wiki .jd-native-spec-copy article span { color:#0066cc; font:700 10px/1 monospace; padding-top:5px; }
+body.project-jd-wiki .jd-native-spec-copy h4 { margin:0; color:#1d1d1f; font-size:20px; line-height:1.25; letter-spacing:-.02em; }
+body.project-jd-wiki .jd-native-spec-copy article p { margin:7px 0 0; color:#3a3a3c; font-size:14px; line-height:1.7; }
+@media(max-width:760px){ body.project-jd-wiki .jd-native-spec-content { grid-template-columns:1fr; margin-top:32px; } }
+
+/* Core practice two: keep each visual directly below its related capability. */
+body.project-jd-wiki .jd-native-spec-content { display:block; margin-top:40px; }
+body.project-jd-wiki .jd-native-spec-copy { display:block; }
+body.project-jd-wiki .jd-native-spec-copy article { grid-template-columns:32px 1fr; max-width:760px; }
+body.project-jd-wiki .jd-native-spec-content figure { max-width:none; margin:0 0 28px 46px; }
+body.project-jd-wiki .jd-native-spec-copy article:nth-of-type(2) { margin-top:0; }
+@media(max-width:760px){ body.project-jd-wiki .jd-native-spec-content figure { margin-left:0; } }
+
+/* Core practice three: collaboration boundaries. */
+body.project-jd-wiki .jd-native-practice--collaboration { padding-top:clamp(64px,8vw,104px); padding-bottom:clamp(64px,8vw,104px); border-top:1px solid #e0e0e0; }
+body.project-jd-wiki .jd-native-collaboration-visual { margin:48px 0; border:1px solid #e0e0e0; border-radius:11px; overflow:hidden; background:#f5f5f7; }
+body.project-jd-wiki .jd-native-collaboration-visual img { display:block; width:100%; height:auto; }
+body.project-jd-wiki .jd-native-collaboration-copy>p { max-width:930px; margin:0; color:#3a3a3c; font-size:16px; line-height:1.85; }
+body.project-jd-wiki .jd-native-boundaries { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; margin:36px 0 28px; border:1px solid #e0e0e0; background:#e0e0e0; }
+body.project-jd-wiki .jd-native-boundaries article { padding:24px; background:#fff; }
+body.project-jd-wiki .jd-native-boundaries b { color:#0066cc; font-size:18px; }.jd-native-boundaries p { margin:10px 0 0; color:#1d1d1f; font-size:14px; line-height:1.55; }
+body.project-jd-wiki .jd-native-collaboration-summary { color:#1d1d1f!important; font-weight:600; }
+body.project-jd-wiki .jd-native-assets { display:grid; grid-template-columns:180px 1fr; gap:28px; align-items:baseline; margin-top:48px; padding-top:24px; border-top:1px solid #d2d2d7; }
+body.project-jd-wiki .jd-native-assets span { color:#0066cc; font:700 10px/1 monospace; letter-spacing:.1em; }.jd-native-assets p { margin:0; color:#3a3a3c; font-size:15px; line-height:1.75; }
+@media(max-width:760px){ body.project-jd-wiki .jd-native-collaboration-visual { margin:32px 0; }.jd-native-boundaries { grid-template-columns:repeat(2,1fr); }.jd-native-assets { grid-template-columns:1fr; gap:12px; } }
+
+/* Core practice three: role boundaries replace the collaboration illustration. */
+body.project-jd-wiki .jd-native-practice--collaboration .jd-native-boundaries { margin:48px 0 32px; }
+body.project-jd-wiki .jd-native-practice--collaboration .jd-native-collaboration-copy { max-width:930px; }
+
+/* Core practice three: surface role boundaries as the primary visual. */
+body.project-jd-wiki .jd-native-practice--collaboration .jd-native-collaboration-copy { display:flex; flex-direction:column; max-width:none; }
+body.project-jd-wiki .jd-native-practice--collaboration .jd-native-boundaries { order:-1; margin:48px 0 32px; }
+
+/* Move the complete collaboration responsibilities into core practice three. */
+body.project-jd-wiki .jd-native-roles--moved { margin-top:48px; }
+body.project-jd-wiki .jd-native-roles--moved article { background:#fff; }
+body.project-jd-wiki .jd-native-process { display:none; }
+
+/* Core practice three: visualize the legacy serial workflow before current roles. */
+body.project-jd-wiki .jd-traditional-flow { margin-top:48px; padding:24px 0 32px; border-top:1px solid #e0e0e0; border-bottom:1px solid #e0e0e0; }
+body.project-jd-wiki .jd-traditional-flow-head { display:flex; align-items:baseline; gap:12px; }.jd-traditional-flow-head span { padding:5px 8px; background:#1d1d1f; color:#fff; font:700 10px/1 monospace; letter-spacing:.08em; }.jd-traditional-flow-head h4 { margin:0; color:#1d1d1f; font-size:18px; }.jd-traditional-flow-head p { margin:0 0 0 auto; color:#7a7a7a; font-size:13px; }
+body.project-jd-wiki .jd-traditional-flow-steps { display:grid; grid-template-columns:repeat(4,minmax(0,1fr) auto) minmax(0,1fr); gap:8px; align-items:center; margin-top:24px; }.jd-traditional-flow-steps article { min-height:96px; padding:14px; border:1px solid #e0e0e0; border-radius:8px; background:#fafafc; display:flex; flex-direction:column; gap:8px; }.jd-traditional-flow-steps b { color:#0066cc; font:700 10px/1 monospace; }.jd-traditional-flow-steps strong { margin-top:auto; font-size:14px; line-height:1.25; }.jd-traditional-flow-steps small { color:#7a7a7a; font-size:10px; }.jd-traditional-flow-steps i { color:#7a7a7a; font-style:normal; }
+@media(max-width:760px){ body.project-jd-wiki .jd-traditional-flow-head { display:block; }.jd-traditional-flow-head p { margin:10px 0 0; }.jd-traditional-flow-steps { grid-template-columns:1fr; }.jd-traditional-flow-steps i { display:none; } }
+
+/* Core practice three: visualize legacy serial workflow before current roles. */
+body.project-jd-wiki .jd-traditional-flow { margin-top:48px; padding:24px 0 32px; border-top:1px solid #e0e0e0; border-bottom:1px solid #e0e0e0; }
+body.project-jd-wiki .jd-traditional-flow-head { display:flex; align-items:baseline; gap:12px; }.jd-traditional-flow-head span { padding:5px 8px; background:#1d1d1f; color:#fff; font:700 10px/1 monospace; letter-spacing:.08em; }.jd-traditional-flow-head h4 { margin:0; color:#1d1d1f; font-size:18px; }.jd-traditional-flow-head p { margin:0 0 0 auto; color:#7a7a7a; font-size:13px; }
+body.project-jd-wiki .jd-traditional-flow-steps { display:grid; grid-template-columns:repeat(4,minmax(0,1fr) auto) minmax(0,1fr); gap:8px; align-items:center; margin-top:24px; }.jd-traditional-flow-steps article { min-height:96px; padding:14px; border:1px solid #e0e0e0; border-radius:8px; background:#fafafc; display:flex; flex-direction:column; gap:8px; }.jd-traditional-flow-steps b { color:#0066cc; font:700 10px/1 monospace; }.jd-traditional-flow-steps strong { margin-top:auto; font-size:14px; line-height:1.25; }.jd-traditional-flow-steps small { color:#7a7a7a; font-size:10px; }.jd-traditional-flow-steps i { color:#7a7a7a; font-style:normal; }
+body.project-jd-wiki .jd-native-collaboration-copy { display:none; }
+@media(max-width:760px){ body.project-jd-wiki .jd-traditional-flow-head { display:block; }.jd-traditional-flow-head p { margin:10px 0 0; }.jd-traditional-flow-steps { grid-template-columns:1fr; }.jd-traditional-flow-steps i { display:none; } }
