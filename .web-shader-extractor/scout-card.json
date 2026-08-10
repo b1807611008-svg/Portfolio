@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 3,
+  "source": {
+    "url": "https://labs.lusion.co/",
+    "route": "/",
+    "viewport": { "width": 1440, "height": 900, "dpr": 1 }
+  },
+  "candidates": [],
+  "lockStatus": "provisional",
+  "targetSet": [],
+  "alternatives": [],
+  "effectBoundary": "page-coupled",
+  "hypotheses": [
+    {
+      "id": "hyp-1",
+      "statement": "The reference site's signature feel depends on page-coupled animated WebGL/Canvas and DOM typography.",
+      "status": "untested",
+      "evidenceFor": ["ev-001"],
+      "evidenceAgainst": [],
+      "truth": "GUESS"
+    }
+  ],
+  "interactions": [],
+  "scopeRisk": "medium",
+  "blockingUnknowns": [
+    "Local Playwright browser executable is missing; no live target surface lock was completed."
+  ],
+  "nextProbe": {
+    "type": "runtime-owner",
+    "target": "reference-page",
+    "resolves": ["surface inventory"],
+    "distinguishes": ["hyp-1"],
+    "expectedOutcomes": [
+      {
+        "observation": "visible animated canvas surfaces are enumerated and ablated",
+        "eliminates": []
+      },
+      {
+        "observation": "no canvas/WebGL surface is present",
+        "eliminates": ["hyp-1"]
+      }
+    ]
+  },
+  "gateDecision": {
+    "requiredEvidence": [
+      {
+        "status": "unknown",
+        "evidenceId": "ev-001",
+        "path": ".web-shader-extractor/evidence/scout/lusion-summary.json",
+        "truth": "PARTIAL",
+        "notes": "Style migration only; no source replay or exact shader extraction claimed."
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "source": "https://labs.lusion.co/",
+  "observedAt": "2026-07-14",
+  "capabilityProfile": [
+    "navigate",
+    "network-metadata",
+    "runtime-eval-attempted"
+  ],
+  "runtimeProbe": {
+    "status": "blocked",
+    "truth": "PARTIAL",
+    "notes": "Playwright is installed but the Chromium executable is not present in the local cache, so live canvas enumeration and screenshot capture could not run without installing a browser."
+  },
+  "usableStyleSignals": [
+    {
+      "fact": "Reference page is a dynamic public landing/lab experience; static fetch returns a JavaScript-rendered shell.",
+      "truth": "PARTIAL"
+    },
+    {
+      "fact": "For this portfolio task, only the visual language is being adapted: dark experimental stage, large sparse typography, numbered project indexing, pointer-responsive motion, and high-contrast project cards.",
+      "truth": "GUESS"
+    }
+  ]
+}

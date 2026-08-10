@@ -1,0 +1,22 @@
+{
+  "state": "SCOPE_CHECK",
+  "gateStatus": {
+    "targetLock": "provisional",
+    "replayReady": "not-started",
+    "baselineVerified": "not-started"
+  },
+  "strategy": "Use the web-shader-extractor skill as a reference-scout guardrail, then apply an original, portfolio-specific style migration instead of reproducing the remote shader.",
+  "targetSet": [],
+  "unknowns": [
+    "Exact Lusion canvas/rendering pipeline was not locked because the local browser automation executable is unavailable."
+  ],
+  "artifacts": [
+    ".web-shader-extractor/scout-card.json",
+    ".web-shader-extractor/evidence/scout/lusion-summary.json"
+  ],
+  "nextAction": "Projectize the portfolio project index with original DOM/CSS/JS interactions inspired by the reference's visual language.",
+  "replayTier": "none-style-reference-only",
+  "qa": {
+    "status": "not-started"
+  }
+}

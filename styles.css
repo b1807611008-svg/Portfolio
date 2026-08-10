@@ -330,7 +330,7 @@ h3 { margin-bottom: 12px; line-height: 1.25; letter-spacing: -0.03em; }
   background:
     radial-gradient(circle at 66% 34%, rgba(245, 243, 237, 0.2), transparent 18rem),
     linear-gradient(90deg, rgba(3, 18, 30, 0.95) 0%, rgba(0, 0, 0, 0.94) 38%, rgba(110, 26, 36, 0.66) 68%, rgba(21, 21, 24, 0.98) 100%),
-    url("https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?auto=format&fit=crop&w=1800&q=80") center/cover;
+    url("assets/cover-cards/about-portrait.webp") center/cover;
   filter: saturate(0.82) contrast(1.08);
 }
 
@@ -391,7 +391,7 @@ h3 { margin-bottom: 12px; line-height: 1.25; letter-spacing: -0.03em; }
   border-radius: 28px;
   background:
     linear-gradient(135deg, rgba(92,255,0,0.78), rgba(8,199,238,0.7), rgba(255,159,216,0.66)),
-    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=500&q=80") center/cover;
+    url("assets/cover-cards/workspace.webp") center/cover;
 }
 
 .profile-name { margin-bottom: 2px; font-size: 20px; font-weight: 800; letter-spacing: -0.03em; }
@@ -501,8 +501,6 @@ dd { margin: 6px 0 0; font-weight: 700; }
 .capability-card p { margin-bottom: 0; color: var(--muted); }
 
 .project-gallery {
-  --gallery-x: 50%;
-  --gallery-y: 20%;
   position: relative;
   padding: clamp(18px, 2.8vw, 34px);
   border: 1px solid rgba(245, 243, 237, 0.12);
@@ -527,20 +525,6 @@ dd { margin: 6px 0 0; font-weight: 700; }
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
-.project-gallery::after {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  z-index: 0;
-  pointer-events: none;
-  border-radius: inherit;
-  background:
-    linear-gradient(115deg, transparent 0 35%, rgba(245, 243, 237, 0.08) 46%, transparent 58%),
-    radial-gradient(circle at var(--gallery-x) var(--gallery-y), rgba(8, 199, 238, 0.2), transparent 24rem);
-  opacity: 0.72;
-  mix-blend-mode: screen;
-  transition: opacity 260ms ease;
-}
 .project-grid {
   position: relative;
   z-index: 1;
@@ -551,29 +535,9 @@ dd { margin: 6px 0 0; font-weight: 700; }
   overflow: visible;
 }
 .project-card {
-  --edge-proximity: 0;
-  --cursor-angle: 45deg;
-  --edge-sensitivity: 10;
-  --color-sensitivity: 18;
-  --cone-spread: 32;
-  --glow-padding: 46px;
-  --fill-opacity: 0.62;
-  --card-bg: rgba(16, 16, 20, 0.88);
-  --tilt-x: 0deg;
-  --tilt-y: 0deg;
-  --tilt-scale: 1;
-  --tilt-lift: 0px;
   --enter-y: 0px;
   --enter-opacity: 1;
-  --gradient-one: radial-gradient(at 80% 55%, #5cff00 0, transparent 52%);
-  --gradient-two: radial-gradient(at 69% 34%, #08c7ee 0, transparent 52%);
-  --gradient-three: radial-gradient(at 8% 6%, #ff9fd8 0, transparent 52%);
-  --gradient-four: radial-gradient(at 41% 38%, #f5f3ed 0, transparent 48%);
-  --gradient-five: radial-gradient(at 86% 85%, #38bdf8 0, transparent 52%);
-  --gradient-six: radial-gradient(at 82% 18%, #f472b6 0, transparent 52%);
-  --gradient-seven: radial-gradient(at 51% 4%, #c084fc 0, transparent 52%);
   position: relative;
-  isolation: isolate;
   min-height: clamp(480px, 46vw, 620px);
   padding: clamp(16px, 2vw, 22px);
   display: flex;
@@ -581,15 +545,11 @@ dd { margin: 6px 0 0; font-weight: 700; }
   justify-content: space-between;
   border: 1px solid var(--line);
   border-radius: clamp(24px, 3.2vw, 38px);
-  background: var(--card-bg);
-  overflow: visible;
-  transform-origin: center;
-  transform-style: preserve-3d;
-  filter: grayscale(1) saturate(0) contrast(1.04);
-  will-change: transform, filter;
+  background: rgba(16, 16, 20, 0.88);
+  overflow: hidden;
   opacity: var(--enter-opacity);
-  transform: perspective(900px) translateY(calc(var(--tilt-lift) + var(--enter-y))) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) scale(var(--tilt-scale));
-  transition: filter 520ms ease, box-shadow 360ms ease, border-color 360ms ease, background 360ms ease;
+  transform: translateY(var(--enter-y));
+  transition: transform 240ms ease, border-color 240ms ease, background 240ms ease;
   animation: project-card-in 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: calc(var(--i, 0) * 70ms);
 }
@@ -597,70 +557,10 @@ dd { margin: 6px 0 0; font-weight: 700; }
   position: relative;
   z-index: 1;
 }
-.project-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  border: 1px solid transparent;
-  border-radius: inherit;
-  background:
-    linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
-    var(--gradient-one) border-box,
-    var(--gradient-two) border-box,
-    var(--gradient-three) border-box,
-    var(--gradient-four) border-box,
-    var(--gradient-five) border-box,
-    var(--gradient-six) border-box,
-    var(--gradient-seven) border-box;
-  opacity: clamp(0, calc((var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity))), 1);
-  mask-image:
-    conic-gradient(
-      from var(--cursor-angle) at center,
-      black calc(var(--cone-spread) * 1%),
-      transparent calc((var(--cone-spread) + 14) * 1%),
-      transparent calc((100 - var(--cone-spread) - 14) * 1%),
-      black calc((100 - var(--cone-spread)) * 1%)
-    );
-  transition: opacity 260ms ease;
-}
-.project-card::after {
-  content: "";
-  position: absolute;
-  inset: calc(var(--glow-padding) * -1);
-  z-index: -1;
-  pointer-events: none;
-  border-radius: inherit;
-  opacity: clamp(0, calc(0.18 + (var(--edge-proximity) - var(--edge-sensitivity)) / (100 - var(--edge-sensitivity))), 1);
-  box-shadow:
-    0 0 3px rgba(92, 255, 0, 0.9),
-    0 0 16px rgba(8, 199, 238, 0.64),
-    0 0 42px rgba(255, 159, 216, 0.48),
-    0 0 86px rgba(92, 255, 0, 0.28);
-  mask-image:
-    conic-gradient(
-      from var(--cursor-angle) at center,
-      black 3%,
-      transparent 12%,
-      transparent 88%,
-      black 97%
-    );
-  mix-blend-mode: plus-lighter;
-  transition: opacity 260ms ease;
-}
-.project-card:not(:hover):not(:focus-visible)::before,
-.project-card:not(:hover):not(:focus-visible)::after {
-  opacity: 0;
-  transition: opacity 600ms ease;
-}
 .project-card:hover,
 .project-card:focus-visible {
-  z-index: 5;
-  filter: grayscale(0) saturate(1);
-  background: rgba(20, 22, 28, 0.96);
-  box-shadow: 0 26px 72px rgba(0, 0, 0, 0.46);
-  border-color: rgba(245, 243, 237, 0.18);
+  border-color: rgba(245, 243, 237, 0.36);
+  transform: translateY(calc(var(--enter-y) - 4px));
 }
 .project-index {
   position: absolute;
@@ -678,7 +578,7 @@ dd { margin: 6px 0 0; font-weight: 700; }
 .project-card:hover .project-index,
 .project-card:focus-visible .project-index {
   color: rgba(245, 243, 237, 0.76);
-  transform: translate3d(0, -6px, 42px);
+  transform: translateY(-4px);
 }
 .project-card.large { min-height: 520px; }
 .project-visual {
@@ -689,19 +589,13 @@ dd { margin: 6px 0 0; font-weight: 700; }
   border-radius: clamp(18px, 2.2vw, 28px);
   background-size: cover;
   background-position: center;
-  filter: saturate(1.08) contrast(1.08);
   transform-origin: center;
-  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1), filter 520ms ease;
 }
-.project-card:hover .project-visual,
-.project-card:focus-visible .project-visual {
-  transform: none;
-  filter: saturate(1.22) contrast(1.12) brightness(1.06);
-}
-.visual-ux { background-image: linear-gradient(135deg, rgba(92,255,0,0.24), rgba(0,0,0,0.72)), url("https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1200&q=80"); }
+
+.visual-ux { background-image: linear-gradient(135deg, rgba(92,255,0,0.24), rgba(0,0,0,0.72)), url("assets/cover-cards/ux-workshop.webp"); }
 .visual-meituan {
   overflow: hidden;
-  background-image: url("assets/meituan/1封面.png");
+  background-image: url("assets/meituan/1封面-1200w.webp");
   background-size: cover;
   background-position: center;
 }
@@ -793,55 +687,55 @@ dd { margin: 6px 0 0; font-weight: 700; }
   width: 36%;
   aspect-ratio: 476 / 1032;
   border-radius: 26px;
-  background: url("assets/meituan/cover-phone.png") center/cover no-repeat;
+  background: url("assets/meituan/1封面-1200w.webp") right center/cover no-repeat;
   transform: rotate(-11deg);
   filter: drop-shadow(0 26px 40px rgba(0, 20, 60, 0.28));
   z-index: 1;
 }
 .project-visual { position: relative; }
 .visual-qishui {
-  background-image: url("assets/qishui-cover.png");
+  background-image: url("assets/qishui-cover.webp");
   background-size: cover;
   background-position: center;
 }
-.visual-packaging { background-image: linear-gradient(135deg, rgba(8,199,238,0.3), rgba(0,0,0,0.7)), url("https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=900&q=80"); }
+.visual-packaging { background-image: linear-gradient(135deg, rgba(8,199,238,0.3), rgba(0,0,0,0.7)), url("assets/cover-cards/packaging.webp"); }
 .visual-motion {
   background-image:
     radial-gradient(circle at 26% 28%, rgba(92,255,0,0.72), transparent 8rem),
     radial-gradient(circle at 78% 68%, rgba(255,159,216,0.58), transparent 10rem),
     linear-gradient(135deg, rgba(0,0,0,0.1), rgba(0,0,0,0.72)),
-    url("https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=900&q=80");
+    url("assets/cover-cards/motion.webp");
 }
 .visual-ai {
   background-image:
     linear-gradient(135deg, rgba(8,199,238,0.34), rgba(92,255,0,0.16), rgba(0,0,0,0.72)),
-    url("https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80");
+    url("assets/cover-cards/ai.webp");
 }
 .visual-system {
   background-image:
     linear-gradient(180deg, rgba(3, 3, 3, 0.02), rgba(3, 3, 3, 0.18)),
-    url("assets/jd-wiki/component-library-cover.png");
+    url("assets/jd-wiki/component-library-cover.webp");
   background-size: cover;
   background-position: center;
 }
 .visual-meituan-campaign {
   background-image:
     linear-gradient(135deg, rgba(5, 5, 7, 0.02), rgba(5, 5, 7, 0.16)),
-    url("assets/meituan visual/Slide 16_9 - 1.png");
+  url("assets/meituan visual/Slide 16_9 - 1-1200w.webp");
   background-size: cover;
   background-position: center;
 }
 .visual-aimv {
   background-image:
     linear-gradient(135deg, rgba(5, 5, 7, 0.08), rgba(5, 5, 7, 0.48)),
-    url("assets/cover-cards/motion-folders-new.png");
+    url("assets/cover-cards/motion-folders-new.webp");
   background-size: cover;
   background-position: center;
 }
 .visual-sop {
   background-image:
     linear-gradient(135deg, rgba(5, 5, 7, 0.06), rgba(5, 5, 7, 0.48)),
-    url("assets/jd-wiki/relay-design-wiki-flow.png");
+    url("assets/jd-wiki/component-library-cover.webp");
   background-size: cover;
   background-position: center;
 }
@@ -1054,7 +948,7 @@ body.project-jd-wiki .brand-mark {
 .jd-relay-canvas { position: relative; padding: 17px; overflow: hidden; }
 .jd-relay-canvas img,
 .jd-wiki-window img { width: 100%; height: 100%; display: block; object-fit: cover; }
-.jd-relay-canvas:has(> img) { padding: 0; }
+.jd-relay-canvas:has(> .responsive-media) { padding: 0; }
 .jd-relay-canvas img { border-radius: 8px; object-position: center top; }
 .jd-wiki-window img { object-position: center top; }
 .jd-relay-label { color: #fff; font-size: 12px; font-weight: 800; }
@@ -1074,7 +968,7 @@ body.project-jd-wiki .brand-mark {
 .jd-code-window strong { color: #67aef2; }.jd-code-window em { color: #b9d9f9; }.jd-code-window span { color: #8bd6b1; }
 .jd-live-dot { width: 7px; height: 7px; border-radius: 50%; background: #67e8a5; box-shadow: 0 0 10px #67e8a5; }
 .jd-wiki-window { display: grid; grid-template-columns: 42px 1fr; overflow: hidden; }
-.jd-wiki-window:has(> img) { display: block; }
+.jd-wiki-window:has(> .responsive-media) { display: block; }
 .jd-wiki-window aside { padding: 14px 11px; display: grid; align-content: start; gap: 12px; border-right: 1px solid rgba(255,255,255,.08); }
 .jd-wiki-window aside i { width: 19px; height: 4px; border-radius: 4px; background: rgba(255,255,255,.17); }
 .jd-wiki-window > div { padding: 17px; }
@@ -4952,13 +4846,367 @@ body.project-jd-wiki .jd-native-efficiency strong { color:#0066cc; font:600 clam
 
 /* Homepage project gallery: let the black surface carry the work. */
 .project-gallery { padding:clamp(18px,2.8vw,34px); border:0; border-radius:0; background:#000; background-image:none; box-shadow:none; }
-.project-gallery::after { display:none; }
 .project-gallery::before { content:"PROJECT INDEX / 04"; }
 
-/* Homepage project cards: retain original artwork colors at rest and on hover. */
-.project-card { filter:none; will-change:transform; transition:box-shadow 360ms ease,border-color 360ms ease,background 360ms ease; }
-.project-card:hover, .project-card:focus-visible { filter:none; }
+/* Project context: three parallel backgrounds. */
+body.project-jd-wiki .jd-context-blocks { grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(24px,4vw,64px); }
+@media (max-width:900px) { body.project-jd-wiki .jd-context-blocks { grid-template-columns:1fr; gap:32px; } }
 
-/* Homepage project cards: no hover glow or exposure shift. */
-.project-card::before, .project-card::after { display:none; }
-.project-card:hover, .project-card:focus-visible { background:var(--card-bg); box-shadow:none; border-color:var(--line); }
+/* Project context: highlight the three background conclusions. */
+body.project-jd-wiki .jd-context-block > p strong { color:#0066cc; font-weight:650; }
+
+/* Project context heading: align the supporting summary to the right. */
+body.project-jd-wiki .jd-context-intro > p:last-child { justify-self:end; text-align:right; }
+@media (max-width:900px) { body.project-jd-wiki .jd-context-intro > p:last-child { justify-self:start; text-align:left; } }
+
+/* Real-delivery background: expose the three adoption gaps. */
+body.project-jd-wiki .jd-native-opening-copy strong { color:#0066cc; font-weight:650; }
+body.project-jd-wiki .jd-native-project-cover { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:20px clamp(40px,6vw,96px); align-items:end; }
+body.project-jd-wiki .jd-native-project-backgrounds { grid-column:1 / -1; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; max-width:none; }
+body.project-jd-wiki .jd-native-project-backgrounds article { display:flex; flex-direction:column; align-items:center; gap:12px; padding:24px; background:#f5f5f7; text-align:center; }
+body.project-jd-wiki .jd-native-project-backgrounds strong { color:#1d1d1f; font:600 20px/1.2 "SF Pro Display",system-ui,-apple-system,sans-serif; }
+body.project-jd-wiki .jd-native-project-backgrounds span { color:#3a3a3c; font:400 16px/1.5 "SF Pro Text",system-ui,-apple-system,sans-serif; }
+@media (max-width:760px) { body.project-jd-wiki .jd-native-project-cover { grid-template-columns:1fr; } body.project-jd-wiki .jd-native-project-backgrounds { grid-template-columns:1fr; } }
+
+/* Reset the former project-cover grid for the three-gap background layout. */
+body.project-jd-wiki .jd-native-project-cover > p { grid-column:1 / -1; grid-row:auto; margin:0; }
+body.project-jd-wiki .jd-native-project-cover h3 { grid-column:1 / -1; grid-row:auto; max-width:none; font-size:clamp(30px,3.2vw,48px); }
+body.project-jd-wiki .jd-native-project-cover > .jd-native-project-backgrounds { grid-column:1 / -1; grid-row:auto; width:100%; margin:16px 0 0; align-self:auto; }
+
+/* Real-delivery opening: prioritize the closing title line. */
+body.project-jd-wiki .jd-native-opening { grid-template-columns:minmax(0,1.55fr) minmax(200px,.45fr); column-gap:clamp(24px,4vw,56px); }
+body.project-jd-wiki .jd-native-opening-copy { max-width:300px; justify-self:end; }
+body.project-jd-wiki .jd-native-opening h2 .jd-native-title-line:nth-child(3) { white-space:nowrap; font-size:clamp(30px,3.25vw,46px); }
+@media (max-width:760px) { body.project-jd-wiki .jd-native-opening-copy { max-width:none; justify-self:auto; } body.project-jd-wiki .jd-native-opening h2 .jd-native-title-line:nth-child(3) { white-space:normal; } }
+
+/* My action: make the move from opportunity to delivery explicit. */
+body.project-jd-wiki .jd-native-actions { width:100vw; margin-left:calc(50% - 50vw); padding:clamp(56px,7vw,88px) max(24px,calc((100vw - 1180px)/2)); background:#fff; color:#1d1d1f; }
+body.project-jd-wiki .jd-native-actions header { display:flex; justify-content:space-between; align-items:baseline; gap:24px; padding-bottom:24px; border-bottom:1px solid #d2d2d7; }
+body.project-jd-wiki .jd-native-actions .eyebrow { margin:0; color:#0066cc; }
+body.project-jd-wiki .jd-native-actions h3 { margin:0; font:600 clamp(30px,3.2vw,48px)/1.1 "SF Pro Display",system-ui,-apple-system,sans-serif; letter-spacing:-.035em; }
+body.project-jd-wiki .jd-native-actions ol { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; margin:40px 0 32px; padding:0; list-style:none; border-top:1px solid #d2d2d7; border-bottom:1px solid #d2d2d7; }
+body.project-jd-wiki .jd-native-actions li { display:grid; grid-template-columns:32px 1fr; gap:12px; min-height:164px; padding:24px; border-left:1px solid #d2d2d7; }
+body.project-jd-wiki .jd-native-actions li:last-child { border-right:1px solid #d2d2d7; }
+body.project-jd-wiki .jd-native-actions li>span { color:#0066cc; font:700 10px/1 monospace; padding-top:5px; }
+body.project-jd-wiki .jd-native-actions strong { display:block; color:#1d1d1f; font:600 20px/1.25 "SF Pro Display",system-ui,-apple-system,sans-serif; letter-spacing:-.02em; }
+body.project-jd-wiki .jd-native-actions li p { margin:10px 0 0; color:#3a3a3c; font:400 14px/1.65 "SF Pro Text",system-ui,-apple-system,sans-serif; }
+body.project-jd-wiki .jd-native-actions-summary { max-width:820px; margin:0; color:#1d1d1f; font:500 17px/1.75 "SF Pro Text",system-ui,-apple-system,sans-serif; }
+@media (max-width:760px) { body.project-jd-wiki .jd-native-actions header { display:block; } body.project-jd-wiki .jd-native-actions h3 { margin-top:14px; } body.project-jd-wiki .jd-native-actions ol { grid-template-columns:1fr; } body.project-jd-wiki .jd-native-actions li { min-height:0; border-right:1px solid #d2d2d7; } }
+
+/* My action: make the move from opportunity to delivery explicit. */
+body.project-jd-wiki .jd-native-actions { width:100vw; margin-left:calc(50% - 50vw); padding:clamp(56px,7vw,88px) max(24px,calc((100vw - 1180px)/2)); background:#fff; color:#1d1d1f; }
+body.project-jd-wiki .jd-native-actions header { display:flex; justify-content:space-between; align-items:baseline; gap:24px; padding-bottom:24px; border-bottom:1px solid #d2d2d7; }
+body.project-jd-wiki .jd-native-actions .eyebrow { margin:0; color:#0066cc; }
+body.project-jd-wiki .jd-native-actions h3 { margin:0; font:600 clamp(30px,3.2vw,48px)/1.1 "SF Pro Display",system-ui,-apple-system,sans-serif; letter-spacing:-.035em; }
+body.project-jd-wiki .jd-native-actions ol { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; margin:40px 0 32px; padding:0; list-style:none; border-top:1px solid #d2d2d7; border-bottom:1px solid #d2d2d7; }
+body.project-jd-wiki .jd-native-actions li { display:grid; grid-template-columns:32px 1fr; gap:12px; min-height:164px; padding:24px; border-left:1px solid #d2d2d7; }
+body.project-jd-wiki .jd-native-actions li:last-child { border-right:1px solid #d2d2d7; }
+body.project-jd-wiki .jd-native-actions li>span { color:#0066cc; font:700 10px/1 monospace; padding-top:5px; }
+body.project-jd-wiki .jd-native-actions strong { display:block; color:#1d1d1f; font:600 20px/1.25 "SF Pro Display",system-ui,-apple-system,sans-serif; letter-spacing:-.02em; }
+body.project-jd-wiki .jd-native-actions li p { margin:10px 0 0; color:#3a3a3c; font:400 14px/1.65 "SF Pro Text",system-ui,-apple-system,sans-serif; }
+body.project-jd-wiki .jd-native-actions-summary { max-width:820px; margin:0; color:#1d1d1f; font:500 17px/1.75 "SF Pro Text",system-ui,-apple-system,sans-serif; }
+@media (max-width:760px) { body.project-jd-wiki .jd-native-actions header { display:block; } body.project-jd-wiki .jd-native-actions h3 { margin-top:14px; } body.project-jd-wiki .jd-native-actions ol { grid-template-columns:1fr; } body.project-jd-wiki .jd-native-actions li { min-height:0; border-right:1px solid #d2d2d7; } }
+
+/* My action: make the move from opportunity to delivery explicit. */
+body.project-jd-wiki .jd-native-actions { width:100vw; margin-left:calc(50% - 50vw); padding:clamp(56px,7vw,88px) max(24px,calc((100vw - 1180px)/2)); background:#fff; color:#1d1d1f; }
+body.project-jd-wiki .jd-native-actions header { display:flex; justify-content:space-between; align-items:baseline; gap:24px; padding-bottom:24px; border-bottom:1px solid #d2d2d7; }
+body.project-jd-wiki .jd-native-actions .eyebrow { margin:0; color:#0066cc; }
+body.project-jd-wiki .jd-native-actions h3 { margin:0; font:600 clamp(30px,3.2vw,48px)/1.1 "SF Pro Display",system-ui,-apple-system,sans-serif; letter-spacing:-.035em; }
+body.project-jd-wiki .jd-native-actions ol { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; margin:40px 0 32px; padding:0; list-style:none; border-top:1px solid #d2d2d7; border-bottom:1px solid #d2d2d7; }
+body.project-jd-wiki .jd-native-actions li { display:grid; grid-template-columns:32px 1fr; gap:12px; min-height:164px; padding:24px; border-left:1px solid #d2d2d7; }
+body.project-jd-wiki .jd-native-actions li:last-child { border-right:1px solid #d2d2d7; }
+body.project-jd-wiki .jd-native-actions li>span { color:#0066cc; font:700 10px/1 monospace; padding-top:5px; }
+body.project-jd-wiki .jd-native-actions strong { display:block; color:#1d1d1f; font:600 20px/1.25 "SF Pro Display",system-ui,-apple-system,sans-serif; letter-spacing:-.02em; }
+body.project-jd-wiki .jd-native-actions li p { margin:10px 0 0; color:#3a3a3c; font:400 14px/1.65 "SF Pro Text",system-ui,-apple-system,sans-serif; }
+body.project-jd-wiki .jd-native-actions-summary { max-width:820px; margin:0; color:#1d1d1f; font:500 17px/1.75 "SF Pro Text",system-ui,-apple-system,sans-serif; }
+@media (max-width:760px) { body.project-jd-wiki .jd-native-actions header { display:block; } body.project-jd-wiki .jd-native-actions h3 { margin-top:14px; } body.project-jd-wiki .jd-native-actions ol { grid-template-columns:1fr; } body.project-jd-wiki .jd-native-actions li { min-height:0; border-right:1px solid #d2d2d7; } }
+
+/* My action: steps and the resulting Vibe Coding delivery. */
+body.project-jd-wiki .jd-native-actions-content { display:grid; grid-template-columns:minmax(0,1fr) minmax(280px,.82fr); gap:clamp(32px,5vw,80px); align-items:start; margin-top:40px; }
+body.project-jd-wiki .jd-native-actions-content ol { grid-template-columns:1fr; margin:0; border:0; }
+body.project-jd-wiki .jd-native-actions-content li { min-height:0; padding:18px 0; border:0; border-top:1px solid #d2d2d7; }
+body.project-jd-wiki .jd-native-actions-content li:last-child { border-right:0; border-bottom:1px solid #d2d2d7; }
+body.project-jd-wiki .jd-native-actions-result { margin:0; overflow:hidden; border-radius:11px; background:#000; }
+body.project-jd-wiki .jd-native-actions-result img,
+body.project-jd-wiki .jd-native-actions-result video { display:block; width:100%; height:auto; }
+@media (max-width:760px) { body.project-jd-wiki .jd-native-actions-content { grid-template-columns:1fr; } }
+
+/* Project background: compact causes on the left, title at top right. */
+body.project-jd-wiki .jd-native-project-cover { grid-template-columns:minmax(0,1.45fr) minmax(240px,.55fr); grid-template-rows:auto 1fr; gap:16px clamp(32px,5vw,72px); padding-top:clamp(48px,6vw,72px); padding-bottom:clamp(48px,6vw,72px); }
+body.project-jd-wiki .jd-native-project-cover > p { grid-column:2; grid-row:1; justify-self:end; }
+body.project-jd-wiki .jd-native-project-cover h3 { grid-column:2; grid-row:1; justify-self:end; align-self:end; font-size:clamp(36px,4vw,56px); white-space:nowrap; }
+body.project-jd-wiki .jd-native-project-cover > .jd-native-project-backgrounds { grid-column:1; grid-row:1 / span 2; grid-template-columns:repeat(3,minmax(0,1fr)); margin:0; align-self:center; }
+body.project-jd-wiki .jd-native-project-backgrounds article { align-items:flex-start; min-height:154px; padding:20px; text-align:left; }
+body.project-jd-wiki .jd-native-project-backgrounds span { font-size:15px; }
+@media (max-width:760px) { body.project-jd-wiki .jd-native-project-cover > p, body.project-jd-wiki .jd-native-project-cover h3, body.project-jd-wiki .jd-native-project-cover > .jd-native-project-backgrounds { grid-column:1; grid-row:auto; justify-self:start; white-space:normal; } }
+
+/* Project background: remove the eyebrow and present the three causes as a simple reading list. */
+body.project-jd-wiki .jd-native-project-cover > p { display:none; }
+body.project-jd-wiki .jd-native-project-cover > .jd-native-project-backgrounds {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0;
+  width:min(100%, 620px);
+}
+body.project-jd-wiki .jd-native-project-backgrounds article {
+  display:grid;
+  grid-template-columns:104px minmax(0,1fr);
+  gap:24px;
+  min-height:0;
+  padding:17px 0;
+  border-top:1px solid #d2d2d7;
+}
+body.project-jd-wiki .jd-native-project-backgrounds article:last-child { border-bottom:1px solid #d2d2d7; }
+body.project-jd-wiki .jd-native-project-backgrounds span { font-size:16px; line-height:1.45; }
+@media (max-width:760px) {
+  body.project-jd-wiki .jd-native-project-backgrounds article { grid-template-columns:1fr; gap:4px; }
+}
+
+/* Project background: compact causes on the left, title at top right. */
+body.project-jd-wiki .jd-native-project-cover { grid-template-columns:minmax(0,1.45fr) minmax(240px,.55fr); grid-template-rows:auto 1fr; gap:16px clamp(32px,5vw,72px); padding-top:clamp(48px,6vw,72px); padding-bottom:clamp(48px,6vw,72px); }
+body.project-jd-wiki .jd-native-project-cover > p { grid-column:2; grid-row:1; justify-self:end; }
+body.project-jd-wiki .jd-native-project-cover h3 { grid-column:2; grid-row:1; justify-self:end; align-self:end; font-size:clamp(36px,4vw,56px); white-space:nowrap; }
+body.project-jd-wiki .jd-native-project-cover > .jd-native-project-backgrounds { grid-column:1; grid-row:1 / span 2; grid-template-columns:repeat(3,minmax(0,1fr)); margin:0; align-self:center; }
+body.project-jd-wiki .jd-native-project-backgrounds article { align-items:flex-start; min-height:154px; padding:20px; text-align:left; }
+body.project-jd-wiki .jd-native-project-backgrounds span { font-size:15px; }
+@media (max-width:760px) { body.project-jd-wiki .jd-native-project-cover > p, body.project-jd-wiki .jd-native-project-cover h3, body.project-jd-wiki .jd-native-project-cover > .jd-native-project-backgrounds { grid-column:1; grid-row:auto; justify-self:start; white-space:normal; } }
+
+/* My action: a concise vertical flow aligned to the delivery result. */
+body.project-jd-wiki .jd-native-actions-content {
+  align-items:stretch;
+}
+body.project-jd-wiki .jd-native-actions-content .jd-native-action-flow {
+  display:grid;
+  grid-template-columns:1fr;
+  grid-template-rows:repeat(4, minmax(0, 1fr));
+  gap:0;
+  min-height:0;
+  margin:0;
+  padding:0;
+  list-style:none;
+  border:0;
+}
+body.project-jd-wiki .jd-native-actions-content .jd-native-action-flow li {
+  position:relative;
+  display:flex;
+  align-items:center;
+  min-height:0;
+  padding:18px 0 36px;
+  border:0;
+  text-align:center;
+}
+body.project-jd-wiki .jd-native-actions-content .jd-native-action-flow li:last-child { padding-bottom:18px; }
+body.project-jd-wiki .jd-native-action-flow li > div { width:min(100%, 480px); margin:0 auto; }
+body.project-jd-wiki .jd-native-action-flow strong {
+  display:block;
+  width:fit-content;
+  min-width:220px;
+  margin:0 auto;
+  padding:12px 24px;
+  border-radius:8px;
+  background:#e8edff;
+  color:#1d1d1f;
+  font:600 clamp(21px,2vw,29px)/1.15 "SF Pro Display",system-ui,-apple-system,sans-serif;
+  letter-spacing:-.025em;
+}
+body.project-jd-wiki .jd-native-action-flow li p {
+  max-width:480px;
+  margin:16px auto 0;
+  color:#333336;
+  font:400 16px/1.5 "SF Pro Text",system-ui,-apple-system,sans-serif;
+}
+body.project-jd-wiki .jd-native-action-flow li:not(:last-child)::after {
+  content:"⌄";
+  position:absolute;
+  bottom:5px;
+  left:50%;
+  transform:translateX(-50%);
+  color:#8d7bff;
+  font:600 36px/.5 system-ui,sans-serif;
+}
+@media (max-width:760px) {
+  body.project-jd-wiki .jd-native-actions-content .jd-native-action-flow { gap:24px; }
+  body.project-jd-wiki .jd-native-actions-content .jd-native-action-flow li { min-height:136px; padding:12px 0 34px; }
+  body.project-jd-wiki .jd-native-action-flow strong { min-width:0; }
+}
+
+/* Project background: three full-width horizontal rows. */
+body.project-jd-wiki .jd-native-project-cover > .jd-native-project-backgrounds {
+  grid-column:1;
+  grid-row:1 / span 2;
+  justify-self:stretch;
+  width:100%;
+  max-width:none;
+  min-width:0;
+}
+body.project-jd-wiki .jd-native-project-backgrounds article {
+  grid-template-columns:112px minmax(0, 1fr);
+  align-items:center;
+  gap:24px;
+  width:100%;
+}
+body.project-jd-wiki .jd-native-project-backgrounds article strong { white-space:nowrap; }
+body.project-jd-wiki .jd-native-project-backgrounds span { min-width:0; }
+@media (max-width:760px) {
+  body.project-jd-wiki .jd-native-project-cover > .jd-native-project-backgrounds { grid-column:1; grid-row:auto; }
+  body.project-jd-wiki .jd-native-project-backgrounds article { grid-template-columns:1fr; gap:4px; }
+}
+
+/* Project background: match the three horizontal rows reference layout. */
+body.project-jd-wiki .jd-native-project-cover {
+  grid-template-columns:minmax(0, 1fr) 220px;
+  grid-template-rows:1fr;
+  align-items:center;
+  gap:clamp(48px, 8vw, 128px);
+}
+body.project-jd-wiki .jd-native-project-cover h3 {
+  grid-column:2;
+  grid-row:1;
+  justify-self:end;
+  align-self:start;
+  margin-top:18px;
+}
+body.project-jd-wiki .jd-native-project-cover > .jd-native-project-backgrounds {
+  display:grid;
+  grid-column:1;
+  grid-row:1;
+  grid-template-columns:minmax(0, 1fr);
+  align-self:center;
+  width:100%;
+  margin:0;
+  padding:0;
+  gap:0;
+}
+body.project-jd-wiki .jd-native-project-backgrounds article {
+  display:grid;
+  grid-template-columns:120px minmax(0, 1fr);
+  flex-direction:initial;
+  align-items:center;
+  justify-content:initial;
+  gap:32px;
+  min-height:82px;
+  padding:0;
+  background:transparent;
+  text-align:left;
+  border:0;
+}
+body.project-jd-wiki .jd-native-project-backgrounds article + article { margin-top:12px; }
+body.project-jd-wiki .jd-native-project-backgrounds article strong { white-space:nowrap; }
+body.project-jd-wiki .jd-native-project-backgrounds article span { display:block; min-width:0; }
+@media (max-width:760px) {
+  body.project-jd-wiki .jd-native-project-cover { grid-template-columns:1fr; grid-template-rows:auto; }
+  body.project-jd-wiki .jd-native-project-cover h3 { grid-column:1; grid-row:auto; justify-self:start; margin:0; }
+  body.project-jd-wiki .jd-native-project-cover > .jd-native-project-backgrounds { grid-column:1; grid-row:auto; }
+  body.project-jd-wiki .jd-native-project-backgrounds article { grid-template-columns:1fr; gap:4px; min-height:0; padding:12px 0; }
+}
+
+/* Project background: tighter rhythm between the three information rows. */
+body.project-jd-wiki .jd-native-project-cover { padding-top:clamp(40px, 5vw, 64px); padding-bottom:clamp(40px, 5vw, 64px); }
+body.project-jd-wiki .jd-native-project-backgrounds article { min-height:58px; }
+body.project-jd-wiki .jd-native-project-backgrounds article + article { margin-top:4px; }
+
+/* Remove the two non-functional divider lines around the action transition. */
+body.project-jd-wiki .jd-native-project-backgrounds article:last-child { border-bottom:0; }
+body.project-jd-wiki .jd-native-actions header { border-bottom:0; }
+
+/* Traditional workflow: remove the surrounding divider lines. */
+body.project-jd-wiki .jd-traditional-flow { border-top:0; border-bottom:0; }
+
+/* Specification capabilities: no separator lines between the two items. */
+body.project-jd-wiki .jd-native-spec-copy article { border-top:0; }
+
+/* Specification constraint: two quiet ways to connect 16.0 rules to generation. */
+body.project-jd-wiki .jd-native-spec-methods { margin-top:32px; }
+body.project-jd-wiki .jd-native-spec-methods h5 { margin:0 0 16px; color:#1d1d1f; font:600 22px/1.2 "SF Pro Display",system-ui,-apple-system,sans-serif; letter-spacing:-.02em; }
+body.project-jd-wiki .jd-native-spec-methods > div { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:17px; }
+body.project-jd-wiki .jd-native-spec-methods article { display:block; min-height:0; padding:24px; border:1px solid #d2d2d7; border-radius:11px; background:#fff; }
+body.project-jd-wiki .jd-native-spec-methods .jd-native-spec-method-tag { display:inline-block; margin:0 0 14px; padding:5px 8px; border-radius:5px; background:#f5f5f7; color:#0066cc; font:650 12px/1 "SF Pro Text",system-ui,-apple-system,sans-serif; }
+body.project-jd-wiki .jd-native-spec-methods h6 { margin:0; color:#1d1d1f; font:600 19px/1.3 "SF Pro Display",system-ui,-apple-system,sans-serif; letter-spacing:-.015em; }
+body.project-jd-wiki .jd-native-spec-methods article > p:not(.jd-native-spec-method-tag) { margin:12px 0; color:#3a3a3c; font:400 15px/1.6 "SF Pro Text",system-ui,-apple-system,sans-serif; }
+body.project-jd-wiki .jd-native-spec-methods code { padding:1px 4px; border-radius:5px; background:#f5f5f7; color:#1d1d1f; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.9em; }
+body.project-jd-wiki .jd-native-spec-methods small { display:block; color:#7a7a7a; font:400 13px/1.45 "SF Pro Text",system-ui,-apple-system,sans-serif; }
+@media (max-width:760px) { body.project-jd-wiki .jd-native-spec-methods > div { grid-template-columns:1fr; } }
+
+/* No section heading above the specification method cards. */
+body.project-jd-wiki .jd-native-spec-methods { margin-top:24px; }
+
+/* On-demand specification: concise, readable implementation notes. */
+body.project-jd-wiki .jd-native-spec-methods article ul { margin:12px 0; padding-left:18px; color:#3a3a3c; }
+body.project-jd-wiki .jd-native-spec-methods article li { display:list-item; min-height:0; margin:0 0 8px; padding:0; border:0; color:#3a3a3c; font:400 14px/1.55 "SF Pro Text",system-ui,-apple-system,sans-serif; }
+body.project-jd-wiki .jd-native-spec-methods article li:last-child { margin-bottom:0; }
+
+/* Collaboration comparison: an AFTER label matching the BEFORE workflow. */
+body.project-jd-wiki .jd-native-after-head { display:flex; align-items:baseline; gap:12px; margin-top:48px; }
+body.project-jd-wiki .jd-native-after-head span { padding:5px 8px; background:#0066cc; color:#fff; font:700 10px/1 monospace; letter-spacing:.08em; }
+body.project-jd-wiki .jd-native-after-head h4 { margin:0; color:#1d1d1f; font:600 18px/1.25 "SF Pro Display",system-ui,-apple-system,sans-serif; }
+body.project-jd-wiki .jd-native-after-head + .jd-native-roles--moved { margin-top:20px; }
+
+/* Collaboration asset: match the responsibility cards while allowing concise prose. */
+body.project-jd-wiki .jd-native-roles--moved article > p { margin:14px 0 0; color:#3a3a3c; font:400 15px/1.6 "SF Pro Text",system-ui,-apple-system,sans-serif; }
+
+/* Keep the specification result title on exactly two intentional lines. */
+body.project-jd-wiki #jd-native-spec-title { white-space:nowrap; min-width:440px; }
+@media (max-width:760px) { body.project-jd-wiki #jd-native-spec-title { min-width:0; font-size:clamp(28px, 7vw, 38px); } }
+
+/* Core practice two: use the wide canvas as two labelled horizontal content rows. */
+body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-copy { display:grid; gap:32px; }
+body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-copy > article {
+  display:grid;
+  grid-template-columns:178px minmax(0, 1fr);
+  gap:24px;
+  max-width:none;
+  padding:0;
+  align-items:stretch;
+}
+body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-copy > article > span {
+  display:block;
+  padding:24px;
+  border-radius:8px;
+  background:#f5f5f7;
+  color:transparent;
+  font-size:0;
+}
+body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-copy > article > span::after {
+  display:block;
+  color:#1d1d1f;
+  font:600 clamp(22px,2vw,31px)/1.28 "SF Pro Display",system-ui,-apple-system,sans-serif;
+  letter-spacing:-.03em;
+}
+body.project-jd-wiki .jd-native-spec-copy > article:nth-of-type(1) > span::after { content:"1、交互链路补齐"; }
+body.project-jd-wiki .jd-native-spec-copy > article:nth-of-type(2) > span::after { content:"2、保证 AI\A 按 16.0 规范实现"; white-space:pre-line; }
+body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-copy > article > div { min-width:0; }
+body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-copy > article > div > h4,
+body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-copy > article > div > p { margin-left:0; }
+body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-copy > article > div > figure { max-width:none; margin:12px 0 0; }
+body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-methods { margin-top:0; }
+@media (max-width:760px) {
+  body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-copy > article { grid-template-columns:1fr; gap:16px; }
+  body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-copy > article > span { padding:14px 16px; }
+  body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-copy > article > span::after { font-size:22px; }
+}
+
+.responsive-media {
+  display: block;
+  max-width: 100%;
+}
+
+.responsive-media > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.jd-relay-canvas > .responsive-media,
+.jd-wiki-window > .responsive-media,
+.jd-prd-slide > .responsive-media {
+  width: 100%;
+  height: 100%;
+}
+
+.jd-relay-canvas:has(> .responsive-media) {
+  padding: 0;
+}
+
+.jd-wiki-window:has(> .responsive-media) {
+  display: block;
+}

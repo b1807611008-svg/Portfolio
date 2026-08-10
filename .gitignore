@@ -1,2 +1,17 @@
 .DS_Store
 .mcp.json
+
+# Local-only tooling (kept out of the GitHub Pages repository).
+skills/
+
+# Editable source files stay outside this GitHub Pages repository.
+assets/**/*.png
+assets/**/*.gif
+assets/**/*.jpg
+assets/**/*.jpeg
+assets/**/*.psd
+assets/**/*.ai
+assets/**/*.fig
+assets/**/*.mov
+assets/**/*.avi
+assets/**/*.mkv
