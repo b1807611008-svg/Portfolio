@@ -21,7 +21,7 @@
   <main>
     <section class="jd-hero section">
       <div class="jd-hero-copy">
-        <p class="eyebrow">实习转正答辩 · JD Design Wiki</p>
+        <p class="eyebrow">实习项目复盘 · JD Design Wiki</p>
         <h1><span class="line">从「能跑」到「好用」</span><span class="line jd-accent">Design Wiki的真实业务验证与闭环</span></h1>
         <p class="jd-hero-subtitle">以真实业务验证 Design Wiki 的可用性：跑通从设计意图到可运行交付的闭环，并将验证方法沉淀为可复用的团队流程。</p>
       </div>
@@ -89,60 +89,7 @@
       </div>
     </section>
 
-    <section class="jd-summary section" aria-labelledby="jd-summary-title">
-      <div class="jd-summary-heading">
-        <p class="eyebrow">01/先给结论</p>
-        <span class="jd-summary-index" aria-hidden="true">02</span>
-        <h2 id="jd-summary-title">我做成了什么，以及为什么值得推广</h2>
-        <p>围绕内容场域与京东 16.0 规范升级，我解决了“设计知识分散、AI 难以准确调用、生成结果缺少验证”的问题，完成从组件知识结构化到页面交付验证的完整闭环。<strong>这套方法的价值，不只是完成一个页面，而是把个人判断沉淀为团队和 AI 都能复用的工作方式。</strong></p>
-      </div>
 
-      <div class="jd-summary-results" aria-label="项目核心结果">
-        <article>
-          <span>01</span>
-          <h3>跑通完整链路</h3>
-          <p>从基础设计变量出发，完成 Token → 组件 → 页面的逐层沉淀与验证。</p>
-          <small>Token → Component → Page</small>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>验证转译可行性</h3>
-          <p>让 Relay 中的视觉结构被准确转译为 AI 和工程均可读取的设计文档。</p>
-          <small>Relay → Design.md</small>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>反馈真实问题</h3>
-          <p>在复杂业务场景中发现 Skill 的结构、语义与还原问题，并推动迭代。</p>
-          <small>Test → Feedback → Iterate</small>
-        </article>
-        <article>
-          <span>04</span>
-          <h3>沉淀标准化 SOP</h3>
-          <p>将个人验证过程转化为清晰、稳定、可交接的团队复用方法。</p>
-          <small>Practice → SOP → Scale</small>
-        </article>
-      </div>
-
-      <dl class="jd-summary-facts" aria-label="项目基本信息">
-        <div>
-          <dt>我的角色</dt>
-          <dd>设计师<br><span>AI 工作流验证与落地</span></dd>
-        </div>
-        <div>
-          <dt>项目范围</dt>
-          <dd>逛频道 · 视频场域<br><span>商详组件</span></dd>
-        </div>
-        <div>
-          <dt>使用工具</dt>
-          <dd>Relay · JoyCode · Codex<br><span>MCP · Git</span></dd>
-        </div>
-        <div>
-          <dt>项目产出</dt>
-          <dd>组件规范 · 页面还原<br><span>操作手册 · Skill 反馈</span></dd>
-        </div>
-      </dl>
-    </section>
 
     <section class="jd-context section" aria-labelledby="jd-context-title">
       <div class="jd-context-intro">
@@ -585,11 +532,11 @@
 
     <div class="jd-native-spec-copy">
 
-      <article><span>01</span><div><h4>交互补齐</h4><p>保证 AI 获得完整的页面状态和交互意图。</p><figure><picture class="responsive-media">
+      <article><div class="jd-native-spec-step"><h4>1、交互链路补齐</h4><p>保证 AI 获得完整的页面状态和交互意图。</p></div><div><figure><picture class="responsive-media">
   <source type="image/webp" srcset="assets/jd-wiki/%E4%BA%A4%E4%BA%92%E9%93%BE%E8%B7%AF%E8%A1%A5%E9%BD%90%E6%8F%92%E4%BB%B6-1176w.webp 1176w" sizes="(max-width: 1200px) 100vw, 1200px" />
   <img src="assets/jd-wiki/%E4%BA%A4%E4%BA%92%E9%93%BE%E8%B7%AF%E8%A1%A5%E9%BD%90%E6%8F%92%E4%BB%B6-1176w.webp" srcset="assets/jd-wiki/%E4%BA%A4%E4%BA%92%E9%93%BE%E8%B7%AF%E8%A1%A5%E9%BD%90%E6%8F%92%E4%BB%B6-1176w.webp 1176w" sizes="(max-width: 1200px) 100vw, 1200px" alt="交互链路补齐插件：识别交互链路并回写设计稿" loading="lazy" decoding="async" width="1176" height="373" />
 </picture></figure></div></article>
-      <article><span>02</span><div><h4>规范约束</h4><p>将组件、Token、变体和行为规则转化为生成过程中的明确边界，保证 AI 按 16.0 规范实现。</p>
+      <article><div class="jd-native-spec-step"><h4>2、按规范约束实现</h4><p>将组件、Token、变体和行为规则转化为生成过程中的明确边界，保证 AI 按 16.0 规范实现。</p></div><div>
 <section class="jd-native-spec-methods" aria-labelledby="jd-native-spec-methods-title">
 <div>
 <article><p class="jd-native-spec-method-tag">按需调用</p><h6>在需求中明确规范路径</h6><ul><li>在需求中写清 <code>design.md</code> 路径和目标页面目录。</li><li>AI 先读取规范，再修改对应页面。</li></ul><small>适合探索性或一次性交付任务。</small></article>
@@ -694,8 +641,8 @@
       </div>
       <div class="jd-role-shifts">
         <article><div class="jd-role-shift-title"><h3>AI 输出需要专业判断</h3></div><p>如果不理解组件结构、适配和交互规范，就无法判断 AI 生成结果是否正确。</p><div class="jd-role-keywords"><span>结构理解</span><span>适配判断</span><span>交互规范</span></div></article>
-        <article><div class="jd-role-shift-title"><h3>理论可行不等于业务可用</h3></div><p>只有进入复杂、真实、持续变化的业务场景，才能暴露能力边界。</p><div class="jd-role-keywords"><span>真实场景</span><span>复杂业务</span><span>能力边界</span></div></article>
-        <article><div class="jd-role-shift-title"><h3>个人提效不等于组织提效</h3></div><p>只有将方法、检查标准和异常处理机制沉淀下来，AI 能力才能从个人工具升级为团队能力。</p><div class="jd-role-keywords"><span>方法沉淀</span><span>检查标准</span><span>团队能力</span></div></article>
+<article><div class="jd-role-shift-title"><h3>理论可行不等于业务可用</h3></div><p>只有把能力放进真实、复杂、持续变化的业务中反复验证，才能暴露稳定性问题和能力边界。</p><div class="jd-role-keywords"><span>真实场景</span><span>复杂业务</span><span>持续验证</span></div></article>
+<article><div class="jd-role-shift-title"><h3>个人提效不等于组织提效</h3></div><p>只有将个人经验进一步沉淀为标准流程、检查机制和可复用能力，个人提效才能真正转化为团队提效。</p><div class="jd-role-keywords"><span>流程沉淀</span><span>检查机制</span><span>团队复用</span></div></article>
       </div>
       <blockquote class="jd-final-statement">
         <div><span>答辩结论</span><i></i></div>
@@ -744,9 +691,6 @@
       const revealSections = document.querySelectorAll("main > section");
       const revealItems = document.querySelectorAll([
         ".jd-section-title",
-        ".jd-summary-heading",
-        ".jd-summary-results article",
-        ".jd-summary-facts > div",
         ".jd-context-intro",
         ".jd-layers-head",
         ".jd-layer-architecture",

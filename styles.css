@@ -5185,6 +5185,43 @@ body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-methods { margin-
   body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-copy > article > span::after { font-size:22px; }
 }
 
+body.project-jd-wiki .jd-native-spec-content {
+  display:block;
+  margin-top:48px;
+}
+body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-copy > article {
+  grid-template-columns:244px minmax(0, 1fr);
+}
+body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-step {
+  display:block;
+  padding:24px;
+  border-radius:8px;
+  background:#f5f5f7;
+}
+body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-step h4 {
+  margin:0;
+  color:#1d1d1f;
+  font:600 20px/1.25 "SF Pro Display",system-ui,-apple-system,sans-serif;
+  letter-spacing:-.03em;
+  white-space:nowrap;
+}
+body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-step p {
+  margin:12px 0 0;
+  color:#3a3a3c;
+  font:400 14px/1.7 "SF Pro Text",system-ui,-apple-system,sans-serif;
+}
+body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-copy > article > div > figure {
+  margin:0;
+}
+@media (max-width:760px) {
+  body.project-jd-wiki .jd-native-spec-content { margin-top:32px; }
+  body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-copy > article {
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-step { padding:16px; }
+}
+
 .responsive-media {
   display: block;
   max-width: 100%;
