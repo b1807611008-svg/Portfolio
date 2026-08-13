@@ -861,6 +861,7 @@ body.project-meituan .case-longform figure {
   box-shadow: none;
 }
 .next-project { justify-content: center; gap: 12px; padding: 24px 0 72px; }
+.next-project[hidden] { display: none !important; }
 
 body.project-jd-wiki {
   --accent: #2f8ee8;
