@@ -97,7 +97,7 @@
         <div>
           <h2 id="jd-context-title">项目背景</h2>
         </div>
-        <p>团队方向 × 业务机会 × 个人切入点</p>
+        <p>持续、高频探索后，我与 Relay 产品和许帅建立联系，方向契合。借此机会，我才逐步参与到 Design Wiki 的建设中。</p>
       </div>
 
       <div class="jd-context-blocks">
@@ -161,7 +161,7 @@
         <div class="jd-input-case-head">
           <span>01 / DESIGN INPUT</span>
           <h3><span>从业务设计稿开始：</span><span>我如何拆解真实页面</span></h3>
-          <p>逛频道具备足够复杂度，适合作为验证已有 Skill 可用性的首个真实场景。先识别页面结构，再逐层判断哪些规则应该进入全局规范、哪些能力应该沉淀为可复用组件。</p>
+          <p>基于比较熟悉、结构也比较复杂的视频场域，先识别页面结构，再逐层判断哪些规则应该进入全局规范、哪些能力应该沉淀为可复用组件。</p>
         </div>
         <div class="jd-input-workbench">
           <figure class="jd-real-page">
@@ -235,9 +235,68 @@
       </div>
     </section>
 
+    <section class="jd-feedback-loop section" aria-labelledby="jd-feedback-loop-title">
+      <div class="jd-feedback-head">
+        <p class="eyebrow">05/如何迭代</p>
+        <h2 id="jd-feedback-loop-title"><span>问题闭环：</span><small>反复测试、反馈并参与优化。</small></h2>
+        <p>反复运行、测试 Skill，将流程中异常情况收敛为可复现问题，并协同推动 Skill 优化。</p>
+      </div>
+      <div class="jd-loop-diagram reveal" aria-label="问题闭环流程">
+        <div class="jd-loop-node"><span>01</span>运行 Skill</div>
+        <div class="jd-loop-node"><span>02</span>生成结果</div>
+        <div class="jd-loop-node"><span>03</span>业务走查</div>
+        <div class="jd-loop-node"><span>04</span>定位问题</div>
+        <div class="jd-loop-node"><span>05</span>整理并反馈</div>
+        <div class="jd-loop-return" aria-hidden="true"></div>
+      </div>
+      <div class="jd-loop-actions">
+        <article class="reveal jd-loop-action--with-figure">
+          <div class="jd-loop-copy">
+            <p class="jd-loop-tag">问题一</p>
+            <h3>引用不等于调用</h3>
+            <dl class="jd-loop-case">
+              <dt>问题</dt>
+              <dd>AI 明明告诉我它调用了顶部 Tab 的 Design.md，但最终生成出来的尺寸还是完全不对。</dd>
+              <dt>排查原因</dt>
+              <dd>只是引用了文档，但生成时仍然在手写简化样式，并没有真正把组件规范作为强约束。</dd>
+              <dt>解决方式</dt>
+              <dd>把被引用组件的 spec-page.html / behaviors 等当作强约束执行。</dd>
+            </dl>
+          </div>
+          <figure class="jd-loop-figure" aria-label="Skill 引用 design.md 但生成结果与规范不一致的示例">
+            <picture class="responsive-media">
+<source type="image/webp" srcset="assets/jd-wiki/%E8%B0%83%E7%94%A8%E4%BD%86%E4%B8%8D%E8%BF%98%E5%8E%9F-742w.webp 742w" sizes="(max-width: 1200px) 100vw, 1200px" />
+<img src="assets/jd-wiki/%E8%B0%83%E7%94%A8%E4%BD%86%E4%B8%8D%E8%BF%98%E5%8E%9F-742w.webp" srcset="assets/jd-wiki/%E8%B0%83%E7%94%A8%E4%BD%86%E4%B8%8D%E8%BF%98%E5%8E%9F-742w.webp 742w" sizes="(max-width: 1200px) 100vw, 1200px" alt="Skill 引用 design.md 但生成结果与规范不一致的示例" loading="lazy" decoding="async" width="742" height="1247" />
+</picture>
+          </figure>
+        </article>
+        <article class="reveal jd-loop-action--with-figure">
+          <div class="jd-loop-copy">
+            <p class="jd-loop-tag">问题二</p>
+            <h3>组件调用缺失</h3>
+            <dl class="jd-loop-case">
+              <dt>问题</dt>
+              <dd>页面漏组件，或用占位图替代真实 SVG。</dd>
+              <dt>排查原因</dt>
+              <dd>AI 未完整执行组件的 spec-page.html / behaviors，生成后也只做文本检查，缺少真实页面走查。</dd>
+              <dt>解决方式</dt>
+              <dd>强制展开组件依赖并调用真实资源；生成后按页面层级逐项验收。</dd>
+            </dl>
+          </div>
+          <figure class="jd-loop-figure" aria-label="页面漏组件、以占位图替代真实 SVG 的示例">
+            <picture class="responsive-media">
+  <source type="image/webp" srcset="assets/jd-wiki/svg%E5%8D%A0%E4%BD%8D%E5%9B%BE-745w.webp 745w" sizes="(max-width: 1200px) 100vw, 1200px" />
+  <img src="assets/jd-wiki/svg%E5%8D%A0%E4%BD%8D%E5%9B%BE-745w.webp" srcset="assets/jd-wiki/svg%E5%8D%A0%E4%BD%8D%E5%9B%BE-745w.webp 745w" sizes="(max-width: 1200px) 100vw, 1200px" alt="页面漏组件、以占位图替代真实 SVG 的示例" loading="lazy" decoding="async" width="745" height="1570" />
+</picture>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+
     <section class="jd-file-guide section" aria-labelledby="jd-file-guide-title">
       <div class="jd-section-title">
-        <p class="eyebrow">05/如何沉淀</p>
+        <p class="eyebrow">06/如何沉淀</p>
         <h2 id="jd-file-guide-title">生成之后，每个文件分别承担什么职责。</h2>
       </div>
       <div class="jd-file-guide-shell">
@@ -319,65 +378,6 @@
       </div>
     </section>
 
-
-    <section class="jd-feedback-loop section" aria-labelledby="jd-feedback-loop-title">
-      <div class="jd-feedback-head">
-        <p class="eyebrow">06/如何迭代</p>
-        <h2 id="jd-feedback-loop-title"><span>问题闭环：</span><small>反复测试、反馈并参与优化。</small></h2>
-        <p>在多个内容场域组件上反复运行、验证，将 Skill 流程中异常情况收敛为可复现问题，并协同正职同学分析原因、推动 Skill 优化。</p>
-      </div>
-      <div class="jd-loop-diagram reveal" aria-label="问题闭环流程">
-        <div class="jd-loop-node"><span>01</span>运行 Skill</div>
-        <div class="jd-loop-node"><span>02</span>生成结果</div>
-        <div class="jd-loop-node"><span>03</span>业务走查</div>
-        <div class="jd-loop-node"><span>04</span>定位问题</div>
-        <div class="jd-loop-node"><span>05</span>整理并反馈</div>
-        <div class="jd-loop-return" aria-hidden="true"></div>
-      </div>
-      <div class="jd-loop-actions">
-        <article class="reveal jd-loop-action--with-figure">
-          <div class="jd-loop-copy">
-            <p class="jd-loop-tag">问题一</p>
-            <h3>引用不等于调用</h3>
-            <dl class="jd-loop-case">
-              <dt>问题</dt>
-              <dd>AI 明明告诉我它调用了顶部 Tab 的 Design.md，但最终生成出来的尺寸还是完全不对。</dd>
-              <dt>排查原因</dt>
-              <dd>只是引用了文档，但生成时仍然在手写简化样式，并没有真正把组件规范作为强约束。</dd>
-              <dt>解决方式</dt>
-              <dd>把被引用组件的 spec-page.html / behaviors 等当作强约束执行。</dd>
-            </dl>
-          </div>
-          <figure class="jd-loop-figure" aria-label="Skill 引用 design.md 但生成结果与规范不一致的示例">
-            <picture class="responsive-media">
-<source type="image/webp" srcset="assets/jd-wiki/%E8%B0%83%E7%94%A8%E4%BD%86%E4%B8%8D%E8%BF%98%E5%8E%9F-742w.webp 742w" sizes="(max-width: 1200px) 100vw, 1200px" />
-<img src="assets/jd-wiki/%E8%B0%83%E7%94%A8%E4%BD%86%E4%B8%8D%E8%BF%98%E5%8E%9F-742w.webp" srcset="assets/jd-wiki/%E8%B0%83%E7%94%A8%E4%BD%86%E4%B8%8D%E8%BF%98%E5%8E%9F-742w.webp 742w" sizes="(max-width: 1200px) 100vw, 1200px" alt="Skill 引用 design.md 但生成结果与规范不一致的示例" loading="lazy" decoding="async" width="742" height="1247" />
-</picture>
-          </figure>
-        </article>
-        <article class="reveal jd-loop-action--with-figure">
-          <div class="jd-loop-copy">
-            <p class="jd-loop-tag">问题二</p>
-            <h3>组件调用缺失</h3>
-            <dl class="jd-loop-case">
-              <dt>问题</dt>
-              <dd>页面漏组件，或用占位图替代真实 SVG。</dd>
-              <dt>排查原因</dt>
-              <dd>AI 未完整执行组件的 spec-page.html / behaviors，生成后也只做文本检查，缺少真实页面走查。</dd>
-              <dt>解决方式</dt>
-              <dd>强制展开组件依赖并调用真实资源；生成后按页面层级逐项验收。</dd>
-            </dl>
-          </div>
-          <figure class="jd-loop-figure" aria-label="页面漏组件、以占位图替代真实 SVG 的示例">
-            <picture class="responsive-media">
-  <source type="image/webp" srcset="assets/jd-wiki/svg%E5%8D%A0%E4%BD%8D%E5%9B%BE-745w.webp 745w" sizes="(max-width: 1200px) 100vw, 1200px" />
-  <img src="assets/jd-wiki/svg%E5%8D%A0%E4%BD%8D%E5%9B%BE-745w.webp" srcset="assets/jd-wiki/svg%E5%8D%A0%E4%BD%8D%E5%9B%BE-745w.webp 745w" sizes="(max-width: 1200px) 100vw, 1200px" alt="页面漏组件、以占位图替代真实 SVG 的示例" loading="lazy" decoding="async" width="745" height="1570" />
-</picture>
-          </figure>
-        </article>
-      </div>
-    </section>
-
     <section class="jd-case-grid section-grid">
       <article class="jd-case-lead">
         <p class="eyebrow">Contribution</p>
@@ -410,7 +410,7 @@
           <div class="jd-sop-copy">
             <span>04 / TEAM ENABLEMENT</span>
             <strong><small>组织层</small><span>沉淀SOP</span></strong>
-            <p>基于多轮实践，输出《将 Relay 设计稿转 Design.md 的标准化流程》文档，帮助设计同学快速上手，降低团队使用门槛，并参与内部 C2 宣讲和设计同学答疑。</p>
+          <p>在反复验证过程中，越来越多设计同学开始询问 AI、Skill 等相关问题。基于多轮实践，输出教程文档，参与内部 C2 宣讲和答疑，帮助设计同学快速上手，降低团队使用门槛。</p>
             <ul class="jd-sop-outcomes">
               <li>触达 <b>150+ 设计师</b></li>
               <li>累计 <b>600+ 浏览量</b></li>
@@ -493,13 +493,32 @@
         <p>项目背景</p>
         <h3 id="jd-native-project-title">项目背景</h3>
         <div class="jd-native-project-backgrounds">
-          <article><strong>设计侧</strong><span>Design Wiki 已机器可读，但尚未进入业务交付</span></article>
+          <article><strong>设计侧</strong><span>已完成了视频场域所有 design.md 的沉淀，但它本质上还是静态资产，并没有真正进入业务交付</span></article>
           <article><strong>研发侧</strong><span>设计稿仍需人工还原，重复实现与走查成本高</span></article>
           <article><strong>协作侧</strong><span>产设研已有 AI 探索，但缺少贯通设计与开发的交付流程</span></article>
         </div>
-</section>
+
+        <div class="jd-native-project-p1">
+          <div class="jd-native-project-p1-head">
+            <span>P1 小验证</span>
+            <h4>交互链路补齐插件</h4>
+          </div>
+          <figure class="jd-native-project-p1-media">
+            <picture class="responsive-media">
+              <source type="image/webp" srcset="assets/jd-wiki/%E4%BA%A4%E4%BA%92%E9%93%BE%E8%B7%AF%E8%A1%A5%E9%BD%90%E6%8F%92%E4%BB%B6-1176w.webp 1176w" sizes="(max-width: 760px) calc(100vw - 48px), 1180px">
+              <img src="assets/jd-wiki/%E4%BA%A4%E4%BA%92%E9%93%BE%E8%B7%AF%E8%A1%A5%E9%BD%90%E6%8F%92%E4%BB%B6-1176w.webp" alt="交互链路补齐插件：识别交互链路、关联 Design Wiki 并回写设计稿" loading="lazy" decoding="async" width="1176" height="373">
+            </picture>
+          </figure>
+        </div>
+      </section>
 <section class="jd-native-actions" aria-labelledby="jd-native-actions-title">
-  <header><p class="eyebrow">我的行动</p><h3 id="jd-native-actions-title">从发现机会到完成交付闭环</h3></header>
+<header>
+  <p class="eyebrow">我的行动</p>
+  <div class="jd-native-actions-heading">
+    <h3 id="jd-native-actions-title">主动发起共建</h3>
+    <p>把 Design Wiki 接进真实研发工程，约束代码交付</p>
+  </div>
+</header>
   <div class="jd-native-actions-content">
 <ol class="jd-native-action-flow">
 <li><div><strong>识别机会</strong><p>发现短剧小程序适合作为 AI Coding 的真实业务载体。</p></div></li>
@@ -519,17 +538,11 @@
 </section>
 
 
-<section class="jd-native-practice" aria-labelledby="jd-native-practice-title">
-<header><p class="eyebrow">03 / Core Practice</p><div><span>核心成果一：流程层</span><h3 id="jd-native-practice-title">跑通设计意图到代码交付的完整闭环</h3></div><p>验证设计意图能否被 AI 理解和拆解，并通过调用 Design Wiki 完成页面生成与交互链路补齐，最终产出符合规范、可编辑、可复用的交付结果。</p><aside class="jd-native-efficiency" aria-label="阶段性效率测算"><span>阶段性测算</span><div><p>设计侧<strong>30%</strong></p><p>研发侧<strong>65%</strong></p></div></aside></header>
-<div class="jd-native-practice-flow" aria-label="设计意图到代码交付流程">
-<article><b>01</b><strong>业务意图输入</strong><small>目标、规则与场景</small></article><i>→</i><article class="active"><b>02</b><strong>选择 Coding 路径</strong><small>复用 / Spec / MCP</small></article><i>→</i><article><b>03</b><strong>补齐设计意图</strong><small>结构、状态与交互</small></article><i>→</i><article><b>04</b><strong>Design Wiki 调用</strong><small>组件、Token 与规范</small></article><i>→</i><article><b>05</b><strong>AI 生成页面代码</strong><small>可运行、可编辑</small></article><i>→</i><article><b>06</b><strong>Design Review 校验</strong><small>规范与体验检查</small></article><i>→</i><article><b>07</b><strong>研发 Review 与合并</strong><small>进入交付分支</small></article>
-</div></section>
-
 <section class="jd-native-practice jd-native-practice--spec" aria-labelledby="jd-native-spec-title">
   <header>
-    <p class="eyebrow">04 / Core Practice</p>
-    <div><span>核心成果二：实践层</span><h3 id="jd-native-spec-title">验证 16.0 规范能否<br>直接驱动代码生成</h3></div>
-    <p>验证的不只是 AI 能否读取 Design.md，而是规范能否真正约束代码，并通过 Review 对结果形成闭环校验。</p>
+    <p class="eyebrow">03 / Core Practice</p>
+    <div><span>核心成果一：实践层</span><h3 id="jd-native-spec-title">验证 16.0 规范能否<br>直接驱动代码生成</h3></div>
+    <p>验证的不只是 AI 能否读取 Design.md 生成页面，而是 16.0 设计规范能不能从一份静态参考文档，变成 AI Coding 真正需要遵守的约束。</p>
   </header>
   <div class="jd-native-spec-content">
 
@@ -549,6 +562,12 @@
     </div>
   </div>
 </section>
+
+<section class="jd-native-practice" aria-labelledby="jd-native-practice-title">
+<header><p class="eyebrow">04 / Core Practice</p><div><span>核心成果二：流程层</span><h3 id="jd-native-practice-title">跑通设计意图到代码交付的完整闭环</h3></div><p>验证设计意图能否被 AI 理解和拆解，并通过调用 Design Wiki 完成页面生成与交互链路补齐，最终产出符合规范、可编辑、可复用的交付结果。</p><aside class="jd-native-efficiency" aria-label="阶段性效率测算"><span>阶段性测算</span><div><p>设计侧<strong>30%</strong></p><p>研发侧<strong>65%</strong></p></div></aside></header>
+<div class="jd-native-practice-flow" aria-label="设计意图到代码交付流程">
+<article><b>01</b><strong>业务意图输入</strong><small>目标、规则与场景</small></article><i>→</i><article class="active"><b>02</b><strong>选择 Coding 路径</strong><small>复用 / Spec / MCP</small></article><i>→</i><article><b>03</b><strong>补齐设计意图</strong><small>结构、状态与交互</small></article><i>→</i><article><b>04</b><strong>Design Wiki 调用</strong><small>组件、Token 与规范</small></article><i>→</i><article><b>05</b><strong>AI 生成页面代码</strong><small>可运行、可编辑</small></article><i>→</i><article><b>06</b><strong>Design Review 校验</strong><small>规范与体验检查</small></article><i>→</i><article><b>07</b><strong>研发 Review 与合并</strong><small>进入交付分支</small></article>
+</div></section>
 
 <section class="jd-native-practice jd-native-practice--collaboration" aria-labelledby="jd-native-collaboration-title">
   <header>

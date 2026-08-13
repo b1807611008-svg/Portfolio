@@ -970,6 +970,63 @@ body.project-jd-wiki .brand-mark {
 .jd-live-dot { width: 7px; height: 7px; border-radius: 50%; background: #67e8a5; box-shadow: 0 0 10px #67e8a5; }
 .jd-wiki-window { display: grid; grid-template-columns: 42px 1fr; overflow: hidden; }
 .jd-wiki-window:has(> .responsive-media) { display: block; }
+
+body.project-jd-wiki .jd-native-actions {
+  padding:clamp(48px,6vw,80px) max(24px,calc((100vw - 1180px)/2));
+}
+body.project-jd-wiki .jd-native-actions header {
+  align-items:flex-start;
+  padding-bottom:17px;
+}
+body.project-jd-wiki .jd-native-actions-heading {
+  display:grid;
+  gap:4px;
+  max-width:520px;
+  text-align:right;
+}
+body.project-jd-wiki .jd-native-actions-heading p {
+  margin:0;
+  color:#6e6e73;
+  font:400 14px/1.5 "SF Pro Text",system-ui,-apple-system,sans-serif;
+}
+body.project-jd-wiki .jd-native-actions-content {
+  grid-template-columns:minmax(0,1fr) minmax(280px,336px);
+  gap:clamp(24px,4vw,48px);
+  align-items:start;
+  margin-top:24px;
+}
+body.project-jd-wiki .jd-native-actions-result {
+  width:100%;
+  max-width:336px;
+  justify-self:center;
+  align-self:start;
+}
+body.project-jd-wiki .jd-native-actions-content .jd-native-action-flow {
+  grid-template-rows:auto 32px auto 32px auto 32px auto;
+  align-self:start;
+}
+body.project-jd-wiki .jd-native-actions-content .jd-native-action-flow > li:not(.jd-native-action-connector) {
+  padding:8px 0;
+}
+body.project-jd-wiki .jd-native-action-flow li p {
+  margin:8px auto 0;
+  font-size:15px;
+  line-height:1.45;
+}
+body.project-jd-wiki .jd-native-actions-content .jd-native-action-connector {
+  min-height:32px;
+}
+@media (max-width:760px) {
+  body.project-jd-wiki .jd-native-actions-heading {
+    margin-top:12px;
+    text-align:left;
+  }
+  body.project-jd-wiki .jd-native-actions-heading h3 { margin-top:0; }
+  body.project-jd-wiki .jd-native-actions-content { grid-template-columns:1fr; }
+  body.project-jd-wiki .jd-native-actions-content .jd-native-action-flow > li:not(.jd-native-action-connector) {
+    padding:8px 0;
+  }
+}
 .jd-wiki-window aside { padding: 14px 11px; display: grid; align-content: start; gap: 12px; border-right: 1px solid rgba(255,255,255,.08); }
 .jd-wiki-window aside i { width: 19px; height: 4px; border-radius: 4px; background: rgba(255,255,255,.17); }
 .jd-wiki-window > div { padding: 17px; }
@@ -5273,4 +5330,62 @@ body.project-jd-wiki .jd-native-practice--spec .jd-native-spec-copy > article > 
 
 .jd-wiki-window:has(> .responsive-media) {
   display: block;
+}
+
+/* P1 validation: show the interaction-completion workflow beneath the context. */
+body.project-jd-wiki .jd-native-project-cover > .jd-native-project-p1 {
+  grid-column:1 / -1;
+  grid-row:2;
+  align-self:stretch;
+  width:100%;
+  max-width:none;
+  margin:24px 0 0;
+  color:#1d1d1f;
+}
+
+body.project-jd-wiki .jd-native-project-p1-head {
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  margin:0 0 17px;
+}
+
+body.project-jd-wiki .jd-native-project-p1-head span {
+  color:#0066cc;
+  font:600 12px/1 "SF Pro Text",system-ui,-apple-system,sans-serif;
+  white-space:nowrap;
+}
+
+body.project-jd-wiki .jd-native-project-p1-head h4 {
+  margin:0;
+  color:#1d1d1f;
+  font:600 22px/1.2 "SF Pro Display",system-ui,-apple-system,sans-serif;
+  letter-spacing:-.02em;
+}
+
+body.project-jd-wiki .jd-native-project-p1-media {
+  width:100%;
+  margin:0;
+  overflow:hidden;
+  border:1px solid #d2d2d7;
+  border-radius:11px;
+  background:#fff;
+}
+
+body.project-jd-wiki .jd-native-project-p1-media img {
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+@media (max-width:760px) {
+  body.project-jd-wiki .jd-native-project-cover > .jd-native-project-p1 {
+    grid-column:1;
+    grid-row:auto;
+    margin-top:20px;
+  }
+
+  body.project-jd-wiki .jd-native-project-p1-head h4 {
+    font-size:20px;
+  }
 }
