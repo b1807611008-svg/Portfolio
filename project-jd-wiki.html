@@ -341,9 +341,9 @@
             <h3>引用不等于调用</h3>
             <dl class="jd-loop-case">
               <dt>问题</dt>
-              <dd>顶 tab design.md 已在 Skill 中被调用，但产出组件的尺寸和规范完全对不上。</dd>
+              <dd>AI 明明告诉我它调用了顶部 Tab 的 Design.md，但最终生成出来的尺寸还是完全不对。</dd>
               <dt>排查原因</dt>
-              <dd>单一的 design.md 只能帮助 AI 理解组件的基本结构和视觉特征，但无法完整约束生成结果。</dd>
+              <dd>只是引用了文档，但生成时仍然在手写简化样式，并没有真正把组件规范作为强约束。</dd>
               <dt>解决方式</dt>
               <dd>把被引用组件的 spec-page.html / behaviors 等当作强约束执行。</dd>
             </dl>
@@ -503,8 +503,11 @@
   <div class="jd-native-actions-content">
 <ol class="jd-native-action-flow">
 <li><div><strong>识别机会</strong><p>发现短剧小程序适合作为 AI Coding 的真实业务载体。</p></div></li>
-<li><div><strong>主动发起共建</strong><p>同步设计侧 Design System 阶段成果，与研发共同启动实践。</p></div></li>
-<li><div><strong>进入真实工程</strong><p>从研发仓库拉取分支，直接在工程内完成设计实现。</p></div></li>
+<li class="jd-native-action-connector" aria-hidden="true" role="presentation"></li>
+<li><div><strong>主动发起共建</strong><p>同步设计侧 Design System 阶段成果<br>提出用真实业务做一次共建验证</p></div></li>
+<li class="jd-native-action-connector" aria-hidden="true" role="presentation"></li>
+<li><div><strong>进入真实工程</strong><p>研发前置工程环境和业务骨架<br>从研发仓库拉取分支<br>调用 AI 和 Design Wiki<br>在工程内完成设计实现</p></div></li>
+<li class="jd-native-action-connector" aria-hidden="true" role="presentation"></li>
 <li><div><strong>完成交付闭环</strong><p>通过 Design Review、研发 Review 与合并交付完成验证。</p></div></li>
     </ol>
     <figure class="jd-native-actions-result">
@@ -650,9 +653,8 @@
       </blockquote>
     </section>
 
-    <section class="next-project section">
+    <section class="next-project section" hidden>
       <a class="button secondary" href="index.html#projects">返回项目列表</a>
-      <a class="button primary" href="project-meituan.html">查看美团项目</a>
     </section>
   </main>
 
