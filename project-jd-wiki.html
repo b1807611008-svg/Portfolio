@@ -9,9 +9,9 @@
 </head>
 <body class="project-jd-wiki">
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="返回首页">
-      <span class="brand-mark">BX</span>
-    </a>
+  <a class="brand" href="index.html" aria-label="返回主页" data-tooltip="返回主页">
+    <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z" /></svg></span>
+  </a>
     <nav class="site-nav" aria-label="项目页导航">
       <a href="index.html#projects">Projects</a>
       <a href="index.html#contact">Contact</a>
@@ -91,13 +91,72 @@
 
 
 
+    <section class="jd-rule-foundation" aria-labelledby="jd-rule-foundation-title">
+      <div class="jd-rule-foundation-inner">
+        <div class="jd-rule-foundation-heading">
+          <div class="jd-rule-foundation-copy">
+            <p class="eyebrow">前置｜建立设计规则</p>
+            <h2 id="jd-rule-foundation-title">16.0 组件库建设</h2>
+          </div>
+          <p class="jd-rule-foundation-summary">通过参与 16.0 内容场域组件的盘点、收敛、封装与验证，逐步建立对内容业务与设计规则的系统认知，为后续 AI Native 探索奠定基础</p>
+        </div>
+
+        <div class="jd-rule-foundation-gallery">
+          <article class="jd-rule-foundation-card jd-rule-foundation-card--library">
+            <header>
+              <h3>沉浸式、商详B面、逛视频、测评场域组件规范</h3>
+              <p>盘点 → 聚类 → 收敛 → 封装 → 验证</p>
+            </header>
+            <figure class="jd-rule-foundation-media">
+              <img src="assets/jd-wiki/组件库建设-888w.webp" alt="沉浸式、商详 B 面、逛视频与测评场域的组件库页面" decoding="async" />
+            </figure>
+          </article>
+
+          <article class="jd-rule-foundation-card jd-rule-foundation-card--sharing">
+            <header>
+              <h3>四次部门内组件宣讲</h3>
+            </header>
+            <figure class="jd-rule-foundation-media">
+              <img src="assets/jd-wiki/组件宣讲-1682w.webp" alt="四次部门内组件宣讲排期与主题" decoding="async" />
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="jd-skill-lab jd-skill-lab--preface section" aria-labelledby="jd-skill-preface-title">
+      <header class="jd-skill-preface-head">
+        <div>
+          <p class="jd-skill-preface-kicker">探索与契机</p>
+          <h2 id="jd-skill-preface-title">将组件库重复工作转化为提效 Skill</h2>
+        </div>
+        <p>在搭建组件库的过程中发现组件封装、组件标注等高频重复操作，没有只停留在手工执行，而是尝试制作了一些提效小工具来反哺 16.0 组件库生产</p>
+      </header>
+
+      <div class="jd-skill-projects">
+        <article class="jd-skill-project annotation">
+          <h3>组件标注 Skill</h3>
+          <figure class="jd-skill-demo">
+            <img src="assets/jd-wiki/%E7%9B%B4%E6%92%AD%E9%97%B4%E5%B0%BA%E5%AF%B8%E6%A0%87%E6%B3%A8.webp" alt="直播间尺寸标注 Skill 演示" decoding="async" />
+          </figure>
+        </article>
+
+        <article class="jd-skill-project packaging">
+          <h3>组件封装 Skill</h3>
+          <figure class="jd-skill-demo">
+            <img src="assets/jd-wiki/%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85.webp" alt="组件封装 Skill 演示" decoding="async" />
+          </figure>
+        </article>
+      </div>
+    </section>
+
     <section class="jd-context section" aria-labelledby="jd-context-title">
       <div class="jd-context-intro">
         <p class="eyebrow">02/为什么做</p>
         <div>
           <h2 id="jd-context-title">项目背景</h2>
         </div>
-        <p>Skill 尝试是契机，持续、高频探索后，我与 Relay 产品和许帅建立联系，方向契合。借此机会，我才逐步参与到 Design Wiki 的建设中</p>
+        <p>Skill 尝试是契机，持续、高频探索后，我与相关团队建立联系，方向契合。借此机会，我才逐步参与到 Design Wiki 的建设中</p>
       </div>
 
       <div class="jd-context-blocks">
@@ -433,60 +492,6 @@
       </div>
     </section>
 
-    <section class="jd-skill-lab section" aria-labelledby="jd-native-delivery-title">
-
-      <div class="jd-skill-projects">
-        <article class="jd-skill-project annotation">
-          <div class="jd-skill-copy">
-            <div class="jd-skill-number"><span>01</span><small>ANNOTATION SKILL</small></div>
-            <h3>组件自动标注</h3>
-            <p>在组件整理过程中，我发现间距标注存在大量重复劳动。不同标注对象的颜色、优先级和伸缩行为都需要设计师反复判断与设置。</p>
-            <p>我将这些判断规则沉淀为标注 Skill，让 AI 自动识别对象关系并完成一致的规范标注。</p>
-            <dl>
-              <div><dt>输入</dt><dd>待标注组件与图层结构</dd></div>
-              <div><dt>规则</dt><dd>标注颜色 · 对象优先级 · 伸缩规则</dd></div>
-              <div><dt>输出</dt><dd>自动生成的规范标注</dd></div>
-            </dl>
-            <div class="jd-skill-value"><span>减少重复操作</span><span>统一标注判断</span><span>提升整理效率</span></div>
-          </div>
-          <div class="jd-skill-demo" data-demo="annotation">
-            <div class="jd-demo-toolbar"><span>DEMO 01 / COMPONENT ANNOTATION</span><i></i><i></i><i></i></div>
-            <div class="jd-demo-stage annotation-stage has-video">
-              <video controls playsinline preload="metadata" data-pause-when-hidden aria-label="组件自动标注演示视频">
-                <source src="assets/jd-wiki/%E7%BB%84%E4%BB%B6%E6%A0%87%E6%B3%A8%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91.mp4" type="video/mp4" />
-                你的浏览器暂不支持视频播放。
-              </video>
-            </div>
-          </div>
-        </article>
-
-        <article class="jd-skill-project packaging">
-          <div class="jd-skill-copy">
-            <div class="jd-skill-number"><span>02</span><small>PACKAGING SKILL</small></div>
-            <h3>组件自动封装</h3>
-            <p>已定稿的原子组件仍需要经过命名、属性配置、变体组织与层级整理，才能成为结构稳定、可复用的正式组件。</p>
-            <p>该 Skill 支持大模型自动阅读原子组件稿件，并按照机器可理解的组件范式完成封装。</p>
-            <dl>
-              <div><dt>输入</dt><dd>已定稿的原子组件稿件</dd></div>
-              <div><dt>规则</dt><dd>命名 · 属性 · 变体 · 层级范式</dd></div>
-              <div><dt>输出</dt><dd>可复用、可读取的组件资产</dd></div>
-            </dl>
-            <div class="jd-skill-value"><span>自动理解稿件</span><span>规范组件结构</span><span>降低封装成本</span></div>
-          </div>
-          <div class="jd-skill-demo" data-demo="packaging">
-            <div class="jd-demo-toolbar"><span>DEMO 02 / COMPONENT PACKAGING</span><i></i><i></i><i></i></div>
-            <div class="jd-demo-stage packaging-stage has-video">
-              <video controls playsinline preload="metadata" data-pause-when-hidden aria-label="组件自动封装演示视频">
-                <source src="assets/jd-wiki/%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85%E6%BC%94%E7%A4%BA.mp4" type="video/mp4" />
-                你的浏览器暂不支持视频播放。
-              </video>
-            </div>
-          </div>
-        </article>
-
-
-      </div>
-
       <div class="jd-native-delivery" aria-labelledby="jd-native-delivery-title">
       <div class="jd-native-opening">
         <p class="eyebrow">08 / 真实交付</p>
@@ -687,7 +692,7 @@
       </blockquote>
     </section>
 
-    <section class="next-project section" hidden>
+    <section class="next-project section">
       <a class="button secondary" href="index.html#projects">返回项目列表</a>
     </section>
   </main>
@@ -696,12 +701,6 @@
     <p>© 2026 Baoyi Xuan. JD Design Wiki · AI Component Documentation.</p>
   </footer>
   <script>
-    (() => {
-      const nativeDelivery = document.querySelector(".jd-native-delivery");
-      const skillLab = document.querySelector(".jd-skill-lab");
-      if (nativeDelivery && skillLab) skillLab.before(nativeDelivery);
-    })();
-
     (() => {
       document.querySelectorAll(".jd-prd-carousel").forEach((carousel) => {
         const slides = Array.from(carousel.querySelectorAll(".jd-prd-slide"));

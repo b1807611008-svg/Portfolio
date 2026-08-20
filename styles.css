@@ -72,8 +72,64 @@ body.project-meituan .placeholder-image::after {
 }
 
 body.project-meituan .placeholder-image span {
-  background: #ffcc00;
-  color: #111;
+ background: #ffcc00;
+ color: #111;
+}
+body.project-meituan .project-hero {
+ grid-template-columns: minmax(0, 1fr);
+}
+body.project-meituan .project-hero > div:first-child {
+ max-width: 850px;
+}
+body.project-meituan .hero-text {
+ max-width: none;
+}
+body.project-jd-detail {
+ --accent: #e1251b;
+ --accent-soft: rgba(225, 37, 27, 0.18);
+ background: #000;
+}
+body.project-jd-detail .brand-mark {
+ background: #e1251b;
+ color: #fff;
+}
+body.project-jd-detail .site-nav a:hover,
+body.project-jd-detail .eyebrow {
+ color: #ff5a52;
+}
+body.project-jd-detail .button.primary {
+ background: #e1251b;
+ color: #fff;
+ box-shadow: none;
+}
+body.project-jd-detail .project-hero {
+ grid-template-columns: minmax(0, 1fr);
+}
+body.project-jd-detail .project-hero > div:first-child {
+ max-width: 850px;
+}
+body.project-jd-detail .project-title > span {
+ display: block;
+ font-size: clamp(40px, 4.3vw, 64px);
+ line-height: 1.24;
+ letter-spacing: 0.02em;
+}
+body.project-jd-detail .project-title {
+ margin-bottom: 32px;
+}
+body.project-jd-detail .case-longform {
+ padding: 12px 24px 56px;
+ gap: 0;
+}
+body.project-jd-detail .case-longform figure {
+ border: 0;
+ border-radius: 0;
+ box-shadow: none;
+}
+@media (max-width: 560px) {
+ body.project-jd-detail .project-title > span {
+  font-size: clamp(30px, 8.5vw, 40px);
+ }
 }
 
 body.project-qishui {
@@ -136,7 +192,7 @@ a { color: inherit; text-decoration: none; }
 
 .brand, .site-nav, .hero-actions, .section-heading.split, .next-project { display: flex; align-items: center; }
 
-.brand { gap: 12px; flex: 0 0 auto; font-weight: 700; }
+.brand { position: relative; gap: 12px; flex: 0 0 auto; font-weight: 700; }
 
 .brand-mark {
   width: 38px;
@@ -145,9 +201,32 @@ a { color: inherit; text-decoration: none; }
   place-items: center;
   color: #050505;
   border-radius: 50%;
-  background: var(--accent);
-  letter-spacing: -0.04em;
+ background: var(--accent);
+ letter-spacing: -0.04em;
+ line-height: 0;
 }
+.brand-mark svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.brand::after {
+ content: attr(data-tooltip);
+ position: absolute;
+ top: calc(100% + 10px);
+ left: 0;
+ padding: 8px 12px;
+ border-radius: 5px;
+ background: #1d1d1f;
+ color: #fff;
+ font-size: 12px;
+ font-weight: 600;
+ letter-spacing: 0;
+ line-height: 1;
+ white-space: nowrap;
+ opacity: 0;
+ pointer-events: none;
+ transform: translateY(-4px);
+ transition: opacity 160ms ease, transform 160ms ease;
+}
+.brand:hover::after, .brand:focus-visible::after { opacity: 1; transform: translateY(0); }
+.brand:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 9999px; }
 
 .site-nav {
   min-width: 0;
@@ -694,9 +773,14 @@ dd { margin: 6px 0 0; font-weight: 700; }
 }
 .project-visual { position: relative; }
 .visual-qishui {
-  background-image: url("assets/qishui-cover.webp");
-  background-size: cover;
-  background-position: center;
+ background-image: url("assets/qishui-cover.webp");
+ background-size: cover;
+ background-position: center;
+}
+.visual-jd-detail {
+ background-image: url("assets/jd-detail/detail-01-1200w.webp");
+ background-size: cover;
+ background-position: center;
 }
 .visual-packaging { background-image: linear-gradient(135deg, rgba(8,199,238,0.3), rgba(0,0,0,0.7)), url("assets/cover-cards/packaging.webp"); }
 .visual-motion {
@@ -742,6 +826,7 @@ dd { margin: 6px 0 0; font-weight: 700; }
 .project-info { padding: clamp(20px, 2.3vw, 30px) 8px 8px; }
 .project-info p { margin-bottom: 8px; color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
 #work-meituan .project-info p { color: #ffcc00; }
+#work-jd-detail .project-info p { color: #e1251b; }
 #work-system .project-info p { color: var(--accent-blue); }
 #work-meituan-campaign .project-info p { color: #ffcc00; }
 #work-aimv .project-info p { color: var(--accent-pink); }
@@ -4062,7 +4147,7 @@ body.project-jd-wiki .jd-file-card.jd-reveal-item:nth-child(even).in-view {
 }
 
 /* Phase 02 — AI Native design & engineering delivery */
-body.project-jd-wiki .jd-skill-lab .jd-native-delivery {
+body.project-jd-wiki main > .jd-native-delivery {
   position: relative; width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); margin-top: 96px;
 }
 body.project-jd-wiki .jd-native-delivery {
@@ -4911,7 +4996,7 @@ body.project-jd-wiki .jd-native-efficiency strong { color:#0066cc; font:600 clam
 
 /* Homepage project gallery: let the black surface carry the work. */
 .project-gallery { padding:clamp(18px,2.8vw,34px); border:0; border-radius:0; background:#000; background-image:none; box-shadow:none; }
-.project-gallery::before { content:"PROJECT INDEX / 04"; }
+.project-gallery::before { content:"PROJECT INDEX / 05"; }
 
 /* Project context: three parallel backgrounds. */
 body.project-jd-wiki .jd-context-blocks { grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(24px,4vw,64px); }
@@ -5579,5 +5664,290 @@ body.project-jd-wiki .jd-native-practice--spec {
 
   body.project-jd-wiki .jd-context-team-assets > b {
     font-size:14px;
+  }
+}
+
+/* JD Wiki: preface — establish the design rules through 16.0 component work. */
+body.project-jd-wiki .jd-rule-foundation {
+  padding:clamp(80px,9vw,128px) max(24px,calc((100vw - 1180px)/2));
+  background:#f5f5f7;
+}
+
+body.project-jd-wiki .jd-rule-foundation-inner {
+  display:grid;
+  grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);
+  align-items:center;
+  gap:clamp(48px,7vw,96px);
+}
+
+body.project-jd-wiki .jd-rule-foundation-copy .eyebrow {
+  margin:0 0 17px;
+}
+
+body.project-jd-wiki .jd-rule-foundation-copy h2 {
+  max-width:480px;
+  margin:0;
+  color:#1d1d1f;
+  font:600 clamp(42px,5.4vw,72px)/1.07 "SF Pro Display",system-ui,-apple-system,sans-serif;
+  letter-spacing:-.052em;
+}
+
+body.project-jd-wiki .jd-rule-foundation-copy > p:last-child {
+  max-width:420px;
+  margin:24px 0 0;
+  color:#424245;
+  font:400 clamp(16px,1.4vw,19px)/1.7 "SF Pro Text",system-ui,-apple-system,sans-serif;
+  letter-spacing:-.018em;
+}
+
+body.project-jd-wiki .jd-rule-foundation-media {
+  width:100%;
+  margin:0;
+}
+
+body.project-jd-wiki .jd-rule-foundation-media img {
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+@media (max-width:900px) {
+  body.project-jd-wiki .jd-rule-foundation {
+    padding-top:80px;
+    padding-bottom:80px;
+  }
+
+  body.project-jd-wiki .jd-rule-foundation-inner {
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  body.project-jd-wiki .jd-rule-foundation-copy > p:last-child {
+    max-width:640px;
+  }
+}
+
+@media (max-width:600px) {
+  body.project-jd-wiki .jd-rule-foundation {
+    padding-top:64px;
+    padding-bottom:64px;
+  }
+
+  body.project-jd-wiki .jd-rule-foundation-copy h2 {
+    font-size:42px;
+  }
+}
+
+/* JD Wiki: pair the component library work with its internal sharing. */
+body.project-jd-wiki .jd-rule-foundation {
+  background:#fff;
+}
+
+body.project-jd-wiki .jd-rule-foundation-inner {
+  grid-template-columns:1fr;
+  align-items:stretch;
+  gap:clamp(40px,5vw,64px);
+}
+
+body.project-jd-wiki .jd-rule-foundation-heading {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(320px,.8fr);
+  align-items:start;
+  gap:clamp(48px,8vw,128px);
+}
+
+body.project-jd-wiki .jd-rule-foundation-summary {
+  max-width:440px;
+  margin:44px 0 0;
+  color:#424245;
+  font:400 clamp(16px,1.4vw,19px)/1.7 "SF Pro Text",system-ui,-apple-system,sans-serif;
+  letter-spacing:-.018em;
+}
+
+body.project-jd-wiki .jd-rule-foundation-gallery {
+  display:grid;
+  grid-template-columns:minmax(0,1.45fr) minmax(0,.95fr);
+  align-items:stretch;
+  gap:24px;
+}
+
+body.project-jd-wiki .jd-rule-foundation-card {
+  display:flex;
+  min-width:0;
+  flex-direction:column;
+  padding:clamp(20px,2.2vw,32px);
+  border-radius:18px;
+  background:#f5f5f7;
+}
+
+body.project-jd-wiki .jd-rule-foundation-card header {
+  min-height:96px;
+}
+
+body.project-jd-wiki .jd-rule-foundation-card h3 {
+  margin:0;
+  color:#1d1d1f;
+  font:600 clamp(18px,1.7vw,25px)/1.35 "SF Pro Display",system-ui,-apple-system,sans-serif;
+  letter-spacing:-.034em;
+  text-align:center;
+}
+
+body.project-jd-wiki .jd-rule-foundation-card header p {
+  margin:16px 0 0;
+  color:#6e6e73;
+  font:400 clamp(15px,1.35vw,20px)/1.35 "SF Pro Text",system-ui,-apple-system,sans-serif;
+  letter-spacing:-.02em;
+}
+
+body.project-jd-wiki .jd-rule-foundation-media {
+  margin:auto 0 0;
+}
+
+@media (max-width:900px) {
+  body.project-jd-wiki .jd-rule-foundation-heading,
+  body.project-jd-wiki .jd-rule-foundation-gallery {
+    grid-template-columns:1fr;
+    gap:32px;
+  }
+
+  body.project-jd-wiki .jd-rule-foundation-summary {
+    max-width:640px;
+    margin:0;
+  }
+
+  body.project-jd-wiki .jd-rule-foundation-card header {
+    min-height:0;
+  }
+}
+
+@media (max-width:600px) {
+  body.project-jd-wiki .jd-rule-foundation-card {
+    padding:20px;
+  }
+}
+
+/* JD Wiki: separate the specification practice on a quiet gray surface. */
+body.project-jd-wiki .jd-native-practice--spec {
+  background:#f5f5f7;
+}
+
+/* JD Wiki: keep the file-responsibility headline on one desktop line. */
+body.project-jd-wiki #jd-file-guide-title {
+  white-space:nowrap;
+}
+
+@media (max-width:760px) {
+  body.project-jd-wiki #jd-file-guide-title {
+    white-space:normal;
+  }
+}
+
+/* JD Wiki: compact the early component Skill experiments into a light dual demo. */
+body.project-jd-wiki .jd-skill-lab--preface {
+  width:100vw;
+  max-width:none;
+  margin-left:calc(50% - 50vw);
+  padding:clamp(80px,9vw,128px) max(24px,calc((100vw - 1180px)/2));
+  background:#f5f5f7;
+  color:#1d1d1f;
+}
+
+body.project-jd-wiki .jd-skill-lab--preface .jd-skill-preface-head {
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);
+  align-items:end;
+  gap:clamp(40px,7vw,112px);
+  margin-bottom:clamp(40px,5vw,64px);
+}
+
+body.project-jd-wiki .jd-skill-lab--preface .jd-skill-preface-head h2 {
+  max-width:720px;
+  margin:12px 0 0;
+  color:#1d1d1f;
+  font:600 clamp(38px,4.5vw,64px)/1.08 "SF Pro Display",system-ui,-apple-system,sans-serif;
+  letter-spacing:-.048em;
+}
+
+body.project-jd-wiki .jd-skill-lab--preface .jd-skill-preface-kicker {
+  margin:0;
+  color:#0066cc;
+  font:600 12px/1 "SF Pro Text",system-ui,-apple-system,sans-serif;
+  letter-spacing:-.01em;
+}
+
+body.project-jd-wiki .jd-skill-lab--preface .jd-skill-preface-head p {
+  max-width:440px;
+  margin:0;
+  color:#6e6e73;
+  font:400 clamp(16px,1.35vw,19px)/1.7 "SF Pro Text",system-ui,-apple-system,sans-serif;
+  letter-spacing:-.018em;
+}
+
+body.project-jd-wiki .jd-skill-lab--preface .jd-skill-projects {
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+}
+
+body.project-jd-wiki .jd-skill-lab--preface .jd-skill-project {
+  display:flex;
+  min-height:0;
+  padding:clamp(20px,2.2vw,32px);
+  flex-direction:column;
+  gap:24px;
+  border:0;
+  border-radius:18px;
+  background:#fff;
+  color:#1d1d1f;
+}
+
+body.project-jd-wiki .jd-skill-lab--preface .jd-skill-project:nth-child(even) {
+  background:#fff;
+}
+
+body.project-jd-wiki .jd-skill-lab--preface .jd-skill-project h3 {
+  margin:0;
+  color:#1d1d1f;
+  font:600 clamp(18px,1.55vw,22px)/1.25 "SF Pro Display",system-ui,-apple-system,sans-serif;
+  letter-spacing:-.035em;
+  text-align:center;
+}
+
+body.project-jd-wiki .jd-skill-lab--preface .jd-skill-demo {
+  display:block;
+  margin:0;
+  overflow:hidden;
+  border-radius:8px;
+  background:#fff;
+  box-shadow:none;
+}
+
+body.project-jd-wiki .jd-skill-lab--preface .jd-skill-demo > img {
+  display:block;
+  width:100%;
+  height:auto;
+  background:#fff;
+}
+
+@media (max-width:900px) {
+  body.project-jd-wiki .jd-skill-lab--preface .jd-skill-preface-head,
+  body.project-jd-wiki .jd-skill-lab--preface .jd-skill-projects {
+    grid-template-columns:1fr;
+  }
+
+  body.project-jd-wiki .jd-skill-lab--preface .jd-skill-preface-head {
+    align-items:start;
+    gap:24px;
+  }
+}
+
+@media (max-width:600px) {
+  body.project-jd-wiki .jd-skill-lab--preface {
+    padding-top:64px;
+    padding-bottom:64px;
+  }
+
+  body.project-jd-wiki .jd-skill-lab--preface .jd-skill-project {
+    padding:20px;
+    gap:20px;
   }
 }
