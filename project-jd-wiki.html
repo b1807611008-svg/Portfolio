@@ -197,30 +197,39 @@
 
     </section>
 
-    <section class="jd-layers section" aria-labelledby="jd-layers-title">
-      <div class="jd-layers-head">
-        <p class="eyebrow">03/怎么解决</p>
-        <div><span>HOW TO BUILD</span><h2 id="jd-layers-title"><span>如何沉淀 AI 时代的</span><span>组件库 Markdown？</span></h2></div>
-        <p>建立清晰的分层思维，让知识从底层规则逐步向上组合。<strong>下层决定上层：</strong>每一层只描述自己该负责的内容。前面的规则越准确，AI 在页面层需要理解和猜测的内容就越少。</p>
-      </div>
 
-      <div class="jd-layer-architecture">
-        <div class="jd-layer-architecture-top"><span>DESIGN KNOWLEDGE STACK</span><small>依赖方向：由下至上 · 规则逐层收敛</small></div>
-        <div class="jd-layer-stage">
-          <article class="jd-layer-node page"><div class="jd-layer-node-id">L4</div><div><small>ORCHESTRATION</small><h3>Page <span>页面编排</span></h3><p>调用并编排组件，不重复描述组件规则</p></div><code>pages/*.md</code></article>
-          <i class="jd-layer-link link-page" aria-hidden="true"><span>调用组件</span></i>
-          <article class="jd-layer-node component"><div class="jd-layer-node-id">L3</div><div><small>COMPOSITION</small><h3>Component <span>组件结构与状态</span></h3><p>定义结构、变体、状态与交互</p></div><code>components/*.md</code></article>
-          <i class="jd-layer-link link-visual" aria-hidden="true"><span>组合能力</span></i>
-          <article class="jd-layer-node visual"><div class="jd-layer-node-id">L2</div><div><small>PRIMITIVES</small><h3>Visual <span>最小视觉能力</span></h3><p>图标、蒙层、文字等最小视觉能力</p></div><code>visuals/*.md</code></article>
-          <i class="jd-layer-link link-token" aria-hidden="true"><span>引用规则</span></i>
-          <article class="jd-layer-node token"><div class="jd-layer-node-id">L1</div><div><small>FOUNDATION</small><h3>Token <span>基础规则</span></h3><p>颜色、字体、间距等全局基础规则</p></div><code>tokens/*.md</code></article>
-          <article class="jd-layer-node assets"><div class="jd-layer-node-id">A</div><div><small>PRIVATE RESOURCES</small><h3>Assets <span>组件私有资源</span></h3><p>跟随组件管理，避免污染全局资产库</p></div><code>assets/</code></article>
-          <i class="jd-assets-link" aria-hidden="true"><span>私有引用</span></i>
-        </div>
-        <div class="jd-layer-direction"><span>基础规则</span><i></i><b>页面能力</b><em>AI 理解成本逐层降低 →</em></div>
-      </div>
+    <section class="jd-contribution-overview section" aria-labelledby="jd-contribution-overview-title">
+      <header class="jd-contribution-overview-head">
+        <p class="eyebrow">03/我的贡献</p>
+        <h2 id="jd-contribution-overview-title">我的贡献主要有三部分</h2>
+        <p class="jd-contribution-overview-role">角色定位：真实业务验证者、沉淀者和共建推动者</p>
+      </header>
 
+      <ol class="jd-contribution-overview-list">
+        <li>
+          <span class="jd-contribution-overview-index">01</span>
+          <div>
+            <h3>真实业务验证</h3>
+            <p>用视频场域的复杂业务验证并推动 Skill 迭代。</p>
+          </div>
+        </li>
+        <li>
+          <span class="jd-contribution-overview-index">02</span>
+          <div>
+            <h3>团队 SOP 沉淀</h3>
+            <p>把个人经验沉淀成团队 SOP，降低使用门槛。</p>
+          </div>
+        </li>
+        <li>
+          <span class="jd-contribution-overview-index">03</span>
+          <div>
+            <h3>联合研发共建</h3>
+            <p>主动联合研发，把 Design Wiki 接入真实工程，验证设计规则能否直接约束代码交付。</p>
+          </div>
+        </li>
+      </ol>
     </section>
+
 
     <section class="jd-flow section" aria-labelledby="jd-flow-title">
       <div class="jd-section-title">
@@ -305,9 +314,36 @@
       </div>
     </section>
 
+    <section class="jd-layers section" aria-labelledby="jd-layers-title">
+      <div class="jd-layers-head">
+        <p class="eyebrow">05/怎么解决</p>
+        <div><span>HOW TO BUILD</span><h2 id="jd-layers-title"><span>如何沉淀 AI 时代的</span><span>组件库 Markdown？</span></h2></div>
+        <p>建立清晰的分层思维，让知识从底层规则逐步向上组合。<strong>下层决定上层：</strong>每一层只描述自己该负责的内容。前面的规则越准确，AI 在页面层需要理解和猜测的内容就越少。</p>
+      </div>
+
+      <div class="jd-layer-architecture">
+        <div class="jd-layer-architecture-top"><span>DESIGN KNOWLEDGE STACK</span><small>依赖方向：由下至上 · 规则逐层收敛</small></div>
+        <div class="jd-layer-stage">
+          <article class="jd-layer-node page"><div class="jd-layer-node-id">L4</div><div><small>ORCHESTRATION</small><h3>Page <span>页面编排</span></h3><p>调用并编排组件，不重复描述组件规则</p></div><code>pages/*.md</code></article>
+          <i class="jd-layer-link link-page" aria-hidden="true"><span>调用组件</span></i>
+          <article class="jd-layer-node component"><div class="jd-layer-node-id">L3</div><div><small>COMPOSITION</small><h3>Component <span>组件结构与状态</span></h3><p>定义结构、变体、状态与交互</p></div><code>components/*.md</code></article>
+          <i class="jd-layer-link link-visual" aria-hidden="true"><span>组合能力</span></i>
+          <article class="jd-layer-node visual"><div class="jd-layer-node-id">L2</div><div><small>PRIMITIVES</small><h3>Visual <span>最小视觉能力</span></h3><p>图标、蒙层、文字等最小视觉能力</p></div><code>visuals/*.md</code></article>
+          <i class="jd-layer-link link-token" aria-hidden="true"><span>引用规则</span></i>
+          <article class="jd-layer-node token"><div class="jd-layer-node-id">L1</div><div><small>FOUNDATION</small><h3>Token <span>基础规则</span></h3><p>颜色、字体、间距等全局基础规则</p></div><code>tokens/*.md</code></article>
+          <article class="jd-layer-node assets"><div class="jd-layer-node-id">A</div><div><small>PRIVATE RESOURCES</small><h3>Assets <span>组件私有资源</span></h3><p>跟随组件管理，避免污染全局资产库</p></div><code>assets/</code></article>
+          <i class="jd-assets-link" aria-hidden="true"><span>私有引用</span></i>
+        </div>
+        <div class="jd-layer-direction"><span>基础规则</span><i></i><b>页面能力</b><em>AI 理解成本逐层降低 →</em></div>
+      </div>
+
+    </section>
+
+
+
     <section class="jd-feedback-loop section" aria-labelledby="jd-feedback-loop-title">
       <div class="jd-feedback-head">
-        <p class="eyebrow">05/如何迭代</p>
+        <p class="eyebrow">06/如何迭代</p>
         <h2 id="jd-feedback-loop-title"><span>问题闭环：</span><small>反复测试、反馈并参与优化。</small></h2>
         <p>反复运行、测试 Skill，将流程中异常情况收敛为可复现问题，并协同推动 Skill 优化。</p>
       </div>
@@ -361,12 +397,12 @@
           </figure>
         </article>
       </div>
-    </section>
+   </section>
 
 
     <section class="jd-file-guide section" aria-labelledby="jd-file-guide-title">
       <div class="jd-section-title">
-        <p class="eyebrow">06/如何沉淀</p>
+        <p class="eyebrow">07/如何沉淀</p>
         <h2 id="jd-file-guide-title">生成之后，每个文件分别承担什么职责。</h2>
       </div>
       <div class="jd-file-guide-shell">
@@ -448,51 +484,30 @@
       </div>
     </section>
 
-    <section class="jd-case-grid section-grid">
-      <article class="jd-case-lead">
-        <p class="eyebrow">Contribution</p>
-        <h2>我的贡献不是单点输出，而是把验证经验变成团队可以复用的方法。</h2>
-      </article>
-      <div class="jd-contributions">
-        <article>
-          <strong>项目层——跑通链路</strong>
-          <p>基于真实业务组件，连续验证 token、组件、页面到 HTML 预览的完整流程。</p>
-        </article>
-        <article>
-          <strong>能力层——推动迭代</strong>
-          <p>通过多个真实组件测试，暴露并反馈 Skill 在结构、规范、资源和页面还原上的问题，推动已有能力进一步优化。</p>
-        </article>
-        <article class="jd-sop-impact">
-          <div class="jd-sop-proof" aria-label="标准化流程文档传播成果">
-            <div class="jd-sop-proof-head"><span>DESIGN WIKI / SOP</span><i>•••</i></div>
-            <div class="jd-sop-doc">
-              <small>AI 设计工作流</small>
-              <h3><span>将 Relay 设计稿转化成</span><span>Design.md 的标准化流程</span></h3>
-              <p>从第一次使用者视角出发的完整上手指南</p>
-              <div><span>Skill 调用</span><span>使用方法</span><span>上手教程</span><span>检查清单</span></div>
-            </div>
-            <div class="jd-sop-metrics">
-              <div><b>150<sup>+</sup></b><span>触达并帮助设计师</span></div>
-              <div><b>600<sup>+</sup></b><span>累计文档浏览量</span></div>
-            </div>
-            <small class="jd-sop-proof-note">流程文档传播数据</small>
-          </div>
-          <div class="jd-sop-copy">
-            <span>04 / TEAM ENABLEMENT</span>
-            <strong><small>组织层</small><span>沉淀SOP</span></strong>
-          <p>在反复验证过程中，越来越多设计同学开始询问 AI、Skill 等相关问题。基于多轮实践，输出教程文档，参与内部 C2 宣讲和答疑，帮助设计同学快速上手，降低团队使用门槛。</p>
-            <ul class="jd-sop-outcomes">
-              <li>触达 <b>150+ 设计师</b></li>
-              <li>累计 <b>600+ 浏览量</b></li>
-              <li>降低 JoyCode、MCP 和 Skill 的上手成本</li>
-            </ul>
-            <div class="jd-sop-tags"><span>协作共创</span><span>教程补全</span><span>团队宣讲</span><span>规模化复用</span></div>
-          </div>
-        </article>
+    <section class="jd-design-skill-result section" aria-labelledby="jd-design-skill-result-title">
+      <div class="jd-design-skill-result-inner">
+        <header class="jd-design-skill-result-copy reveal">
+          <p class="jd-design-skill-result-kicker">第一阶段成果</p>
+          <h2 id="jd-design-skill-result-title">跑通 Design Skill 的生产链路</h2>
+          <p>从组件规范沉淀、Skill 辅助生产，到 Design.md、Spec 与 HTML 产物生成，完成一条可验证、可复用的设计规则生产链路。</p>
+          <ol class="jd-design-skill-result-flow" aria-label="第一阶段生产链路">
+            <li>组件规范</li>
+            <li>Skill 生产</li>
+            <li>Design.md / Spec / HTML</li>
+          </ol>
+        </header>
+
+        <figure class="jd-design-skill-result-media reveal">
+          <video controls playsinline preload="metadata" poster="assets/jd-wiki/design-skill-production-chain-poster.webp" aria-label="跑通 Design Skill 生产链路的第一阶段结果演示">
+            <source src="assets/jd-wiki/design-skill-production-chain.mp4" type="video/mp4" />
+            你的浏览器暂不支持视频播放。
+          </video>
+          <figcaption>第一阶段结果演示</figcaption>
+        </figure>
       </div>
     </section>
 
-      <div class="jd-native-delivery" aria-labelledby="jd-native-delivery-title">
+    <div class="jd-native-delivery" aria-labelledby="jd-native-delivery-title">
       <div class="jd-native-opening">
         <p class="eyebrow">08 / 真实交付</p>
         <div>
