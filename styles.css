@@ -5954,19 +5954,21 @@ body.project-jd-wiki .jd-skill-lab--preface .jd-skill-demo > img {
 
 /* JD Wiki: phase-one Design Skill production chain result. */
 body.project-jd-wiki .jd-design-skill-result {
-  padding:clamp(80px,9vw,128px) max(24px,calc((100vw - 1180px)/2));
+ width:min(100% - 80px,1360px);
+  padding:clamp(80px,9vw,128px) 0;
   background:#fff;
 }
 
 body.project-jd-wiki .jd-design-skill-result-inner {
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(300px,.48fr);
-  align-items:center;
-  gap:clamp(48px,9vw,144px);
+ display:grid;
+ grid-template-columns:minmax(0,1.32fr) minmax(300px,.52fr);
+ align-items:end;
+  gap:clamp(32px,4vw,80px);
 }
 
 body.project-jd-wiki .jd-design-skill-result-copy {
-  max-width:680px;
+  width:100%;
+  max-width:none;
 }
 
 body.project-jd-wiki .jd-design-skill-result-kicker {
@@ -5977,7 +5979,7 @@ body.project-jd-wiki .jd-design-skill-result-kicker {
 }
 
 body.project-jd-wiki .jd-design-skill-result h2 {
-  max-width:620px;
+  max-width:780px;
   margin:16px 0 0;
   color:#1d1d1f;
   font:600 clamp(40px,4.5vw,64px)/1.08 "SF Pro Display",system-ui,-apple-system,sans-serif;
@@ -6041,6 +6043,28 @@ body.project-jd-wiki .jd-design-skill-result-media figcaption {
   text-align:center;
 }
 
+body.project-jd-wiki .jd-design-skill-result-output {
+  width:100%;
+  max-width:none;
+  margin:clamp(32px,4vw,48px) 0 0;
+}
+
+body.project-jd-wiki .jd-design-skill-result-output img {
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:11px;
+  background:#f5f5f7;
+}
+
+body.project-jd-wiki .jd-design-skill-result-output figcaption {
+  margin-top:12px;
+  color:#86868b;
+  font:400 12px/1.35 "SF Pro Text",system-ui,-apple-system,sans-serif;
+  letter-spacing:-.01em;
+  text-align:center;
+}
+
 @media (max-width:860px) {
   body.project-jd-wiki .jd-design-skill-result-inner {
     grid-template-columns:1fr;
@@ -6053,8 +6077,15 @@ body.project-jd-wiki .jd-design-skill-result-media figcaption {
   }
 }
 
+@media (max-width:760px) {
+  body.project-jd-wiki .jd-design-skill-result {
+    width:min(100% - 40px,1360px);
+  }
+}
+
 @media (max-width:600px) {
   body.project-jd-wiki .jd-design-skill-result {
+    width:min(100% - 32px,1360px);
     padding-top:80px;
     padding-bottom:80px;
   }
