@@ -6208,3 +6208,139 @@ body.project-jd-wiki .jd-contribution-overview-list p {
     gap:40px;
   }
 }
+
+/* JD Wiki: make the project-level AGENTS.md a visible collaboration asset. */
+body.project-jd-wiki .jd-native-agent-rules {
+  margin-top:80px;
+  padding-top:48px;
+  border-top:1px solid #d2d2d7;
+}
+
+body.project-jd-wiki .jd-native-agent-rules-head {
+  display:grid;
+  grid-template-columns:minmax(0,.8fr) minmax(320px,1fr);
+  align-items:end;
+  gap:clamp(32px,6vw,80px);
+}
+
+body.project-jd-wiki .jd-native-agent-rules-head > div > p {
+  margin:0 0 12px;
+  color:#0066cc;
+  font:600 12px/1 "SF Pro Text",system-ui,-apple-system,sans-serif;
+  letter-spacing:0;
+}
+
+body.project-jd-wiki .jd-native-agent-rules-head h4 {
+  margin:0;
+  color:#1d1d1f;
+  font:600 40px/1.1 "SF Pro Display",system-ui,-apple-system,sans-serif;
+  letter-spacing:0;
+}
+
+body.project-jd-wiki .jd-native-practice--collaboration .jd-native-agent-rules-head > p:last-child {
+  max-width:520px;
+  margin:0;
+  color:#3a3a3c;
+  font:400 17px/1.7 "SF Pro Text",system-ui,-apple-system,sans-serif;
+  letter-spacing:0;
+}
+
+body.project-jd-wiki .jd-native-agent-rules-layout {
+  display:grid;
+  grid-template-columns:minmax(0,1.18fr) minmax(320px,.82fr);
+  align-items:start;
+  gap:clamp(32px,5vw,48px);
+  margin-top:48px;
+}
+
+body.project-jd-wiki .jd-native-agent-rules-visual {
+  min-width:0;
+  margin:0;
+}
+
+body.project-jd-wiki .jd-native-agent-rules-visual img {
+  display:block;
+  width:100%;
+  max-width:560px;
+  height:auto;
+  border:1px solid #e0e0e0;
+  border-radius:11px;
+  background:#f5f5f7;
+}
+
+body.project-jd-wiki .jd-native-agent-rules-visual figcaption {
+  margin-top:12px;
+  color:#7a7a7a;
+  font:400 12px/1.5 "SF Pro Text",system-ui,-apple-system,sans-serif;
+  letter-spacing:0;
+}
+
+body.project-jd-wiki .jd-native-agent-rules-list {
+  margin:0;
+  padding:0;
+  list-style:none;
+  border-top:1px solid #d2d2d7;
+}
+
+body.project-jd-wiki .jd-native-agent-rules-list li {
+  display:grid;
+  grid-template-columns:32px minmax(0,1fr);
+  gap:17px;
+  padding:24px 0;
+  border-bottom:1px solid #d2d2d7;
+}
+
+body.project-jd-wiki .jd-native-agent-rules-list li > span {
+  padding-top:5px;
+  color:#0066cc;
+  font:600 12px/1 "SF Pro Text",system-ui,-apple-system,sans-serif;
+  letter-spacing:0;
+}
+
+body.project-jd-wiki .jd-native-agent-rules-list h5 {
+  margin:0;
+  color:#1d1d1f;
+  font:600 21px/1.2 "SF Pro Display",system-ui,-apple-system,sans-serif;
+  letter-spacing:0;
+}
+
+body.project-jd-wiki .jd-native-agent-rules-list p {
+  margin:12px 0 0;
+  color:#3a3a3c;
+  font:400 17px/1.7 "SF Pro Text",system-ui,-apple-system,sans-serif;
+  letter-spacing:0;
+}
+
+@media (max-width:980px) {
+  body.project-jd-wiki .jd-native-agent-rules-head,
+  body.project-jd-wiki .jd-native-agent-rules-layout {
+    grid-template-columns:1fr;
+  }
+
+  body.project-jd-wiki .jd-native-agent-rules-visual img {
+    max-width:none;
+  }
+
+  body.project-jd-wiki .jd-native-practice--collaboration .jd-native-agent-rules-head > p:last-child {
+    max-width:680px;
+  }
+}
+
+@media (max-width:600px) {
+  body.project-jd-wiki .jd-native-agent-rules {
+    margin-top:48px;
+    padding-top:32px;
+  }
+
+  body.project-jd-wiki .jd-native-agent-rules-head h4 {
+    font-size:30px;
+  }
+
+  body.project-jd-wiki .jd-native-agent-rules-layout {
+    margin-top:32px;
+  }
+
+  body.project-jd-wiki .jd-native-agent-rules-list li {
+    padding:24px 0;
+  }
+}

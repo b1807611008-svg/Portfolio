@@ -667,8 +667,37 @@
    <article><span>研发前置</span><ul><li>工程环境</li><li>业务骨架</li><li>接口、路由和状态能力</li><li>核心业务逻辑</li><li>分支和合并规则</li></ul></article>
   <article><span>设计负责</span><ul><li>页面结构与视觉</li><li>组件与 Token 使用</li><li>状态和交互反馈</li><li>Design Review</li><li>设计规范验证</li></ul></article>
   <article><span>AI 负责</span><ul><li>理解工程上下文</li><li>检索 Design Wiki</li><li>辅助生成代码</li><li>补齐页面状态</li><li>支持规范检查</li></ul></article>
- <article><span>沉淀 agent.md</span><p>让设计侧进入真实工程有明确范围和默认约束</p></article>
+ <article><span>沉淀 AGENTS.md</span><p>让设计侧进入真实工程有明确范围和默认约束</p></article>
 </div>
+  <section class="jd-native-agent-rules" aria-labelledby="jd-native-agent-rules-title">
+    <header class="jd-native-agent-rules-head">
+      <div>
+        <p>PROJECT-LEVEL CONTEXT</p>
+        <h4 id="jd-native-agent-rules-title">沉淀项目级 AGENTS.md</h4>
+      </div>
+      <p>将设计规范、工程边界与资源处理方式写进项目规则，让设计、研发与 AI 每次都从同一套上下文开始协作。</p>
+    </header>
+    <div class="jd-native-agent-rules-layout">
+      <figure class="jd-native-agent-rules-visual">
+        <img src="assets/jd-wiki/agents-md-collaboration-guide.webp" alt="项目级 AGENTS.md 协作指南预览，包含使用者身份确认、UI 与逻辑分离等规则" width="1680" height="1658" loading="lazy" decoding="async" />
+        <figcaption>项目级 AGENTS.md / 设计与研发共用的协作上下文</figcaption>
+      </figure>
+      <ol class="jd-native-agent-rules-list">
+        <li>
+          <span>01</span>
+          <div><h5>规范固化：16.0 规则写入 AGENTS.md</h5><p>将规范读取路径、使用规则直接写入项目，让 AI 进入任务后默认读取，减少重复说明。</p></div>
+        </li>
+        <li>
+          <span>02</span>
+          <div><h5>工程兜底：高频问题沉淀为默认规则</h5><p>针对设计师不熟悉工程资源处理的问题，补充“上传图片默认转 URL”等规则，避免大图直接进入项目影响加载。</p></div>
+        </li>
+        <li>
+          <span>03</span>
+          <div><h5>协作降本：共性问题持续回写 AGENTS.md</h5><p>设计或研发发现新的共性问题后，直接补充进项目规则，双方与 AI 基于同一套上下文协作，减少反复对齐。</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
   <footer class="jd-native-assets"><span>可持续沉淀的资产</span><p>项目级 Agent 规则、代码修改边界、Coding 路径选择规则、Spec 模板、AI 友好设计稿规范、交互补齐能力，以及 Design Review 的质量机制。</p></footer>
 </section>
 
